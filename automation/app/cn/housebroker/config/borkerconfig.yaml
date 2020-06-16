@@ -1,0 +1,11 @@
+platformName: Android
+platformVersion: 5.1.1
+deviceIP: 127.0.0.1
+devicePort: 62001
+app: automation/app/cn/apk/经纪人测试.apk
+appPackage: com.easylife.house.broker.test
+appActivity: com.heiyue.project.ui.LaunchActivity
+noReset: False
+unicodeKeyboard: True
+resetKeyboard: True
+automationName: uiautomator2

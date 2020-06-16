@@ -1,0 +1,14 @@
+pack
+1、test
+测试使用包
+1、new_tools
+通用工具包
+2、api_tools
+接口专用工具包
+3、config_toll
+参数类工具包
+class
+1、request_header
+接口测试需要的常用变量
+method
+
