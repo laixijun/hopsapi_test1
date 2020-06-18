@@ -27,4 +27,5 @@ pip install cryptography pyOpenSSL certifi -i  http://mirrors.aliyun.com/pypi/si
 pip install pyOpenSSL-19.1.0-py2.py3-none-any.whl -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
 可用链接
 pip install pymysql requests xlrd xlsxwriter openpyxl pymongo selenium xlwt xlutils pyyaml BeautifulReport -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
-pymysql requests xlrd xlsxwriter openpyxl pymongo selenium xlwt xlutils yaml BeautifulReport
+pip install jsonpath -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
+

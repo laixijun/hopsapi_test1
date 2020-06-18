@@ -1,8 +1,10 @@
 # @Time    : 6/17/2020 12:27 PM
 # @Author  : Yang Xiaobai
 # @Email   : yangzhiyongtest@163.com
+from utils.api_tools.api_classfication import ApiClassification
+from utils.logger import Log
 
-
+logger = Log(logger='api_classfication').get_log()
 class UnittestTestTool:
     def __init__(self):
         pass

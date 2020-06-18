@@ -55,7 +55,11 @@ class ApiClassification:
             post_response_fail["text"] = post_response.text
             logger.info(post_response_fail)
             return post_response_fail
-
+    # 如果需要处理token
+    def requestToken(self,tokenStrDic):
+        for tokenStr in tokenStrDic.keys():
+            self.header_app
+    # 判断需要使用的请求类型
     def requestEstimate(self,methodRequest,urlRequest,dataRequest=None):
         if methodRequest == "post" or methodRequest == "Post" or methodRequest == "POST":
             resultRequst=self.post_request(url_post = urlRequest, post_data = dataRequest)
