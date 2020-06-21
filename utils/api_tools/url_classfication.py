@@ -1,6 +1,8 @@
 # @Time    : 6/16/2020 3:53 PM
 # @Author  : Yang Xiaobai
 # @Email   : yangzhiyongtest@163.com
+import json
+
 from utils.logger import Log
 
 logger = Log(logger='url_classfication').get_log()
@@ -23,9 +25,17 @@ class UrlClassfication:
         logger.info(url_noHave)
         return url_noHave
     #判断URL是否有参
-    def estimateUrl(self,url_estimate,param_dic=None):
+    '''
+    url_estimate URL
+    param_dic  URL中的参数，字典类型
+    '''
+    def estimateUrl(self,testList):
+        url_estimate=testList[4]
         if "{" in url_estimate:
-            url_result = self.havaVars(url_hava = url_estimate,param_dic = param_dic)
+            param_dic = testList[6]
+            param_dic = json.dumps(param_dic)
+            param_dic = json.loads(param_dic,encoding='utf-8')
+            url_result = self.havaVars(url_hava = url_estimate,param_dic = param_dic['PaData']['urlData'])
         else:
             url_result = self.noHaveVars(url_noHave = url_estimate)
         logger.info(url_result)

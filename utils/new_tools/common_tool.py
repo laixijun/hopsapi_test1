@@ -38,3 +38,19 @@ class Common:
         strRes = strRes.replace(strKey,strValue)
         strRes = json.loads(strRes)
         return strRes
+
+    # 对列表中的数据进行计数
+    def itemListCount(self,lst):
+        itemDic = {}
+        lstSet = set(lst)
+        lstSet = list(lstSet)
+        countEnd = 1
+        for item in lstSet:
+            countGap = 0
+            for compareItem in lst:
+                if item == compareItem:
+                    countGap += 1
+            countEnd = countEnd + countGap
+            itemDic[item] = [item, countGap, countEnd]
+        return itemDic
+

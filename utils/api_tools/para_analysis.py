@@ -1,6 +1,8 @@
 # @Time    : 6/18/2020 9:07 AM
 # @Author  : Yang Xiaobai
 # @Email   : yangzhiyongtest@163.com
+import json
+
 import jsonpath
 
 from utils.config_tool.request_header import RequestHeader
@@ -29,8 +31,22 @@ class ParaAnalysis:
             header_token[header_tokenKey[0]] = header_tokenValue
         return header_token
 
+    # header处理选择
+    def chooseHeader(self,caseList,responseValue=None):
+        paraDic = caseList[7]
+        paraDic = json.dumps(paraDic)
+        tokenlist = jsonpath.jsonpath(paraDic,'$.isTransmit.tokenName')
+        paraDic = json.loads(paraDic,encoding='utf-8')
+        if tokenlist == '' and (paraDic['isApp'] == 'N' or paraDic['isApp'] == 'n'):
+            return RequestHeader.WEBHEADER
+        elif tokenlist == '' and (paraDic['isApp'] == 'Y' or paraDic['isApp'] == 'y'):
+            return RequestHeader.APPHEADER
+        elif tokenlist != '':
+            headerdata=self.tokenToHeader(responseValue=responseValue, requestPara=caseList, envContentDic=None)
+            return headerdata
+
     # 2、将需要传递的健值添加参数
-    def paraToRequestData(self,responseValue,requestPara,requestData,envContentDic):
+    def paraToRequestData(self,responseValue,requestPara,requestData,envContentDic={}):
         transmitKey = requestPara["isTransmit"]["transmitName"]
         requestDataJson = requestData["paData"]["paramData"]
         listNum = Common().estimateList(transmitKey)
@@ -49,6 +65,20 @@ class ParaAnalysis:
             requestDataJson=Common().replaceStr(requestDataJson, strKey, strValue)
             logger.info(requestDataJson)
         return {"requestDataJson":requestDataJson,"envContentDic":envContentDic}
+
+    # 获取参数
+    def choosePara(self,caseList,responseValue=None):
+        paraDic = caseList[7]
+        paraJson = caseList[6]
+        paraDic = json.dumps(paraDic)
+        paraJson = json.dumps(paraJson)
+        paraList = jsonpath.jsonpath(paraDic,'$.isTransmit.transmitName')
+        if paraList == '':
+            return paraJson["PaData"]["paramData"]
+        else:
+            return self.paraToRequestData(responseValue=responseValue,requestPara=paraDic,requestData=paraJson)
+
+
     # 3、 获取Python脚本
     def acquirePython(self):
         pass
@@ -58,7 +88,7 @@ class ParaAnalysis:
     # 5、判断是否是APP
     #{"isApp":"False","isTransmit":{"tokenName":"tokenKey","transmitName":"transmitKey"}}
     def isAppRequest(self,isAppDic):
-        if isAppDic["isApp"]:
+        if isAppDic["isApp"] == 'Y' or isAppDic["isApp"] == 'y':
             return True
         else:
             return False

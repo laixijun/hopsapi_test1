@@ -10,15 +10,19 @@ from utils.logger import Log
 
 logger = Log(logger='api_classfication').get_log()
 class ApiClassification:
-    def __init__(self):
+    def __init__(self,headerData=None):
         self.url_post = "https://tbroker.lifeat.cn:45788/easylife/rest/broker/login"
         self.data = {\
                     "brokerPhone": "15718868478",\
                     "clientId": "8c82592b934908becdc2375e52dbbc6d",\
                     "password": "123456"\
                     }
-        self.header_app = RequestHeader.APPHEADER
-        self.header_web = RequestHeader.WEBHEADER
+        if headerData != None:
+            self.header_app = headerData
+            self.header_web = headerData
+        else:
+            self.header_app = RequestHeader.APPHEADER
+            self.header_web = RequestHeader.WEBHEADER
 
     # 2、 对get的请求进行get处理
     def get_request(self, url_get, pydata = None):
