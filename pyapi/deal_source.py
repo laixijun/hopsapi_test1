@@ -6,6 +6,7 @@ import datetime
 from pyapi.get_source import SourceGet
 from utils.api_tools.api_classfication import ApiClassification
 from utils.api_tools.para_analysis import ParaAnalysis
+from utils.api_tools.result_assert import ResultAssert
 from utils.api_tools.url_classfication import UrlClassfication
 from utils.logger import Log
 
@@ -36,7 +37,13 @@ class SourceDeal:
 			a = datetime.now()
 			resultRequst=ApiClassification(headerData=requestHeader).requestEstimate(methodRequest=requestMethod, urlRequest=requestUrl, dataRequest=requestData)
 			b = datetime.now()
+			# 执行时间
 			durn = (b - a).seconds
 			logger.info(resultRequst)
+			if resultRequst['status_code']==200:
+				compareResults=ResultAssert().compareResult(jsonActual=resultRequst['text'],jsonExpect=testCaseListItem[8])
+			else:
+				pass
 			responseValue=resultRequst
 			resultList.append(resultCaseList)
+			resultList.append(durn)
