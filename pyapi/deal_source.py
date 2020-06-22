@@ -24,7 +24,11 @@ class SourceDeal:
 		testCaseList=SourceGet().getIdOfTestOperate(lstNum)
 		responseValue= None
 		resultList = []
+		responseValue={}
+		responseValue['header']=None
+		responseValue['text']=None
 		for testCaseListItem in testCaseList:
+			resultList.append(resultCaseList)
 			resultCaseList = testCaseListItem[:3]
 			requestMethod = testCaseListItem[5]
 			logger.info(requestMethod)
@@ -37,13 +41,28 @@ class SourceDeal:
 			a = datetime.now()
 			resultRequst=ApiClassification(headerData=requestHeader).requestEstimate(methodRequest=requestMethod, urlRequest=requestUrl, dataRequest=requestData)
 			b = datetime.now()
-			# 执行时间
+			# 执行时间 durn
 			durn = (b - a).seconds
 			logger.info(resultRequst)
+			# 是否执行通过 isPass
+			isPass = None
 			if resultRequst['status_code']==200:
 				compareResults=ResultAssert().compareResult(jsonActual=resultRequst['text'],jsonExpect=testCaseListItem[8])
+				if compareResults['reusltFinal'] == 'N':
+					isPass = 'FAIL'
+					failReason = compareResults['FAIL']
+					# 失败response
+					failResponse = resultRequst['text']
+					# 失败request
+					failRequests = requestData
+				else:
+					isPass = 'SUC'
 			else:
-				pass
+				isPass = 'FAIL'
+				# 失败原因 failReason
+				failReason = resultRequst['text']
+			resultList.append(durn)
+			resultList.append(isPass)
+			resultList.append(isPass)
 			responseValue=resultRequst
-			resultList.append(resultCaseList)
 			resultList.append(durn)
