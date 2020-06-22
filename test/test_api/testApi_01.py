@@ -91,6 +91,9 @@ responseValue={"isApp":"False","isTransmit":{"tokenName":"[tokenKey,valueKey]","
     ["transmitKey",{"valueKey":"valueKey","getValuePath":"getValuePath"}]}}
 result=paraToRequestData(responseValue, requestPara, requestData, envContentDic)
 print(result)
+
+def test():
+    pass
 # estimatelistValue=[["getValuePath",{"valueKey":"valueKey","getValuePath":"$.isTransmit.tokenName"}],["valueKey",{"valueKey":"valueKey","getValuePath":"$.isApp"}]]
 # def estimateList(estimatelistValue):
 #     listNum = 0
@@ -107,3 +110,7 @@ print(result)
 #
 # num = estimateList(estimatelistValue)
 # print(num)
+
+
+
+
