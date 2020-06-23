@@ -16,17 +16,24 @@ class ParaAnalysis:
 
     # 1、 将header中的token添加到header
     def tokenToHeader(self,responseValue,requestPara,envContentDic=None):
+        requestPara=requestPara[7]
+        logger.info(requestPara)
+        # requestPara = json.dumps(requestPara,ensure_ascii=False)
+        requestPara = json.loads(requestPara,encoding='utf-8')
+        logger.info(requestPara["isTransmit"])
         header_tokenKey = requestPara["isTransmit"]["tokenName"]
+        logger.info(header_tokenKey)
+        header_tokenKey = eval(header_tokenKey)
         listNum = Common().estimateList(header_tokenKey)
         if self.isAppRequest(isAppDic=requestPara):
             header_token = RequestHeader.APPHEADER
         else:
             header_token = RequestHeader.WEBHEADER
-        if listNum ==1:
+        if listNum ==1 and responseValue != None :
             for list_item in header_tokenKey:
                 header_tokenValue = responseValue[list_item[1]]
                 header_token[list_item[0]]=header_tokenValue
-        elif listNum == 0:
+        elif listNum == 0 and responseValue != None:
             header_tokenValue = responseValue[header_tokenKey[1]]
             header_token[header_tokenKey[0]] = header_tokenValue
         return header_token
@@ -34,7 +41,7 @@ class ParaAnalysis:
     # header处理选择
     def chooseHeader(self,caseList,responseValue=None):
         paraDic = caseList[7]
-        paraDic = json.dumps(paraDic)
+        paraDic = json.dumps(paraDic,ensure_ascii=False)
         tokenlist = jsonpath.jsonpath(paraDic,'$.isTransmit.tokenName')
         paraDic = json.loads(paraDic,encoding='utf-8')
         if tokenlist == '' and (paraDic['isApp'] == 'N' or paraDic['isApp'] == 'n'):
@@ -47,6 +54,10 @@ class ParaAnalysis:
 
     # 2、将需要传递的健值添加参数
     def paraToRequestData(self,responseValue,requestPara,requestData,envContentDic={}):
+        # requestPara = requestPara[7]
+        requestData = json.loads(requestData,encoding='utf-8')
+        logger.info(requestData)
+        logger.info(requestPara)
         transmitKey = requestPara["isTransmit"]["transmitName"]
         requestDataJson = requestData["paData"]["paramData"]
         listNum = Common().estimateList(transmitKey)
@@ -70,8 +81,8 @@ class ParaAnalysis:
     def choosePara(self,caseList,responseValue=None):
         paraDic = caseList[7]
         paraJson = caseList[6]
-        paraDic = json.dumps(paraDic)
-        paraJson = json.dumps(paraJson)
+        paraDic = json.dumps(paraDic,ensure_ascii=False)
+        paraJson = json.dumps(paraJson,ensure_ascii=False)
         paraList = jsonpath.jsonpath(paraDic,'$.isTransmit.transmitName')
         if paraList == '':
             return paraJson["PaData"]["paramData"]
