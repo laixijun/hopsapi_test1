@@ -8,7 +8,9 @@ from utils.api_tools.api_classfication import ApiClassification
 from utils.api_tools.para_analysis import ParaAnalysis
 from utils.api_tools.result_assert import ResultAssert
 from utils.api_tools.url_classfication import UrlClassfication
+from utils.config_tool.file_config_path import ExcelConfig
 from utils.logger import Log
+from utils.new_tools.excel_tool import ExcelTool, DealExcelTool
 
 logger = Log(logger='deal_source').get_log()
 class SourceDeal:
@@ -20,6 +22,9 @@ class SourceDeal:
 		pass
 
 	# 完成一次请求
+	'''
+	lstNum 业务编号用例
+	'''
 	def operationDeal(self,lstNum):
 		testCaseList=SourceGet().getIdOfTestOperate(lstNum)
 		responseValue= None
@@ -27,6 +32,7 @@ class SourceDeal:
 		responseValue={}
 		responseValue['header']=None
 		responseValue['text']=None
+		testCaseDict = {}
 		for testCaseListItem in testCaseList:
 			resultList.append(resultCaseList)
 			resultCaseList = testCaseListItem[:3]
@@ -63,6 +69,36 @@ class SourceDeal:
 				failReason = resultRequst['text']
 			resultList.append(durn)
 			resultList.append(isPass)
+			if isPass == "FAIL":
+				resultList.append(failReason)
+				resultList.append(failResponse)
+				resultList.append(failRequests)
 			resultList.append(isPass)
 			responseValue=resultRequst
-			resultList.append(durn)
+			testCaseDict[testCaseListItem[1]]=resultList
+		return testCaseDict
+	
+	# 将业务编号循环执行
+	def operationAllDeal(self):
+		operateId = SourceGet().getOperateId()
+		excelRow=None
+		for operateIdKey in operateId.keys():
+			resultDic=self.operationDeal(operateId[operateIdKey])
+			rte=self.resultToExcel(testCaseDict=resultDic,excelRow=excelRow)
+			excelRow=rte['excelRow']
+		rte['et'].saveWorkbook(pathFile=ExcelConfig.REPORTPATHSHEETCURRENT)
+	# 将测试结果写入到Excel
+	def resultToExcel(self,testCaseDict,excelRow=None):
+		rte={}
+		et=ExcelTool(excelFile=DealExcelTool().getReportFileName(),sheetName=ExcelConfig.REPORTPATHSHEET)
+		if excelRow != None:
+			excelRow = excelRow
+		else:
+			excelRow=2
+		for i in testCaseDict.keys:
+			et.writeCellRow(list=testCaseDict[i],row=excelRow,column=1)
+			excelRow += 1
+		# et.saveWorkbook()
+		rte['excelRow']=excelRow
+		rte['et']=et
+		return rte

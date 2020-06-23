@@ -74,6 +74,13 @@ class ExcelTool:
 		cellIndex=self.getSheetValue().cell(row,column)
 		cellIndex.value=rcValue
 
+	# 向一行写入一条list
+	def writeCellRow(self,list,row,column=1):
+		column = column
+		for i in list:
+			self.writeCellValue(row=row,column=column,rcValue=i)
+			column += 1
+
 	#将工作簿保存
 	def saveWorkbook(self,pathFile):
 		self.work_book.save(pathFile)
