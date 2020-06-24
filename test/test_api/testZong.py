@@ -37,6 +37,5 @@ def testDic():
     print(f)
     print(type(f))
 
-
-a = datetime.now()
+a = r"D:\zhy\haoshenghuo\autoproject\hopsapi_test\utils\api_tools\url_classfication.py"
 print(a)

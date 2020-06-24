@@ -35,8 +35,9 @@ class SourceDeal:
 		responseValue['text']=None
 		testCaseDict = {}
 		for testCaseListItem in testCaseList:
-			resultCaseList = testCaseListItem[:3]
-			resultList.append(resultCaseList)
+			resultCaseList = testCaseListItem[:4]
+			# resultList.append(resultCaseList)
+			resultList = resultCaseList
 			requestMethod = testCaseListItem[5]
 			logger.info(requestMethod)
 			requestUrl = UrlClassfication().estimateUrl(testCaseListItem)
@@ -52,7 +53,7 @@ class SourceDeal:
 			durn = (b - a).seconds
 			logger.info(resultRequst)
 			# 是否执行通过 isPass
-			isPass = None
+			isTwo = None
 			if resultRequst['status_code']==200:
 				compareResults=ResultAssert().compareResult(jsonActual=resultRequst['text'],jsonExpect=testCaseListItem[8])
 				if compareResults['reusltFinal'] == 'N':
@@ -72,8 +73,9 @@ class SourceDeal:
 			resultList.append(isPass)
 			if isPass == "FAIL":
 				resultList.append(failReason)
-				resultList.append(failResponse)
-				resultList.append(failRequests)
+				if resultRequst['status_code']==200:
+					resultList.append(failResponse)
+					resultList.append(failRequests)
 			resultList.append(isPass)
 			responseValue=resultRequst
 			testCaseDict[testCaseListItem[1]]=resultList
@@ -87,6 +89,8 @@ class SourceDeal:
 			resultDic=self.operationDeal(operateId[operateIdKey])
 			resultDic = json.dumps(resultDic,ensure_ascii=False)
 			resultDic = json.loads(resultDic,encoding='utf-8')
+			logger.info(resultDic)
+			logger.info(type(resultDic))
 			rte=self.resultToExcel(testCaseDict=resultDic,excelRow=excelRow)
 			excelRow=rte['excelRow']
 		rte['et'].saveWorkbook(pathFile=ExcelConfig.REPORTPATHSHEETCURRENT)
@@ -98,7 +102,7 @@ class SourceDeal:
 			excelRow = excelRow
 		else:
 			excelRow=2
-		for i in testCaseDict.keys:
+		for i in testCaseDict.keys():
 			et.writeCellRow(list=testCaseDict[i],row=excelRow,column=1)
 			excelRow += 1
 		# et.saveWorkbook()
