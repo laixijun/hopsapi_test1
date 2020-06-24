@@ -5,7 +5,7 @@ import time
 
 
 class ExcelConfig:
-	PROJECTPATH = 'hopsapi_test'
+	PROJECTPATH = 'hopsapi_test1'
 	TESTCASEALL = '/testCase/testCaseAll'
 	REPORTPATH = '/report/excelReport'
 	TESTCASEALLFile = 'testCase.xlsx'

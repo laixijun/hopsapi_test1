@@ -46,7 +46,10 @@ class ApiClassification:
     def post_request(self, url_post, post_data):
         post_response_dic={}
         post_response_fail={}
-        post_data_json = json.dumps(post_data)
+        post_data_json = json.dumps(post_data,ensure_ascii=False)
+        logger.info(post_data_json)
+        logger.info(url_post)
+        logger.info(self.header_app)
         post_response = requests.post(url=url_post, data=post_data_json, headers=self.header_app, verify=False)
         logger.info(post_response.status_code)
         if post_response.status_code == requests.codes.ok:

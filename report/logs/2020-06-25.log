@@ -1,0 +1,265 @@
+2020-06-25 00:11:40,335 excel_tool.py [line:120] INFO /Users/yangzhiyong/PycharmProjects/
+2020-06-25 00:15:15,345 excel_tool.py [line:120] INFO /Users/yangzhiyong/PycharmProjects/
+2020-06-25 00:15:15,379 excel_tool.py [line:120] INFO /Users/yangzhiyong/PycharmProjects/
+2020-06-25 00:15:15,542 deal_source.py [line:42] INFO POST
+2020-06-25 00:15:15,543 url_classfication.py [line:25] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-25 00:15:15,543 url_classfication.py [line:41] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-25 00:15:15,543 deal_source.py [line:44] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-25 00:15:15,543 para_analysis.py [line:20] INFO {"isApp":"Y","isTransmit":{"tokenName":["token","token"],"transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-25 00:15:15,543 para_analysis.py [line:20] INFO {"isApp":"Y","isTransmit":{"tokenName":["token","token"],"transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-25 00:15:15,543 para_analysis.py [line:23] INFO {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}
+2020-06-25 00:15:15,543 para_analysis.py [line:23] INFO {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}
+2020-06-25 00:15:15,544 para_analysis.py [line:25] INFO ['token', 'token']
+2020-06-25 00:15:15,544 para_analysis.py [line:25] INFO ['token', 'token']
+2020-06-25 00:15:15,544 deal_source.py [line:46] INFO {'Content-Type': 'application/json', 'Connection': 'keep-alive', 'User-Agent': 'EasyLife.alpha/1.4.2 (iPhone; iOS 10.2.1; Scale/3.00)'}
+2020-06-25 00:15:15,544 para_analysis.py [line:92] INFO False
+2020-06-25 00:15:15,544 para_analysis.py [line:92] INFO False
+2020-06-25 00:15:15,544 para_analysis.py [line:62] INFO {'isDefine': '', 'paData': {'urlData': '', 'paramData': {'brokerPhone': '15718868478', 'clientId': '77a8a4b9e5ba1c9b6a21ca1b839c3581', 'password': 'haoshenghuo'}}}
+2020-06-25 00:15:15,544 para_analysis.py [line:62] INFO {'isDefine': '', 'paData': {'urlData': '', 'paramData': {'brokerPhone': '15718868478', 'clientId': '77a8a4b9e5ba1c9b6a21ca1b839c3581', 'password': 'haoshenghuo'}}}
+2020-06-25 00:15:15,544 para_analysis.py [line:63] INFO {'isApp': 'Y', 'isTransmit': {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}}
+2020-06-25 00:15:15,544 para_analysis.py [line:63] INFO {'isApp': 'Y', 'isTransmit': {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}}
+2020-06-25 00:15:15,544 para_analysis.py [line:64] INFO <class 'dict'>
+2020-06-25 00:15:15,544 para_analysis.py [line:64] INFO <class 'dict'>
+2020-06-25 00:15:15,544 para_analysis.py [line:65] INFO <class 'dict'>
+2020-06-25 00:15:15,544 para_analysis.py [line:65] INFO <class 'dict'>
+2020-06-25 00:15:15,544 deal_source.py [line:48] INFO {'requestDataJson': {'brokerPhone': '15718868478', 'clientId': '77a8a4b9e5ba1c9b6a21ca1b839c3581', 'password': 'haoshenghuo'}, 'envContentDic': {}}
+2020-06-25 00:15:15,778 api_classfication.py [line:51] INFO 400
+2020-06-25 00:15:15,778 api_classfication.py [line:61] INFO {'status_code': 400, 'text': '<html><head><title>Apache Tomcat/7.0.75 - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 400 - </h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u></u></p><p><b>description</b> <u>The request sent by the client was syntactically incorrect.</u></p><HR size="1" noshade="noshade"><h3>Apache Tomcat/7.0.75</h3></body></html>'}
+2020-06-25 00:15:15,778 deal_source.py [line:54] INFO {'status_code': 400, 'text': '<html><head><title>Apache Tomcat/7.0.75 - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 400 - </h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u></u></p><p><b>description</b> <u>The request sent by the client was syntactically incorrect.</u></p><HR size="1" noshade="noshade"><h3>Apache Tomcat/7.0.75</h3></body></html>'}
+2020-06-25 00:15:15,778 deal_source.py [line:92] INFO {'BOHUI01': ['KHGJ001', 'BOHUI01', '客户跟进', '驳回', 0, 'FAIL', '<html><head><title>Apache Tomcat/7.0.75 - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 400 - </h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u></u></p><p><b>description</b> <u>The request sent by the client was syntactically incorrect.</u></p><HR size="1" noshade="noshade"><h3>Apache Tomcat/7.0.75</h3></body></html>', 'FAIL']}
+2020-06-25 00:15:15,778 deal_source.py [line:93] INFO <class 'dict'>
+2020-06-25 00:15:15,778 excel_tool.py [line:120] INFO /Users/yangzhiyong/PycharmProjects/
+2020-06-25 00:15:15,843 excel_tool.py [line:120] INFO /Users/yangzhiyong/PycharmProjects/
+2020-06-25 00:15:16,032 deal_source.py [line:42] INFO None
+2020-06-25 00:15:27,316 excel_tool.py [line:120] INFO /Users/yangzhiyong/PycharmProjects/
+2020-06-25 00:15:27,335 excel_tool.py [line:120] INFO /Users/yangzhiyong/PycharmProjects/
+2020-06-25 00:15:27,501 deal_source.py [line:42] INFO POST
+2020-06-25 00:15:27,501 url_classfication.py [line:25] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-25 00:15:27,501 url_classfication.py [line:41] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-25 00:15:27,501 deal_source.py [line:44] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-25 00:15:27,502 para_analysis.py [line:20] INFO {"isApp":"Y","isTransmit":{"tokenName":["token","token"],"transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-25 00:15:27,502 para_analysis.py [line:20] INFO {"isApp":"Y","isTransmit":{"tokenName":["token","token"],"transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-25 00:15:27,502 para_analysis.py [line:23] INFO {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}
+2020-06-25 00:15:27,502 para_analysis.py [line:23] INFO {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}
+2020-06-25 00:15:27,502 para_analysis.py [line:25] INFO ['token', 'token']
+2020-06-25 00:15:27,502 para_analysis.py [line:25] INFO ['token', 'token']
+2020-06-25 00:15:27,502 deal_source.py [line:46] INFO {'Content-Type': 'application/json', 'Connection': 'keep-alive', 'User-Agent': 'EasyLife.alpha/1.4.2 (iPhone; iOS 10.2.1; Scale/3.00)'}
+2020-06-25 00:15:27,502 para_analysis.py [line:92] INFO False
+2020-06-25 00:15:27,502 para_analysis.py [line:92] INFO False
+2020-06-25 00:15:27,502 para_analysis.py [line:62] INFO {'isDefine': '', 'paData': {'urlData': '', 'paramData': {'brokerPhone': '15718868478', 'clientId': '77a8a4b9e5ba1c9b6a21ca1b839c3581', 'password': 'haoshenghuo'}}}
+2020-06-25 00:15:27,502 para_analysis.py [line:62] INFO {'isDefine': '', 'paData': {'urlData': '', 'paramData': {'brokerPhone': '15718868478', 'clientId': '77a8a4b9e5ba1c9b6a21ca1b839c3581', 'password': 'haoshenghuo'}}}
+2020-06-25 00:15:27,502 para_analysis.py [line:63] INFO {'isApp': 'Y', 'isTransmit': {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}}
+2020-06-25 00:15:27,502 para_analysis.py [line:63] INFO {'isApp': 'Y', 'isTransmit': {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}}
+2020-06-25 00:15:27,502 para_analysis.py [line:64] INFO <class 'dict'>
+2020-06-25 00:15:27,502 para_analysis.py [line:64] INFO <class 'dict'>
+2020-06-25 00:15:27,502 para_analysis.py [line:65] INFO <class 'dict'>
+2020-06-25 00:15:27,502 para_analysis.py [line:65] INFO <class 'dict'>
+2020-06-25 00:15:27,502 deal_source.py [line:48] INFO {'requestDataJson': {'brokerPhone': '15718868478', 'clientId': '77a8a4b9e5ba1c9b6a21ca1b839c3581', 'password': 'haoshenghuo'}, 'envContentDic': {}}
+2020-06-25 00:15:27,597 api_classfication.py [line:51] INFO 400
+2020-06-25 00:15:27,598 api_classfication.py [line:61] INFO {'status_code': 400, 'text': '<html><head><title>Apache Tomcat/7.0.75 - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 400 - </h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u></u></p><p><b>description</b> <u>The request sent by the client was syntactically incorrect.</u></p><HR size="1" noshade="noshade"><h3>Apache Tomcat/7.0.75</h3></body></html>'}
+2020-06-25 00:15:27,598 deal_source.py [line:54] INFO {'status_code': 400, 'text': '<html><head><title>Apache Tomcat/7.0.75 - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 400 - </h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u></u></p><p><b>description</b> <u>The request sent by the client was syntactically incorrect.</u></p><HR size="1" noshade="noshade"><h3>Apache Tomcat/7.0.75</h3></body></html>'}
+2020-06-25 00:15:27,598 deal_source.py [line:92] INFO {'BOHUI01': ['KHGJ001', 'BOHUI01', '客户跟进', '驳回', 0, 'FAIL', '<html><head><title>Apache Tomcat/7.0.75 - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 400 - </h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u></u></p><p><b>description</b> <u>The request sent by the client was syntactically incorrect.</u></p><HR size="1" noshade="noshade"><h3>Apache Tomcat/7.0.75</h3></body></html>', 'FAIL']}
+2020-06-25 00:15:27,598 deal_source.py [line:93] INFO <class 'dict'>
+2020-06-25 00:15:27,598 excel_tool.py [line:120] INFO /Users/yangzhiyong/PycharmProjects/
+2020-06-25 00:15:27,663 excel_tool.py [line:120] INFO /Users/yangzhiyong/PycharmProjects/
+2020-06-25 00:15:27,857 deal_source.py [line:42] INFO None
+2020-06-25 00:15:43,919 excel_tool.py [line:120] INFO /Users/yangzhiyong/PycharmProjects/
+2020-06-25 00:16:28,706 excel_tool.py [line:120] INFO /Users/yangzhiyong/PycharmProjects/
+2020-06-25 00:16:28,731 excel_tool.py [line:120] INFO /Users/yangzhiyong/PycharmProjects/
+2020-06-25 00:16:28,901 deal_source.py [line:42] INFO POST
+2020-06-25 00:16:28,901 url_classfication.py [line:25] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-25 00:16:28,902 url_classfication.py [line:41] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-25 00:16:28,902 deal_source.py [line:44] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-25 00:16:28,902 para_analysis.py [line:20] INFO {"isApp":"Y","isTransmit":{"tokenName":["token","token"],"transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-25 00:16:28,902 para_analysis.py [line:20] INFO {"isApp":"Y","isTransmit":{"tokenName":["token","token"],"transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-25 00:16:28,902 para_analysis.py [line:23] INFO {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}
+2020-06-25 00:16:28,902 para_analysis.py [line:23] INFO {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}
+2020-06-25 00:16:28,903 para_analysis.py [line:25] INFO ['token', 'token']
+2020-06-25 00:16:28,903 para_analysis.py [line:25] INFO ['token', 'token']
+2020-06-25 00:16:28,903 deal_source.py [line:46] INFO {'Content-Type': 'application/json', 'Connection': 'keep-alive', 'User-Agent': 'EasyLife.alpha/1.4.2 (iPhone; iOS 10.2.1; Scale/3.00)'}
+2020-06-25 00:16:28,903 para_analysis.py [line:92] INFO False
+2020-06-25 00:16:28,903 para_analysis.py [line:92] INFO False
+2020-06-25 00:16:28,903 para_analysis.py [line:62] INFO {'isDefine': '', 'paData': {'urlData': '', 'paramData': {'brokerPhone': '15718868478', 'clientId': '77a8a4b9e5ba1c9b6a21ca1b839c3581', 'password': 'haoshenghuo'}}}
+2020-06-25 00:16:28,903 para_analysis.py [line:62] INFO {'isDefine': '', 'paData': {'urlData': '', 'paramData': {'brokerPhone': '15718868478', 'clientId': '77a8a4b9e5ba1c9b6a21ca1b839c3581', 'password': 'haoshenghuo'}}}
+2020-06-25 00:16:28,903 para_analysis.py [line:63] INFO {'isApp': 'Y', 'isTransmit': {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}}
+2020-06-25 00:16:28,903 para_analysis.py [line:63] INFO {'isApp': 'Y', 'isTransmit': {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}}
+2020-06-25 00:16:28,903 para_analysis.py [line:64] INFO <class 'dict'>
+2020-06-25 00:16:28,903 para_analysis.py [line:64] INFO <class 'dict'>
+2020-06-25 00:16:28,903 para_analysis.py [line:65] INFO <class 'dict'>
+2020-06-25 00:16:28,903 para_analysis.py [line:65] INFO <class 'dict'>
+2020-06-25 00:16:28,903 deal_source.py [line:48] INFO {'requestDataJson': {'brokerPhone': '15718868478', 'clientId': '77a8a4b9e5ba1c9b6a21ca1b839c3581', 'password': 'haoshenghuo'}, 'envContentDic': {}}
+2020-06-25 00:16:28,968 api_classfication.py [line:51] INFO 400
+2020-06-25 00:16:28,968 api_classfication.py [line:61] INFO {'status_code': 400, 'text': '<html><head><title>Apache Tomcat/7.0.75 - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 400 - </h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u></u></p><p><b>description</b> <u>The request sent by the client was syntactically incorrect.</u></p><HR size="1" noshade="noshade"><h3>Apache Tomcat/7.0.75</h3></body></html>'}
+2020-06-25 00:16:28,969 deal_source.py [line:54] INFO {'status_code': 400, 'text': '<html><head><title>Apache Tomcat/7.0.75 - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 400 - </h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u></u></p><p><b>description</b> <u>The request sent by the client was syntactically incorrect.</u></p><HR size="1" noshade="noshade"><h3>Apache Tomcat/7.0.75</h3></body></html>'}
+2020-06-25 00:16:28,970 deal_source.py [line:92] INFO {'BOHUI01': ['KHGJ001', 'BOHUI01', '客户跟进', '驳回', 0, 'FAIL', '<html><head><title>Apache Tomcat/7.0.75 - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 400 - </h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u></u></p><p><b>description</b> <u>The request sent by the client was syntactically incorrect.</u></p><HR size="1" noshade="noshade"><h3>Apache Tomcat/7.0.75</h3></body></html>', 'FAIL']}
+2020-06-25 00:16:28,970 deal_source.py [line:93] INFO <class 'dict'>
+2020-06-25 00:16:28,971 excel_tool.py [line:120] INFO /Users/yangzhiyong/PycharmProjects/
+2020-06-25 00:16:29,047 excel_tool.py [line:120] INFO /Users/yangzhiyong/PycharmProjects/
+2020-06-25 00:16:29,276 deal_source.py [line:42] INFO None
+2020-06-25 00:20:32,792 excel_tool.py [line:120] INFO /Users/yangzhiyong/PycharmProjects/
+2020-06-25 00:20:32,819 excel_tool.py [line:120] INFO /Users/yangzhiyong/PycharmProjects/
+2020-06-25 00:20:32,999 deal_source.py [line:39] INFO ['KHGJ001', 'BOHUI01', '客户跟进', '驳回', 'https://tbroker.lifeat.cn:45788/easylife/rest/broker/login', 'POST', '{"isDefine":"","paData":{"urlData":"","paramData":{\n\t"brokerPhone": "15718868478",\n\t"clientId": "77a8a4b9e5ba1c9b6a21ca1b839c3581",\n\t"password": "haoshenghuo"\n}}}', '{"isApp":"Y","isTransmit":{"tokenName":["token","token"],"transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}', '{"$.status.code":"1000"}', None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+2020-06-25 00:20:32,999 deal_source.py [line:43] INFO POST
+2020-06-25 00:20:33,000 url_classfication.py [line:25] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-25 00:20:33,000 url_classfication.py [line:41] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-25 00:20:33,000 deal_source.py [line:45] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-25 00:20:33,000 para_analysis.py [line:20] INFO {"isApp":"Y","isTransmit":{"tokenName":["token","token"],"transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-25 00:20:33,000 para_analysis.py [line:20] INFO {"isApp":"Y","isTransmit":{"tokenName":["token","token"],"transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-25 00:20:33,000 para_analysis.py [line:23] INFO {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}
+2020-06-25 00:20:33,000 para_analysis.py [line:23] INFO {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}
+2020-06-25 00:20:33,001 para_analysis.py [line:25] INFO ['token', 'token']
+2020-06-25 00:20:33,001 para_analysis.py [line:25] INFO ['token', 'token']
+2020-06-25 00:20:33,001 deal_source.py [line:47] INFO {'Content-Type': 'application/json', 'Connection': 'keep-alive', 'User-Agent': 'EasyLife.alpha/1.4.2 (iPhone; iOS 10.2.1; Scale/3.00)'}
+2020-06-25 00:20:33,001 para_analysis.py [line:92] INFO False
+2020-06-25 00:20:33,001 para_analysis.py [line:92] INFO False
+2020-06-25 00:20:33,001 para_analysis.py [line:62] INFO {'isDefine': '', 'paData': {'urlData': '', 'paramData': {'brokerPhone': '15718868478', 'clientId': '77a8a4b9e5ba1c9b6a21ca1b839c3581', 'password': 'haoshenghuo'}}}
+2020-06-25 00:20:33,001 para_analysis.py [line:62] INFO {'isDefine': '', 'paData': {'urlData': '', 'paramData': {'brokerPhone': '15718868478', 'clientId': '77a8a4b9e5ba1c9b6a21ca1b839c3581', 'password': 'haoshenghuo'}}}
+2020-06-25 00:20:33,001 para_analysis.py [line:63] INFO {'isApp': 'Y', 'isTransmit': {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}}
+2020-06-25 00:20:33,001 para_analysis.py [line:63] INFO {'isApp': 'Y', 'isTransmit': {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}}
+2020-06-25 00:20:33,001 para_analysis.py [line:64] INFO <class 'dict'>
+2020-06-25 00:20:33,001 para_analysis.py [line:64] INFO <class 'dict'>
+2020-06-25 00:20:33,001 para_analysis.py [line:65] INFO <class 'dict'>
+2020-06-25 00:20:33,001 para_analysis.py [line:65] INFO <class 'dict'>
+2020-06-25 00:20:33,001 deal_source.py [line:49] INFO {'requestDataJson': {'brokerPhone': '15718868478', 'clientId': '77a8a4b9e5ba1c9b6a21ca1b839c3581', 'password': 'haoshenghuo'}, 'envContentDic': {}}
+2020-06-25 00:20:33,097 api_classfication.py [line:51] INFO 400
+2020-06-25 00:20:33,097 api_classfication.py [line:61] INFO {'status_code': 400, 'text': '<html><head><title>Apache Tomcat/7.0.75 - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 400 - </h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u></u></p><p><b>description</b> <u>The request sent by the client was syntactically incorrect.</u></p><HR size="1" noshade="noshade"><h3>Apache Tomcat/7.0.75</h3></body></html>'}
+2020-06-25 00:20:33,098 deal_source.py [line:55] INFO {'status_code': 400, 'text': '<html><head><title>Apache Tomcat/7.0.75 - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 400 - </h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u></u></p><p><b>description</b> <u>The request sent by the client was syntactically incorrect.</u></p><HR size="1" noshade="noshade"><h3>Apache Tomcat/7.0.75</h3></body></html>'}
+2020-06-25 00:20:33,098 deal_source.py [line:93] INFO {'BOHUI01': ['KHGJ001', 'BOHUI01', '客户跟进', '驳回', 0, 'FAIL', '<html><head><title>Apache Tomcat/7.0.75 - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 400 - </h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u></u></p><p><b>description</b> <u>The request sent by the client was syntactically incorrect.</u></p><HR size="1" noshade="noshade"><h3>Apache Tomcat/7.0.75</h3></body></html>', 'FAIL']}
+2020-06-25 00:20:33,098 deal_source.py [line:94] INFO <class 'dict'>
+2020-06-25 00:20:33,098 excel_tool.py [line:120] INFO /Users/yangzhiyong/PycharmProjects/
+2020-06-25 00:20:33,160 excel_tool.py [line:120] INFO /Users/yangzhiyong/PycharmProjects/
+2020-06-25 00:20:33,413 deal_source.py [line:39] INFO [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+2020-06-25 00:20:33,413 deal_source.py [line:43] INFO None
+2020-06-25 00:22:26,577 excel_tool.py [line:120] INFO /Users/yangzhiyong/PycharmProjects/
+2020-06-25 00:22:26,603 excel_tool.py [line:120] INFO /Users/yangzhiyong/PycharmProjects/
+2020-06-25 00:22:26,758 deal_source.py [line:41] INFO ['KHGJ001', 'BOHUI01', '客户跟进', '驳回', 'https://tbroker.lifeat.cn:45788/easylife/rest/broker/login', 'POST', '{"isDefine":"","paData":{"urlData":"","paramData":{\n\t"brokerPhone": "15718868478",\n\t"clientId": "77a8a4b9e5ba1c9b6a21ca1b839c3581",\n\t"password": "haoshenghuo"\n}}}', '{"isApp":"Y","isTransmit":{"tokenName":["token","token"],"transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}', '{"$.status.code":"1000"}', None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+2020-06-25 00:22:26,758 deal_source.py [line:45] INFO POST
+2020-06-25 00:22:26,758 url_classfication.py [line:25] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-25 00:22:26,758 url_classfication.py [line:41] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-25 00:22:26,758 deal_source.py [line:47] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-25 00:22:26,759 para_analysis.py [line:20] INFO {"isApp":"Y","isTransmit":{"tokenName":["token","token"],"transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-25 00:22:26,759 para_analysis.py [line:20] INFO {"isApp":"Y","isTransmit":{"tokenName":["token","token"],"transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-25 00:22:26,759 para_analysis.py [line:23] INFO {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}
+2020-06-25 00:22:26,759 para_analysis.py [line:23] INFO {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}
+2020-06-25 00:22:26,759 para_analysis.py [line:25] INFO ['token', 'token']
+2020-06-25 00:22:26,759 para_analysis.py [line:25] INFO ['token', 'token']
+2020-06-25 00:22:26,759 deal_source.py [line:49] INFO {'Content-Type': 'application/json', 'Connection': 'keep-alive', 'User-Agent': 'EasyLife.alpha/1.4.2 (iPhone; iOS 10.2.1; Scale/3.00)'}
+2020-06-25 00:22:26,759 para_analysis.py [line:92] INFO False
+2020-06-25 00:22:26,759 para_analysis.py [line:92] INFO False
+2020-06-25 00:22:26,760 para_analysis.py [line:62] INFO {'isDefine': '', 'paData': {'urlData': '', 'paramData': {'brokerPhone': '15718868478', 'clientId': '77a8a4b9e5ba1c9b6a21ca1b839c3581', 'password': 'haoshenghuo'}}}
+2020-06-25 00:22:26,760 para_analysis.py [line:62] INFO {'isDefine': '', 'paData': {'urlData': '', 'paramData': {'brokerPhone': '15718868478', 'clientId': '77a8a4b9e5ba1c9b6a21ca1b839c3581', 'password': 'haoshenghuo'}}}
+2020-06-25 00:22:26,760 para_analysis.py [line:63] INFO {'isApp': 'Y', 'isTransmit': {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}}
+2020-06-25 00:22:26,760 para_analysis.py [line:63] INFO {'isApp': 'Y', 'isTransmit': {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}}
+2020-06-25 00:22:26,760 para_analysis.py [line:64] INFO <class 'dict'>
+2020-06-25 00:22:26,760 para_analysis.py [line:64] INFO <class 'dict'>
+2020-06-25 00:22:26,760 para_analysis.py [line:65] INFO <class 'dict'>
+2020-06-25 00:22:26,760 para_analysis.py [line:65] INFO <class 'dict'>
+2020-06-25 00:22:26,760 deal_source.py [line:51] INFO {'requestDataJson': {'brokerPhone': '15718868478', 'clientId': '77a8a4b9e5ba1c9b6a21ca1b839c3581', 'password': 'haoshenghuo'}, 'envContentDic': {}}
+2020-06-25 00:29:25,344 excel_tool.py [line:120] INFO /Users/yangzhiyong/PycharmProjects/
+2020-06-25 00:29:25,364 excel_tool.py [line:120] INFO /Users/yangzhiyong/PycharmProjects/
+2020-06-25 00:29:25,520 deal_source.py [line:41] INFO ['KHGJ001', 'BOHUI01', '客户跟进', '驳回', 'https://tbroker.lifeat.cn:45788/easylife/rest/broker/login', 'POST', '{"isDefine":"","paData":{"urlData":"","paramData":{\n\t"brokerPhone": "15718868478",\n\t"clientId": "77a8a4b9e5ba1c9b6a21ca1b839c3581",\n\t"password": "haoshenghuo"\n}}}', '{"isApp":"Y","isTransmit":{"tokenName":["token","token"],"transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}', '{"$.status.code":"1000"}', None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+2020-06-25 00:29:25,520 deal_source.py [line:45] INFO POST
+2020-06-25 00:29:25,520 url_classfication.py [line:25] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-25 00:29:25,520 url_classfication.py [line:41] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-25 00:29:25,520 deal_source.py [line:47] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-25 00:29:25,521 para_analysis.py [line:20] INFO {"isApp":"Y","isTransmit":{"tokenName":["token","token"],"transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-25 00:29:25,521 para_analysis.py [line:20] INFO {"isApp":"Y","isTransmit":{"tokenName":["token","token"],"transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-25 00:29:25,521 para_analysis.py [line:23] INFO {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}
+2020-06-25 00:29:25,521 para_analysis.py [line:23] INFO {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}
+2020-06-25 00:29:25,521 para_analysis.py [line:25] INFO ['token', 'token']
+2020-06-25 00:29:25,521 para_analysis.py [line:25] INFO ['token', 'token']
+2020-06-25 00:29:25,521 deal_source.py [line:49] INFO {'Content-Type': 'application/json', 'Connection': 'keep-alive', 'User-Agent': 'EasyLife.alpha/1.4.2 (iPhone; iOS 10.2.1; Scale/3.00)'}
+2020-06-25 00:29:25,521 para_analysis.py [line:92] INFO False
+2020-06-25 00:29:25,521 para_analysis.py [line:92] INFO False
+2020-06-25 00:29:25,521 para_analysis.py [line:62] INFO {'isDefine': '', 'paData': {'urlData': '', 'paramData': {'brokerPhone': '15718868478', 'clientId': '77a8a4b9e5ba1c9b6a21ca1b839c3581', 'password': 'haoshenghuo'}}}
+2020-06-25 00:29:25,521 para_analysis.py [line:62] INFO {'isDefine': '', 'paData': {'urlData': '', 'paramData': {'brokerPhone': '15718868478', 'clientId': '77a8a4b9e5ba1c9b6a21ca1b839c3581', 'password': 'haoshenghuo'}}}
+2020-06-25 00:29:25,522 para_analysis.py [line:63] INFO {'isApp': 'Y', 'isTransmit': {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}}
+2020-06-25 00:29:25,522 para_analysis.py [line:63] INFO {'isApp': 'Y', 'isTransmit': {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}}
+2020-06-25 00:29:25,522 para_analysis.py [line:64] INFO <class 'dict'>
+2020-06-25 00:29:25,522 para_analysis.py [line:64] INFO <class 'dict'>
+2020-06-25 00:29:25,522 para_analysis.py [line:65] INFO <class 'dict'>
+2020-06-25 00:29:25,522 para_analysis.py [line:65] INFO <class 'dict'>
+2020-06-25 00:29:25,522 deal_source.py [line:51] INFO {'requestDataJson': {'brokerPhone': '15718868478', 'clientId': '77a8a4b9e5ba1c9b6a21ca1b839c3581', 'password': 'haoshenghuo'}, 'envContentDic': {}}
+2020-06-25 00:29:25,522 api_classfication.py [line:50] INFO {"requestDataJson": {"brokerPhone": "15718868478", "clientId": "77a8a4b9e5ba1c9b6a21ca1b839c3581", "password": "haoshenghuo"}, "envContentDic": {}}
+2020-06-25 00:29:25,522 api_classfication.py [line:51] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-25 00:29:25,522 api_classfication.py [line:52] INFO {'Content-Type': 'application/json', 'Connection': 'keep-alive', 'User-Agent': 'EasyLife.alpha/1.4.2 (iPhone; iOS 10.2.1; Scale/3.00)'}
+2020-06-25 00:38:12,671 excel_tool.py [line:120] INFO /Users/yangzhiyong/PycharmProjects/
+2020-06-25 00:38:12,689 excel_tool.py [line:120] INFO /Users/yangzhiyong/PycharmProjects/
+2020-06-25 00:38:12,847 deal_source.py [line:41] INFO ['KHGJ001', 'BOHUI01', '客户跟进', '驳回', 'https://tbroker.lifeat.cn:45788/easylife/rest/broker/login', 'POST', '{"isDefine":"","paData":{"urlData":"","paramData":{\n\t"brokerPhone": "15718868478",\n\t"clientId": "77a8a4b9e5ba1c9b6a21ca1b839c3581",\n\t"password": "123456"\n}}}', '{"isApp":"Y","isTransmit":{"tokenName":["token","token"],"transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}', '{"$.status.code":"1000"}', None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+2020-06-25 00:38:12,847 deal_source.py [line:45] INFO POST
+2020-06-25 00:38:12,847 url_classfication.py [line:25] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-25 00:38:12,847 url_classfication.py [line:41] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-25 00:38:12,847 deal_source.py [line:47] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-25 00:38:12,848 para_analysis.py [line:20] INFO {"isApp":"Y","isTransmit":{"tokenName":["token","token"],"transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-25 00:38:12,848 para_analysis.py [line:20] INFO {"isApp":"Y","isTransmit":{"tokenName":["token","token"],"transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-25 00:38:12,848 para_analysis.py [line:23] INFO {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}
+2020-06-25 00:38:12,848 para_analysis.py [line:23] INFO {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}
+2020-06-25 00:38:12,848 para_analysis.py [line:25] INFO ['token', 'token']
+2020-06-25 00:38:12,848 para_analysis.py [line:25] INFO ['token', 'token']
+2020-06-25 00:38:12,848 deal_source.py [line:49] INFO {'Content-Type': 'application/json', 'Connection': 'keep-alive', 'User-Agent': 'EasyLife.alpha/1.4.2 (iPhone; iOS 10.2.1; Scale/3.00)'}
+2020-06-25 00:38:12,848 para_analysis.py [line:92] INFO False
+2020-06-25 00:38:12,848 para_analysis.py [line:92] INFO False
+2020-06-25 00:38:12,848 para_analysis.py [line:62] INFO {'isDefine': '', 'paData': {'urlData': '', 'paramData': {'brokerPhone': '15718868478', 'clientId': '77a8a4b9e5ba1c9b6a21ca1b839c3581', 'password': '123456'}}}
+2020-06-25 00:38:12,848 para_analysis.py [line:62] INFO {'isDefine': '', 'paData': {'urlData': '', 'paramData': {'brokerPhone': '15718868478', 'clientId': '77a8a4b9e5ba1c9b6a21ca1b839c3581', 'password': '123456'}}}
+2020-06-25 00:38:12,848 para_analysis.py [line:63] INFO {'isApp': 'Y', 'isTransmit': {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}}
+2020-06-25 00:38:12,848 para_analysis.py [line:63] INFO {'isApp': 'Y', 'isTransmit': {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}}
+2020-06-25 00:38:12,848 para_analysis.py [line:64] INFO <class 'dict'>
+2020-06-25 00:38:12,848 para_analysis.py [line:64] INFO <class 'dict'>
+2020-06-25 00:38:12,848 para_analysis.py [line:65] INFO <class 'dict'>
+2020-06-25 00:38:12,848 para_analysis.py [line:65] INFO <class 'dict'>
+2020-06-25 00:38:12,849 deal_source.py [line:51] INFO {'requestDataJson': {'brokerPhone': '15718868478', 'clientId': '77a8a4b9e5ba1c9b6a21ca1b839c3581', 'password': '123456'}, 'envContentDic': {}}
+2020-06-25 00:38:12,849 api_classfication.py [line:50] INFO {"requestDataJson": {"brokerPhone": "15718868478", "clientId": "77a8a4b9e5ba1c9b6a21ca1b839c3581", "password": "123456"}, "envContentDic": {}}
+2020-06-25 00:38:12,849 api_classfication.py [line:51] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-25 00:38:12,849 api_classfication.py [line:52] INFO {'Content-Type': 'application/json', 'Connection': 'keep-alive', 'User-Agent': 'EasyLife.alpha/1.4.2 (iPhone; iOS 10.2.1; Scale/3.00)'}
+2020-06-25 00:38:12,913 api_classfication.py [line:54] INFO 400
+2020-06-25 00:38:12,913 api_classfication.py [line:64] INFO {'status_code': 400, 'text': '<html><head><title>Apache Tomcat/7.0.75 - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 400 - </h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u></u></p><p><b>description</b> <u>The request sent by the client was syntactically incorrect.</u></p><HR size="1" noshade="noshade"><h3>Apache Tomcat/7.0.75</h3></body></html>'}
+2020-06-25 00:38:12,914 deal_source.py [line:57] INFO {'status_code': 400, 'text': '<html><head><title>Apache Tomcat/7.0.75 - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 400 - </h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u></u></p><p><b>description</b> <u>The request sent by the client was syntactically incorrect.</u></p><HR size="1" noshade="noshade"><h3>Apache Tomcat/7.0.75</h3></body></html>'}
+2020-06-25 00:38:12,914 deal_source.py [line:95] INFO {'BOHUI01': ['KHGJ001', 'BOHUI01', '客户跟进', '驳回', 0, 'FAIL', '<html><head><title>Apache Tomcat/7.0.75 - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 400 - </h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u></u></p><p><b>description</b> <u>The request sent by the client was syntactically incorrect.</u></p><HR size="1" noshade="noshade"><h3>Apache Tomcat/7.0.75</h3></body></html>', 'FAIL']}
+2020-06-25 00:38:12,914 deal_source.py [line:96] INFO <class 'dict'>
+2020-06-25 00:38:12,915 excel_tool.py [line:120] INFO /Users/yangzhiyong/PycharmProjects/
+2020-06-25 00:38:12,976 excel_tool.py [line:120] INFO /Users/yangzhiyong/PycharmProjects/
+2020-06-25 00:38:13,166 deal_source.py [line:95] INFO {}
+2020-06-25 00:38:13,167 deal_source.py [line:96] INFO <class 'dict'>
+2020-06-25 00:38:13,167 excel_tool.py [line:120] INFO /Users/yangzhiyong/PycharmProjects/
+2020-06-25 00:48:18,431 excel_tool.py [line:120] INFO /Users/yangzhiyong/PycharmProjects/
+2020-06-25 00:48:18,439 excel_tool.py [line:120] INFO /Users/yangzhiyong/PycharmProjects/
+2020-06-25 00:48:18,445 deal_source.py [line:41] INFO ['KHGJ001', 'BOHUI01', '客户跟进', '驳回', 'https://tbroker.lifeat.cn:45788/easylife/rest/broker/login', 'POST', '{"isDefine":"","paData":{"urlData":"","paramData":{\n\t"brokerPhone": "15718868478",\n\t"clientId": "77a8a4b9e5ba1c9b6a21ca1b839c3581",\n\t"password": "123456"\n}}}', '{"isApp":"Y","isTransmit":{"tokenName":["token","token"],"transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}', '{"$.status.code":"1000"}', None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+2020-06-25 00:48:18,445 deal_source.py [line:45] INFO POST
+2020-06-25 00:48:18,445 url_classfication.py [line:25] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-25 00:48:18,445 url_classfication.py [line:41] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-25 00:48:18,445 deal_source.py [line:47] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-25 00:48:18,446 para_analysis.py [line:20] INFO {"isApp":"Y","isTransmit":{"tokenName":["token","token"],"transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-25 00:48:18,446 para_analysis.py [line:20] INFO {"isApp":"Y","isTransmit":{"tokenName":["token","token"],"transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-25 00:48:18,446 para_analysis.py [line:23] INFO {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}
+2020-06-25 00:48:18,446 para_analysis.py [line:23] INFO {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}
+2020-06-25 00:48:18,446 para_analysis.py [line:25] INFO ['token', 'token']
+2020-06-25 00:48:18,446 para_analysis.py [line:25] INFO ['token', 'token']
+2020-06-25 00:48:18,446 deal_source.py [line:49] INFO {'Content-Type': 'application/json', 'Connection': 'keep-alive', 'User-Agent': 'EasyLife.alpha/1.4.2 (iPhone; iOS 10.2.1; Scale/3.00)'}
+2020-06-25 00:48:18,446 para_analysis.py [line:92] INFO False
+2020-06-25 00:48:18,446 para_analysis.py [line:92] INFO False
+2020-06-25 00:48:18,446 para_analysis.py [line:62] INFO {'isDefine': '', 'paData': {'urlData': '', 'paramData': {'brokerPhone': '15718868478', 'clientId': '77a8a4b9e5ba1c9b6a21ca1b839c3581', 'password': '123456'}}}
+2020-06-25 00:48:18,446 para_analysis.py [line:62] INFO {'isDefine': '', 'paData': {'urlData': '', 'paramData': {'brokerPhone': '15718868478', 'clientId': '77a8a4b9e5ba1c9b6a21ca1b839c3581', 'password': '123456'}}}
+2020-06-25 00:48:18,446 para_analysis.py [line:63] INFO {'isApp': 'Y', 'isTransmit': {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}}
+2020-06-25 00:48:18,446 para_analysis.py [line:63] INFO {'isApp': 'Y', 'isTransmit': {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}}
+2020-06-25 00:48:18,446 para_analysis.py [line:64] INFO <class 'dict'>
+2020-06-25 00:48:18,446 para_analysis.py [line:64] INFO <class 'dict'>
+2020-06-25 00:48:18,447 para_analysis.py [line:65] INFO <class 'dict'>
+2020-06-25 00:48:18,447 para_analysis.py [line:65] INFO <class 'dict'>
+2020-06-25 00:48:18,447 deal_source.py [line:51] INFO {'requestDataJson': {'brokerPhone': '15718868478', 'clientId': '77a8a4b9e5ba1c9b6a21ca1b839c3581', 'password': '123456'}, 'envContentDic': {}}
+2020-06-25 00:48:18,447 api_classfication.py [line:50] INFO {"requestDataJson": {"brokerPhone": "15718868478", "clientId": "77a8a4b9e5ba1c9b6a21ca1b839c3581", "password": "123456"}, "envContentDic": {}}
+2020-06-25 00:48:18,447 api_classfication.py [line:51] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-25 00:48:18,447 api_classfication.py [line:52] INFO {'Content-Type': 'application/json', 'Connection': 'keep-alive', 'User-Agent': 'EasyLife.alpha/1.4.2 (iPhone; iOS 10.2.1; Scale/3.00)'}
+2020-06-25 00:48:18,587 api_classfication.py [line:54] INFO 400
+2020-06-25 00:48:18,588 api_classfication.py [line:64] INFO {'status_code': 400, 'text': '<html><head><title>Apache Tomcat/7.0.75 - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 400 - </h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u></u></p><p><b>description</b> <u>The request sent by the client was syntactically incorrect.</u></p><HR size="1" noshade="noshade"><h3>Apache Tomcat/7.0.75</h3></body></html>'}
+2020-06-25 00:48:18,588 deal_source.py [line:57] INFO {'status_code': 400, 'text': '<html><head><title>Apache Tomcat/7.0.75 - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 400 - </h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u></u></p><p><b>description</b> <u>The request sent by the client was syntactically incorrect.</u></p><HR size="1" noshade="noshade"><h3>Apache Tomcat/7.0.75</h3></body></html>'}
+2020-06-25 00:48:18,588 deal_source.py [line:95] INFO {'BOHUI01': ['KHGJ001', 'BOHUI01', '客户跟进', '驳回', 0, 'FAIL', '<html><head><title>Apache Tomcat/7.0.75 - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 400 - </h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u></u></p><p><b>description</b> <u>The request sent by the client was syntactically incorrect.</u></p><HR size="1" noshade="noshade"><h3>Apache Tomcat/7.0.75</h3></body></html>', 'FAIL']}
+2020-06-25 00:48:18,588 deal_source.py [line:96] INFO <class 'dict'>
+2020-06-25 00:48:18,588 excel_tool.py [line:120] INFO /Users/yangzhiyong/PycharmProjects/
+2020-06-25 00:48:18,595 excel_tool.py [line:120] INFO /Users/yangzhiyong/PycharmProjects/
+2020-06-25 00:48:18,602 deal_source.py [line:95] INFO {}
+2020-06-25 00:48:18,602 deal_source.py [line:96] INFO <class 'dict'>
+2020-06-25 00:48:18,602 excel_tool.py [line:120] INFO /Users/yangzhiyong/PycharmProjects/
+2020-06-25 00:51:40,432 excel_tool.py [line:120] INFO /Users/yangzhiyong/PycharmProjects/
+2020-06-25 00:51:40,432 excel_tool.py [line:120] INFO /Users/yangzhiyong/PycharmProjects/
+2020-06-25 00:55:16,101 excel_tool.py [line:120] INFO /Users/yangzhiyong/PycharmProjects/
+2020-06-25 00:55:16,101 excel_tool.py [line:120] INFO /Users/yangzhiyong/PycharmProjects/

@@ -35,7 +35,10 @@ class SourceDeal:
 		responseValue['text']=None
 		testCaseDict = {}
 		for testCaseListItem in testCaseList:
+			if testCaseListItem[0] == None:
+				break
 			resultCaseList = testCaseListItem[:4]
+			logger.info(testCaseListItem)
 			# resultList.append(resultCaseList)
 			resultList = resultCaseList
 			requestMethod = testCaseListItem[5]

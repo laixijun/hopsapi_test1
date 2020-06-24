@@ -13,9 +13,9 @@ class ExcelTool:
 			self.sheetName = sheetName
 		else:
 			self.sheetName = "Sheet1"
+		self.work_book = openpyxl.load_workbook(self.excelFile)
 	#获取工作表
 	def getSheetValue(self):
-		self.work_book = openpyxl.load_workbook(self.excelFile)
 		sheet = self.work_book[self.sheetName]
 		return sheet
 
@@ -101,7 +101,7 @@ class DealExcelTool:
 		return testFileName
 	# 获取报告文件的全路径
 	def getReportFileName(self):
-		reportFileName=self.getFileReport() + '/' + ExcelConfig.REPORTPATHFILE
+		reportFileName=self.getFileReport() + '/' + ExcelConfig.REPORTPATHSHEETCURRENT
 		reportFileName = reportFileName.replace('\\','/')
 		return reportFileName
 	# 获取用例文件的路径
@@ -135,8 +135,8 @@ if __name__ == '__main__':
 	rf=de.getReportFileName()
 	tf=de.getTestFileName()
 	print(rf,tf)
-	path = de.getFilePath()
-	pathReport = de.getFileReport()
-	print(path)
-	print(pathReport)
-	print(de.getProjectPath())
+	# path = de.getFilePath()
+	# pathReport = de.getFileReport()
+	# print(path)
+	# print(pathReport)
+	# print(de.getProjectPath())
