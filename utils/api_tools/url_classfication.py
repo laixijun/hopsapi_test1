@@ -33,7 +33,7 @@ class UrlClassfication:
         url_estimate=testList[4]
         if "{" in url_estimate:
             param_dic = testList[6]
-            param_dic = json.dumps(param_dic)
+            param_dic = json.dumps(param_dic,ensure_ascii=False)
             param_dic = json.loads(param_dic,encoding='utf-8')
             url_result = self.havaVars(url_hava = url_estimate,param_dic = param_dic['PaData']['urlData'])
         else:

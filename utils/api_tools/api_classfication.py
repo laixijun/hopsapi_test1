@@ -39,6 +39,7 @@ class ApiClassification:
         else:
             get_response_fail["status_code"] = get_response.status_code
             get_response_fail["text"] = get_response.text
+            get_response_fail["headers"] = get_response.headers
             logger.info(get_response_fail)
             return get_response_fail
     # 3、 对post的请求进行post的处理

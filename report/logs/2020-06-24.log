@@ -1,0 +1,356 @@
+2020-06-24 08:55:10,424 excel_tool.py [line:120] INFO D:\zhy\haoshenghuo\autoproject\
+2020-06-24 08:55:10,519 excel_tool.py [line:120] INFO D:\zhy\haoshenghuo\autoproject\
+2020-06-24 08:55:10,729 deal_source.py [line:41] INFO POST
+2020-06-24 08:55:10,729 url_classfication.py [line:25] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-24 08:55:10,729 url_classfication.py [line:41] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-24 08:55:10,730 deal_source.py [line:43] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-24 08:55:10,730 para_analysis.py [line:20] INFO {"isApp":"Y","isTransmit":{"tokenName":"[\"token\",\"token\"]","transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-24 08:55:10,730 para_analysis.py [line:20] INFO {"isApp":"Y","isTransmit":{"tokenName":"[\"token\",\"token\"]","transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-24 08:55:10,731 para_analysis.py [line:23] INFO {'tokenName': '["token","token"]', 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}
+2020-06-24 08:55:10,731 para_analysis.py [line:23] INFO {'tokenName': '["token","token"]', 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}
+2020-06-24 08:55:10,731 para_analysis.py [line:25] INFO ["token","token"]
+2020-06-24 08:55:10,731 para_analysis.py [line:25] INFO ["token","token"]
+2020-06-24 08:55:10,731 deal_source.py [line:45] INFO {'Content-Type': 'application/json', 'Connection': 'keep-alive', 'User-Agent': 'EasyLife.alpha/1.4.2 (iPhone; iOS 10.2.1; Scale/3.00)'}
+2020-06-24 08:55:10,731 para_analysis.py [line:59] INFO {"isApp":"Y","isTransmit":{"tokenName":"[\"token\",\"token\"]","transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-24 08:55:10,731 para_analysis.py [line:59] INFO {"isApp":"Y","isTransmit":{"tokenName":"[\"token\",\"token\"]","transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-24 08:55:10,731 para_analysis.py [line:60] INFO "{\"isDefine\":\"\",\"PaData\":{\"urlData\":\"\",\"paramData\":{\n\t\"brokerPhone\": \"15718868478\",\n\t\"clientId\": \"77a8a4b9e5ba1c9b6a21ca1b839c3581\",\n\t\"password\": \"haoshenghuo\"\n}}}"
+2020-06-24 08:55:10,731 para_analysis.py [line:60] INFO "{\"isDefine\":\"\",\"PaData\":{\"urlData\":\"\",\"paramData\":{\n\t\"brokerPhone\": \"15718868478\",\n\t\"clientId\": \"77a8a4b9e5ba1c9b6a21ca1b839c3581\",\n\t\"password\": \"haoshenghuo\"\n}}}"
+2020-06-24 09:07:40,426 excel_tool.py [line:120] INFO D:\zhy\haoshenghuo\autoproject\
+2020-06-24 09:07:40,449 excel_tool.py [line:120] INFO D:\zhy\haoshenghuo\autoproject\
+2020-06-24 09:07:40,660 deal_source.py [line:41] INFO POST
+2020-06-24 09:07:40,660 url_classfication.py [line:25] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-24 09:07:40,660 url_classfication.py [line:41] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-24 09:07:40,660 deal_source.py [line:43] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-24 09:07:40,661 para_analysis.py [line:20] INFO {"isApp":"Y","isTransmit":{"tokenName":"[\"token\",\"token\"]","transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-24 09:07:40,661 para_analysis.py [line:20] INFO {"isApp":"Y","isTransmit":{"tokenName":"[\"token\",\"token\"]","transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-24 09:07:40,661 para_analysis.py [line:23] INFO {'tokenName': '["token","token"]', 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}
+2020-06-24 09:07:40,661 para_analysis.py [line:23] INFO {'tokenName': '["token","token"]', 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}
+2020-06-24 09:07:40,661 para_analysis.py [line:25] INFO ["token","token"]
+2020-06-24 09:07:40,661 para_analysis.py [line:25] INFO ["token","token"]
+2020-06-24 09:07:40,661 deal_source.py [line:45] INFO {'Content-Type': 'application/json', 'Connection': 'keep-alive', 'User-Agent': 'EasyLife.alpha/1.4.2 (iPhone; iOS 10.2.1; Scale/3.00)'}
+2020-06-24 09:07:40,662 para_analysis.py [line:60] INFO {"isDefine":"","PaData":{"urlData":"","paramData":{
+	"brokerPhone": "15718868478",
+	"clientId": "77a8a4b9e5ba1c9b6a21ca1b839c3581",
+	"password": "haoshenghuo"
+}}}
+2020-06-24 09:07:40,662 para_analysis.py [line:60] INFO {"isDefine":"","PaData":{"urlData":"","paramData":{
+	"brokerPhone": "15718868478",
+	"clientId": "77a8a4b9e5ba1c9b6a21ca1b839c3581",
+	"password": "haoshenghuo"
+}}}
+2020-06-24 09:07:40,662 para_analysis.py [line:61] INFO {"isApp":"Y","isTransmit":{"tokenName":"[\"token\",\"token\"]","transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-24 09:07:40,662 para_analysis.py [line:61] INFO {"isApp":"Y","isTransmit":{"tokenName":"[\"token\",\"token\"]","transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-24 09:51:00,768 excel_tool.py [line:120] INFO D:\zhy\haoshenghuo\autoproject\
+2020-06-24 09:51:00,789 excel_tool.py [line:120] INFO D:\zhy\haoshenghuo\autoproject\
+2020-06-24 09:51:00,995 deal_source.py [line:41] INFO POST
+2020-06-24 09:51:00,995 url_classfication.py [line:25] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-24 09:51:00,995 url_classfication.py [line:41] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-24 09:51:00,995 deal_source.py [line:43] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-24 09:51:00,996 para_analysis.py [line:20] INFO {"isApp":"Y","isTransmit":{"tokenName":"[\'token\',\'token\']","transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-24 09:51:00,996 para_analysis.py [line:20] INFO {"isApp":"Y","isTransmit":{"tokenName":"[\'token\',\'token\']","transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-24 11:42:38,407 excel_tool.py [line:120] INFO D:\zhy\haoshenghuo\autoproject\
+2020-06-24 11:42:38,500 excel_tool.py [line:120] INFO D:\zhy\haoshenghuo\autoproject\
+2020-06-24 11:42:38,702 deal_source.py [line:41] INFO POST
+2020-06-24 11:42:38,702 url_classfication.py [line:25] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-24 11:42:38,702 url_classfication.py [line:41] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-24 11:42:38,702 deal_source.py [line:43] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-24 11:42:38,703 para_analysis.py [line:20] INFO {"isApp":"Y","isTransmit":{"tokenName":"[\'token\',\'token\']","transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-24 11:42:38,703 para_analysis.py [line:20] INFO {"isApp":"Y","isTransmit":{"tokenName":"[\'token\',\'token\']","transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-24 12:06:34,683 excel_tool.py [line:120] INFO D:\zhy\haoshenghuo\autoproject\
+2020-06-24 12:06:34,703 excel_tool.py [line:120] INFO D:\zhy\haoshenghuo\autoproject\
+2020-06-24 12:06:34,905 deal_source.py [line:41] INFO POST
+2020-06-24 12:06:34,905 url_classfication.py [line:25] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-24 12:06:34,905 url_classfication.py [line:41] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-24 12:06:34,906 deal_source.py [line:43] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-24 12:06:34,906 para_analysis.py [line:20] INFO {"isApp":"Y","isTransmit":{"tokenName":["token","token"]","transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-24 12:06:34,906 para_analysis.py [line:20] INFO {"isApp":"Y","isTransmit":{"tokenName":["token","token"]","transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-24 12:08:43,953 excel_tool.py [line:120] INFO D:\zhy\haoshenghuo\autoproject\
+2020-06-24 12:08:43,974 excel_tool.py [line:120] INFO D:\zhy\haoshenghuo\autoproject\
+2020-06-24 12:08:44,171 deal_source.py [line:41] INFO POST
+2020-06-24 12:08:44,171 url_classfication.py [line:25] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-24 12:08:44,172 url_classfication.py [line:41] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-24 12:08:44,172 deal_source.py [line:43] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-24 12:08:44,173 para_analysis.py [line:20] INFO {"isApp":"Y","isTransmit":{"tokenName":["token","token"],"transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-24 12:08:44,173 para_analysis.py [line:20] INFO {"isApp":"Y","isTransmit":{"tokenName":["token","token"],"transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-24 12:08:44,173 para_analysis.py [line:23] INFO {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}
+2020-06-24 12:08:44,173 para_analysis.py [line:23] INFO {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}
+2020-06-24 12:08:44,173 para_analysis.py [line:25] INFO ['token', 'token']
+2020-06-24 12:08:44,173 para_analysis.py [line:25] INFO ['token', 'token']
+2020-06-24 12:10:22,650 excel_tool.py [line:120] INFO D:\zhy\haoshenghuo\autoproject\
+2020-06-24 12:10:22,672 excel_tool.py [line:120] INFO D:\zhy\haoshenghuo\autoproject\
+2020-06-24 12:10:22,902 deal_source.py [line:41] INFO POST
+2020-06-24 12:10:22,902 url_classfication.py [line:25] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-24 12:10:22,902 url_classfication.py [line:41] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-24 12:10:22,902 deal_source.py [line:43] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-24 12:10:22,903 para_analysis.py [line:20] INFO {"isApp":"Y","isTransmit":{"tokenName":["token","token"],"transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-24 12:10:22,903 para_analysis.py [line:20] INFO {"isApp":"Y","isTransmit":{"tokenName":["token","token"],"transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-24 12:10:22,903 para_analysis.py [line:23] INFO {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}
+2020-06-24 12:10:22,903 para_analysis.py [line:23] INFO {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}
+2020-06-24 12:10:22,903 para_analysis.py [line:25] INFO ['token', 'token']
+2020-06-24 12:10:22,903 para_analysis.py [line:25] INFO ['token', 'token']
+2020-06-24 12:10:22,903 deal_source.py [line:45] INFO {'Content-Type': 'application/json', 'Connection': 'keep-alive', 'User-Agent': 'EasyLife.alpha/1.4.2 (iPhone; iOS 10.2.1; Scale/3.00)'}
+2020-06-24 12:10:22,903 para_analysis.py [line:61] INFO {"isDefine":"","PaData":{"urlData":"","paramData":{
+	"brokerPhone": "15718868478",
+	"clientId": "77a8a4b9e5ba1c9b6a21ca1b839c3581",
+	"password": "haoshenghuo"
+}}}
+2020-06-24 12:10:22,903 para_analysis.py [line:61] INFO {"isDefine":"","PaData":{"urlData":"","paramData":{
+	"brokerPhone": "15718868478",
+	"clientId": "77a8a4b9e5ba1c9b6a21ca1b839c3581",
+	"password": "haoshenghuo"
+}}}
+2020-06-24 12:10:22,903 para_analysis.py [line:62] INFO {"isApp":"Y","isTransmit":{"tokenName":["token","token"],"transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-24 12:10:22,903 para_analysis.py [line:62] INFO {"isApp":"Y","isTransmit":{"tokenName":["token","token"],"transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-24 12:26:21,434 excel_tool.py [line:120] INFO D:\zhy\haoshenghuo\autoproject\
+2020-06-24 12:26:21,461 excel_tool.py [line:120] INFO D:\zhy\haoshenghuo\autoproject\
+2020-06-24 12:26:21,659 deal_source.py [line:41] INFO POST
+2020-06-24 12:26:21,659 url_classfication.py [line:25] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-24 12:26:21,659 url_classfication.py [line:41] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-24 12:26:21,659 deal_source.py [line:43] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-24 12:26:21,660 para_analysis.py [line:20] INFO {"isApp":"Y","isTransmit":{"tokenName":["token","token"],"transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-24 12:26:21,660 para_analysis.py [line:20] INFO {"isApp":"Y","isTransmit":{"tokenName":["token","token"],"transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-24 12:26:21,660 para_analysis.py [line:23] INFO {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}
+2020-06-24 12:26:21,660 para_analysis.py [line:23] INFO {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}
+2020-06-24 12:26:21,660 para_analysis.py [line:25] INFO ['token', 'token']
+2020-06-24 12:26:21,660 para_analysis.py [line:25] INFO ['token', 'token']
+2020-06-24 12:26:21,660 deal_source.py [line:45] INFO {'Content-Type': 'application/json', 'Connection': 'keep-alive', 'User-Agent': 'EasyLife.alpha/1.4.2 (iPhone; iOS 10.2.1; Scale/3.00)'}
+2020-06-24 12:26:21,660 para_analysis.py [line:61] INFO {"isDefine":"","PaData":{"urlData":"","paramData":{
+	"brokerPhone": "15718868478",
+	"clientId": "77a8a4b9e5ba1c9b6a21ca1b839c3581",
+	"password": "haoshenghuo"
+}}}
+2020-06-24 12:26:21,660 para_analysis.py [line:61] INFO {"isDefine":"","PaData":{"urlData":"","paramData":{
+	"brokerPhone": "15718868478",
+	"clientId": "77a8a4b9e5ba1c9b6a21ca1b839c3581",
+	"password": "haoshenghuo"
+}}}
+2020-06-24 12:26:21,660 para_analysis.py [line:62] INFO {"isApp":"Y","isTransmit":{"tokenName":["token","token"],"transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-24 12:26:21,660 para_analysis.py [line:62] INFO {"isApp":"Y","isTransmit":{"tokenName":["token","token"],"transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-24 12:26:21,660 para_analysis.py [line:63] INFO <class 'str'>
+2020-06-24 12:26:21,660 para_analysis.py [line:63] INFO <class 'str'>
+2020-06-24 14:08:18,808 excel_tool.py [line:120] INFO D:\zhy\haoshenghuo\autoproject\
+2020-06-24 14:08:18,828 excel_tool.py [line:120] INFO D:\zhy\haoshenghuo\autoproject\
+2020-06-24 14:08:19,030 deal_source.py [line:41] INFO POST
+2020-06-24 14:08:19,030 url_classfication.py [line:25] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-24 14:08:19,030 url_classfication.py [line:41] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-24 14:08:19,030 deal_source.py [line:43] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-24 14:08:19,031 para_analysis.py [line:20] INFO {"isApp":"Y","isTransmit":{"tokenName":["token","token"],"transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-24 14:08:19,031 para_analysis.py [line:20] INFO {"isApp":"Y","isTransmit":{"tokenName":["token","token"],"transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-24 14:08:19,031 para_analysis.py [line:23] INFO {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}
+2020-06-24 14:08:19,031 para_analysis.py [line:23] INFO {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}
+2020-06-24 14:08:19,031 para_analysis.py [line:25] INFO ['token', 'token']
+2020-06-24 14:08:19,031 para_analysis.py [line:25] INFO ['token', 'token']
+2020-06-24 14:08:19,031 deal_source.py [line:45] INFO {'Content-Type': 'application/json', 'Connection': 'keep-alive', 'User-Agent': 'EasyLife.alpha/1.4.2 (iPhone; iOS 10.2.1; Scale/3.00)'}
+2020-06-24 14:08:19,031 para_analysis.py [line:61] INFO {"isDefine":"","PaData":{"urlData":"","paramData":{
+	"brokerPhone": "15718868478",
+	"clientId": "77a8a4b9e5ba1c9b6a21ca1b839c3581",
+	"password": "haoshenghuo"
+}}}
+2020-06-24 14:08:19,031 para_analysis.py [line:61] INFO {"isDefine":"","PaData":{"urlData":"","paramData":{
+	"brokerPhone": "15718868478",
+	"clientId": "77a8a4b9e5ba1c9b6a21ca1b839c3581",
+	"password": "haoshenghuo"
+}}}
+2020-06-24 14:08:19,031 para_analysis.py [line:62] INFO "{\"isApp\":\"Y\",\"isTransmit\":{\"tokenName\":[\"token\",\"token\"],\"transmitName\":[\"brokerCode\",{\"valueKey\":\"brokerCode\",\"getValuePath\":\"$.data.brokerCode\"}]}}"
+2020-06-24 14:08:19,031 para_analysis.py [line:62] INFO "{\"isApp\":\"Y\",\"isTransmit\":{\"tokenName\":[\"token\",\"token\"],\"transmitName\":[\"brokerCode\",{\"valueKey\":\"brokerCode\",\"getValuePath\":\"$.data.brokerCode\"}]}}"
+2020-06-24 14:08:19,031 para_analysis.py [line:63] INFO <class 'str'>
+2020-06-24 14:08:19,031 para_analysis.py [line:63] INFO <class 'str'>
+2020-06-24 14:24:00,750 excel_tool.py [line:120] INFO D:\zhy\haoshenghuo\autoproject\
+2020-06-24 14:24:00,771 excel_tool.py [line:120] INFO D:\zhy\haoshenghuo\autoproject\
+2020-06-24 14:24:00,967 deal_source.py [line:41] INFO POST
+2020-06-24 14:24:00,967 url_classfication.py [line:25] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-24 14:24:00,967 url_classfication.py [line:41] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-24 14:24:00,967 deal_source.py [line:43] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-24 14:24:00,968 para_analysis.py [line:20] INFO {"isApp":"Y","isTransmit":{"tokenName":["token","token"],"transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-24 14:24:00,968 para_analysis.py [line:20] INFO {"isApp":"Y","isTransmit":{"tokenName":["token","token"],"transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-24 14:24:00,968 para_analysis.py [line:23] INFO {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}
+2020-06-24 14:24:00,968 para_analysis.py [line:23] INFO {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}
+2020-06-24 14:24:00,968 para_analysis.py [line:25] INFO ['token', 'token']
+2020-06-24 14:24:00,968 para_analysis.py [line:25] INFO ['token', 'token']
+2020-06-24 14:24:00,968 deal_source.py [line:45] INFO {'Content-Type': 'application/json', 'Connection': 'keep-alive', 'User-Agent': 'EasyLife.alpha/1.4.2 (iPhone; iOS 10.2.1; Scale/3.00)'}
+2020-06-24 14:24:00,968 para_analysis.py [line:90] INFO False
+2020-06-24 14:24:00,968 para_analysis.py [line:90] INFO False
+2020-06-24 14:24:00,968 para_analysis.py [line:61] INFO {"isDefine":"","PaData":{"urlData":"","paramData":{
+	"brokerPhone": "15718868478",
+	"clientId": "77a8a4b9e5ba1c9b6a21ca1b839c3581",
+	"password": "haoshenghuo"
+}}}
+2020-06-24 14:24:00,968 para_analysis.py [line:61] INFO {"isDefine":"","PaData":{"urlData":"","paramData":{
+	"brokerPhone": "15718868478",
+	"clientId": "77a8a4b9e5ba1c9b6a21ca1b839c3581",
+	"password": "haoshenghuo"
+}}}
+2020-06-24 14:24:00,969 para_analysis.py [line:62] INFO {"isApp":"Y","isTransmit":{"tokenName":["token","token"],"transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-24 14:24:00,969 para_analysis.py [line:62] INFO {"isApp":"Y","isTransmit":{"tokenName":["token","token"],"transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-24 14:24:00,969 para_analysis.py [line:63] INFO <class 'str'>
+2020-06-24 14:24:00,969 para_analysis.py [line:63] INFO <class 'str'>
+2020-06-24 14:26:25,399 excel_tool.py [line:120] INFO D:\zhy\haoshenghuo\autoproject\
+2020-06-24 14:26:25,425 excel_tool.py [line:120] INFO D:\zhy\haoshenghuo\autoproject\
+2020-06-24 14:26:25,634 deal_source.py [line:41] INFO POST
+2020-06-24 14:26:25,634 url_classfication.py [line:25] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-24 14:26:25,635 url_classfication.py [line:41] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-24 14:26:25,635 deal_source.py [line:43] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-24 14:26:25,635 para_analysis.py [line:20] INFO {"isApp":"Y","isTransmit":{"tokenName":["token","token"],"transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-24 14:26:25,635 para_analysis.py [line:20] INFO {"isApp":"Y","isTransmit":{"tokenName":["token","token"],"transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-24 14:26:25,635 para_analysis.py [line:23] INFO {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}
+2020-06-24 14:26:25,635 para_analysis.py [line:23] INFO {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}
+2020-06-24 14:26:25,636 para_analysis.py [line:25] INFO ['token', 'token']
+2020-06-24 14:26:25,636 para_analysis.py [line:25] INFO ['token', 'token']
+2020-06-24 14:26:25,636 deal_source.py [line:45] INFO {'Content-Type': 'application/json', 'Connection': 'keep-alive', 'User-Agent': 'EasyLife.alpha/1.4.2 (iPhone; iOS 10.2.1; Scale/3.00)'}
+2020-06-24 14:26:25,636 para_analysis.py [line:91] INFO False
+2020-06-24 14:26:25,636 para_analysis.py [line:91] INFO False
+2020-06-24 14:26:25,636 para_analysis.py [line:62] INFO {'isDefine': '', 'PaData': {'urlData': '', 'paramData': {'brokerPhone': '15718868478', 'clientId': '77a8a4b9e5ba1c9b6a21ca1b839c3581', 'password': 'haoshenghuo'}}}
+2020-06-24 14:26:25,636 para_analysis.py [line:62] INFO {'isDefine': '', 'PaData': {'urlData': '', 'paramData': {'brokerPhone': '15718868478', 'clientId': '77a8a4b9e5ba1c9b6a21ca1b839c3581', 'password': 'haoshenghuo'}}}
+2020-06-24 14:26:25,636 para_analysis.py [line:63] INFO {"isApp":"Y","isTransmit":{"tokenName":["token","token"],"transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-24 14:26:25,636 para_analysis.py [line:63] INFO {"isApp":"Y","isTransmit":{"tokenName":["token","token"],"transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-24 14:26:25,636 para_analysis.py [line:64] INFO <class 'str'>
+2020-06-24 14:26:25,636 para_analysis.py [line:64] INFO <class 'str'>
+2020-06-24 14:29:03,696 excel_tool.py [line:120] INFO D:\zhy\haoshenghuo\autoproject\
+2020-06-24 14:29:03,721 excel_tool.py [line:120] INFO D:\zhy\haoshenghuo\autoproject\
+2020-06-24 14:29:03,935 deal_source.py [line:41] INFO POST
+2020-06-24 14:29:03,935 url_classfication.py [line:25] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-24 14:29:03,935 url_classfication.py [line:41] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-24 14:29:03,936 deal_source.py [line:43] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-24 14:29:03,936 para_analysis.py [line:20] INFO {"isApp":"Y","isTransmit":{"tokenName":["token","token"],"transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-24 14:29:03,936 para_analysis.py [line:20] INFO {"isApp":"Y","isTransmit":{"tokenName":["token","token"],"transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-24 14:29:03,936 para_analysis.py [line:23] INFO {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}
+2020-06-24 14:29:03,936 para_analysis.py [line:23] INFO {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}
+2020-06-24 14:29:03,936 para_analysis.py [line:25] INFO ['token', 'token']
+2020-06-24 14:29:03,936 para_analysis.py [line:25] INFO ['token', 'token']
+2020-06-24 14:29:03,937 deal_source.py [line:45] INFO {'Content-Type': 'application/json', 'Connection': 'keep-alive', 'User-Agent': 'EasyLife.alpha/1.4.2 (iPhone; iOS 10.2.1; Scale/3.00)'}
+2020-06-24 14:29:03,937 para_analysis.py [line:91] INFO False
+2020-06-24 14:29:03,937 para_analysis.py [line:91] INFO False
+2020-06-24 14:29:03,937 para_analysis.py [line:62] INFO {"isDefine":"","PaData":{"urlData":"","paramData":{
+	"brokerPhone": "15718868478",
+	"clientId": "77a8a4b9e5ba1c9b6a21ca1b839c3581",
+	"password": "haoshenghuo"
+}}}
+2020-06-24 14:29:03,937 para_analysis.py [line:62] INFO {"isDefine":"","PaData":{"urlData":"","paramData":{
+	"brokerPhone": "15718868478",
+	"clientId": "77a8a4b9e5ba1c9b6a21ca1b839c3581",
+	"password": "haoshenghuo"
+}}}
+2020-06-24 14:29:03,937 para_analysis.py [line:63] INFO {'isApp': 'Y', 'isTransmit': {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}}
+2020-06-24 14:29:03,937 para_analysis.py [line:63] INFO {'isApp': 'Y', 'isTransmit': {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}}
+2020-06-24 14:29:03,937 para_analysis.py [line:64] INFO <class 'dict'>
+2020-06-24 14:29:03,937 para_analysis.py [line:64] INFO <class 'dict'>
+2020-06-24 14:31:28,558 excel_tool.py [line:120] INFO D:\zhy\haoshenghuo\autoproject\
+2020-06-24 14:31:28,586 excel_tool.py [line:120] INFO D:\zhy\haoshenghuo\autoproject\
+2020-06-24 14:31:28,790 deal_source.py [line:41] INFO POST
+2020-06-24 14:31:28,790 url_classfication.py [line:25] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-24 14:31:28,790 url_classfication.py [line:41] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-24 14:31:28,790 deal_source.py [line:43] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-24 14:31:28,791 para_analysis.py [line:20] INFO {"isApp":"Y","isTransmit":{"tokenName":["token","token"],"transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-24 14:31:28,791 para_analysis.py [line:20] INFO {"isApp":"Y","isTransmit":{"tokenName":["token","token"],"transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-24 14:31:28,791 para_analysis.py [line:23] INFO {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}
+2020-06-24 14:31:28,791 para_analysis.py [line:23] INFO {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}
+2020-06-24 14:31:28,791 para_analysis.py [line:25] INFO ['token', 'token']
+2020-06-24 14:31:28,791 para_analysis.py [line:25] INFO ['token', 'token']
+2020-06-24 14:31:28,791 deal_source.py [line:45] INFO {'Content-Type': 'application/json', 'Connection': 'keep-alive', 'User-Agent': 'EasyLife.alpha/1.4.2 (iPhone; iOS 10.2.1; Scale/3.00)'}
+2020-06-24 14:31:28,791 para_analysis.py [line:91] INFO False
+2020-06-24 14:31:28,791 para_analysis.py [line:91] INFO False
+2020-06-24 14:31:28,791 para_analysis.py [line:62] INFO {'isDefine': '', 'PaData': {'urlData': '', 'paramData': {'brokerPhone': '15718868478', 'clientId': '77a8a4b9e5ba1c9b6a21ca1b839c3581', 'password': 'haoshenghuo'}}}
+2020-06-24 14:31:28,791 para_analysis.py [line:62] INFO {'isDefine': '', 'PaData': {'urlData': '', 'paramData': {'brokerPhone': '15718868478', 'clientId': '77a8a4b9e5ba1c9b6a21ca1b839c3581', 'password': 'haoshenghuo'}}}
+2020-06-24 14:31:28,791 para_analysis.py [line:63] INFO {'isApp': 'Y', 'isTransmit': {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}}
+2020-06-24 14:31:28,791 para_analysis.py [line:63] INFO {'isApp': 'Y', 'isTransmit': {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}}
+2020-06-24 14:31:28,791 para_analysis.py [line:64] INFO <class 'dict'>
+2020-06-24 14:31:28,791 para_analysis.py [line:64] INFO <class 'dict'>
+2020-06-24 14:34:04,536 excel_tool.py [line:120] INFO D:\zhy\haoshenghuo\autoproject\
+2020-06-24 14:34:04,563 excel_tool.py [line:120] INFO D:\zhy\haoshenghuo\autoproject\
+2020-06-24 14:34:04,771 deal_source.py [line:41] INFO POST
+2020-06-24 14:34:04,771 url_classfication.py [line:25] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-24 14:34:04,771 url_classfication.py [line:41] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-24 14:34:04,771 deal_source.py [line:43] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-24 14:34:04,772 para_analysis.py [line:20] INFO {"isApp":"Y","isTransmit":{"tokenName":["token","token"],"transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-24 14:34:04,772 para_analysis.py [line:20] INFO {"isApp":"Y","isTransmit":{"tokenName":["token","token"],"transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-24 14:34:04,772 para_analysis.py [line:23] INFO {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}
+2020-06-24 14:34:04,772 para_analysis.py [line:23] INFO {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}
+2020-06-24 14:34:04,772 para_analysis.py [line:25] INFO ['token', 'token']
+2020-06-24 14:34:04,772 para_analysis.py [line:25] INFO ['token', 'token']
+2020-06-24 14:34:04,772 deal_source.py [line:45] INFO {'Content-Type': 'application/json', 'Connection': 'keep-alive', 'User-Agent': 'EasyLife.alpha/1.4.2 (iPhone; iOS 10.2.1; Scale/3.00)'}
+2020-06-24 14:34:04,772 para_analysis.py [line:92] INFO False
+2020-06-24 14:34:04,772 para_analysis.py [line:92] INFO False
+2020-06-24 14:34:04,772 para_analysis.py [line:62] INFO {'isDefine': '', 'PaData': {'urlData': '', 'paramData': {'brokerPhone': '15718868478', 'clientId': '77a8a4b9e5ba1c9b6a21ca1b839c3581', 'password': 'haoshenghuo'}}}
+2020-06-24 14:34:04,772 para_analysis.py [line:62] INFO {'isDefine': '', 'PaData': {'urlData': '', 'paramData': {'brokerPhone': '15718868478', 'clientId': '77a8a4b9e5ba1c9b6a21ca1b839c3581', 'password': 'haoshenghuo'}}}
+2020-06-24 14:34:04,772 para_analysis.py [line:63] INFO {'isApp': 'Y', 'isTransmit': {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}}
+2020-06-24 14:34:04,772 para_analysis.py [line:63] INFO {'isApp': 'Y', 'isTransmit': {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}}
+2020-06-24 14:34:04,772 para_analysis.py [line:64] INFO <class 'dict'>
+2020-06-24 14:34:04,772 para_analysis.py [line:64] INFO <class 'dict'>
+2020-06-24 14:34:04,772 para_analysis.py [line:65] INFO <class 'dict'>
+2020-06-24 14:34:04,772 para_analysis.py [line:65] INFO <class 'dict'>
+2020-06-24 14:35:26,071 excel_tool.py [line:120] INFO D:\zhy\haoshenghuo\autoproject\
+2020-06-24 14:35:26,094 excel_tool.py [line:120] INFO D:\zhy\haoshenghuo\autoproject\
+2020-06-24 14:35:26,315 deal_source.py [line:41] INFO POST
+2020-06-24 14:35:26,315 url_classfication.py [line:25] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-24 14:35:26,315 url_classfication.py [line:41] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-24 14:35:26,315 deal_source.py [line:43] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-24 14:35:26,316 para_analysis.py [line:20] INFO {"isApp":"Y","isTransmit":{"tokenName":["token","token"],"transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-24 14:35:26,316 para_analysis.py [line:20] INFO {"isApp":"Y","isTransmit":{"tokenName":["token","token"],"transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-24 14:35:26,316 para_analysis.py [line:23] INFO {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}
+2020-06-24 14:35:26,316 para_analysis.py [line:23] INFO {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}
+2020-06-24 14:35:26,316 para_analysis.py [line:25] INFO ['token', 'token']
+2020-06-24 14:35:26,316 para_analysis.py [line:25] INFO ['token', 'token']
+2020-06-24 14:35:26,316 deal_source.py [line:45] INFO {'Content-Type': 'application/json', 'Connection': 'keep-alive', 'User-Agent': 'EasyLife.alpha/1.4.2 (iPhone; iOS 10.2.1; Scale/3.00)'}
+2020-06-24 14:35:26,316 para_analysis.py [line:92] INFO False
+2020-06-24 14:35:26,316 para_analysis.py [line:92] INFO False
+2020-06-24 14:35:26,316 para_analysis.py [line:62] INFO {'isDefine': '', 'paData': {'urlData': '', 'paramData': {'brokerPhone': '15718868478', 'clientId': '77a8a4b9e5ba1c9b6a21ca1b839c3581', 'password': 'haoshenghuo'}}}
+2020-06-24 14:35:26,316 para_analysis.py [line:62] INFO {'isDefine': '', 'paData': {'urlData': '', 'paramData': {'brokerPhone': '15718868478', 'clientId': '77a8a4b9e5ba1c9b6a21ca1b839c3581', 'password': 'haoshenghuo'}}}
+2020-06-24 14:35:26,316 para_analysis.py [line:63] INFO {'isApp': 'Y', 'isTransmit': {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}}
+2020-06-24 14:35:26,316 para_analysis.py [line:63] INFO {'isApp': 'Y', 'isTransmit': {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}}
+2020-06-24 14:35:26,316 para_analysis.py [line:64] INFO <class 'dict'>
+2020-06-24 14:35:26,316 para_analysis.py [line:64] INFO <class 'dict'>
+2020-06-24 14:35:26,316 para_analysis.py [line:65] INFO <class 'dict'>
+2020-06-24 14:35:26,316 para_analysis.py [line:65] INFO <class 'dict'>
+2020-06-24 14:35:26,316 para_analysis.py [line:77] INFO brokerCode
+2020-06-24 14:35:26,316 para_analysis.py [line:77] INFO brokerCode
+2020-06-24 14:40:09,851 excel_tool.py [line:120] INFO D:\zhy\haoshenghuo\autoproject\
+2020-06-24 14:40:09,875 excel_tool.py [line:120] INFO D:\zhy\haoshenghuo\autoproject\
+2020-06-24 14:40:10,075 deal_source.py [line:41] INFO POST
+2020-06-24 14:40:10,075 url_classfication.py [line:25] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-24 14:40:10,075 url_classfication.py [line:41] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-24 14:40:10,075 deal_source.py [line:43] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-24 14:40:10,076 para_analysis.py [line:20] INFO {"isApp":"Y","isTransmit":{"tokenName":["token","token"],"transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-24 14:40:10,076 para_analysis.py [line:20] INFO {"isApp":"Y","isTransmit":{"tokenName":["token","token"],"transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-24 14:40:10,076 para_analysis.py [line:23] INFO {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}
+2020-06-24 14:40:10,076 para_analysis.py [line:23] INFO {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}
+2020-06-24 14:40:10,076 para_analysis.py [line:25] INFO ['token', 'token']
+2020-06-24 14:40:10,076 para_analysis.py [line:25] INFO ['token', 'token']
+2020-06-24 14:40:10,076 deal_source.py [line:45] INFO {'Content-Type': 'application/json', 'Connection': 'keep-alive', 'User-Agent': 'EasyLife.alpha/1.4.2 (iPhone; iOS 10.2.1; Scale/3.00)'}
+2020-06-24 14:40:10,076 para_analysis.py [line:92] INFO False
+2020-06-24 14:40:10,076 para_analysis.py [line:92] INFO False
+2020-06-24 14:40:10,077 para_analysis.py [line:62] INFO {'isDefine': '', 'paData': {'urlData': '', 'paramData': {'brokerPhone': '15718868478', 'clientId': '77a8a4b9e5ba1c9b6a21ca1b839c3581', 'password': 'haoshenghuo'}}}
+2020-06-24 14:40:10,077 para_analysis.py [line:62] INFO {'isDefine': '', 'paData': {'urlData': '', 'paramData': {'brokerPhone': '15718868478', 'clientId': '77a8a4b9e5ba1c9b6a21ca1b839c3581', 'password': 'haoshenghuo'}}}
+2020-06-24 14:40:10,077 para_analysis.py [line:63] INFO {'isApp': 'Y', 'isTransmit': {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}}
+2020-06-24 14:40:10,077 para_analysis.py [line:63] INFO {'isApp': 'Y', 'isTransmit': {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}}
+2020-06-24 14:40:10,077 para_analysis.py [line:64] INFO <class 'dict'>
+2020-06-24 14:40:10,077 para_analysis.py [line:64] INFO <class 'dict'>
+2020-06-24 14:40:10,077 para_analysis.py [line:65] INFO <class 'dict'>
+2020-06-24 14:40:10,077 para_analysis.py [line:65] INFO <class 'dict'>
+2020-06-24 14:40:10,077 deal_source.py [line:47] INFO {'requestDataJson': {'brokerPhone': '15718868478', 'clientId': '77a8a4b9e5ba1c9b6a21ca1b839c3581', 'password': 'haoshenghuo'}, 'envContentDic': {}}
+2020-06-24 14:44:11,862 excel_tool.py [line:120] INFO D:\zhy\haoshenghuo\autoproject\
+2020-06-24 14:44:11,893 excel_tool.py [line:120] INFO D:\zhy\haoshenghuo\autoproject\
+2020-06-24 14:44:12,093 deal_source.py [line:41] INFO POST
+2020-06-24 14:44:12,093 url_classfication.py [line:25] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-24 14:44:12,093 url_classfication.py [line:41] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-24 14:44:12,093 deal_source.py [line:43] INFO https://tbroker.lifeat.cn:45788/easylife/rest/broker/login
+2020-06-24 14:44:12,094 para_analysis.py [line:20] INFO {"isApp":"Y","isTransmit":{"tokenName":["token","token"],"transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-24 14:44:12,094 para_analysis.py [line:20] INFO {"isApp":"Y","isTransmit":{"tokenName":["token","token"],"transmitName":["brokerCode",{"valueKey":"brokerCode","getValuePath":"$.data.brokerCode"}]}}
+2020-06-24 14:44:12,094 para_analysis.py [line:23] INFO {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}
+2020-06-24 14:44:12,094 para_analysis.py [line:23] INFO {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}
+2020-06-24 14:44:12,094 para_analysis.py [line:25] INFO ['token', 'token']
+2020-06-24 14:44:12,094 para_analysis.py [line:25] INFO ['token', 'token']
+2020-06-24 14:44:12,094 deal_source.py [line:45] INFO {'Content-Type': 'application/json', 'Connection': 'keep-alive', 'User-Agent': 'EasyLife.alpha/1.4.2 (iPhone; iOS 10.2.1; Scale/3.00)'}
+2020-06-24 14:44:12,094 para_analysis.py [line:92] INFO False
+2020-06-24 14:44:12,094 para_analysis.py [line:92] INFO False
+2020-06-24 14:44:12,095 para_analysis.py [line:62] INFO {'isDefine': '', 'paData': {'urlData': '', 'paramData': {'brokerPhone': '15718868478', 'clientId': '77a8a4b9e5ba1c9b6a21ca1b839c3581', 'password': 'haoshenghuo'}}}
+2020-06-24 14:44:12,095 para_analysis.py [line:62] INFO {'isDefine': '', 'paData': {'urlData': '', 'paramData': {'brokerPhone': '15718868478', 'clientId': '77a8a4b9e5ba1c9b6a21ca1b839c3581', 'password': 'haoshenghuo'}}}
+2020-06-24 14:44:12,095 para_analysis.py [line:63] INFO {'isApp': 'Y', 'isTransmit': {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}}
+2020-06-24 14:44:12,095 para_analysis.py [line:63] INFO {'isApp': 'Y', 'isTransmit': {'tokenName': ['token', 'token'], 'transmitName': ['brokerCode', {'valueKey': 'brokerCode', 'getValuePath': '$.data.brokerCode'}]}}
+2020-06-24 14:44:12,095 para_analysis.py [line:64] INFO <class 'dict'>
+2020-06-24 14:44:12,095 para_analysis.py [line:64] INFO <class 'dict'>
+2020-06-24 14:44:12,095 para_analysis.py [line:65] INFO <class 'dict'>
+2020-06-24 14:44:12,095 para_analysis.py [line:65] INFO <class 'dict'>
+2020-06-24 14:44:12,095 deal_source.py [line:47] INFO {'requestDataJson': {'brokerPhone': '15718868478', 'clientId': '77a8a4b9e5ba1c9b6a21ca1b839c3581', 'password': 'haoshenghuo'}, 'envContentDic': {}}
+2020-06-24 14:44:12,917 api_classfication.py [line:51] INFO 400
+2020-06-24 14:44:12,917 api_classfication.py [line:61] INFO {'status_code': 400, 'text': '<html><head><title>Apache Tomcat/7.0.75 - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 400 - </h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u></u></p><p><b>description</b> <u>The request sent by the client was syntactically incorrect.</u></p><HR size="1" noshade="noshade"><h3>Apache Tomcat/7.0.75</h3></body></html>'}
+2020-06-24 14:44:12,917 deal_source.py [line:53] INFO {'status_code': 400, 'text': '<html><head><title>Apache Tomcat/7.0.75 - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 400 - </h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u></u></p><p><b>description</b> <u>The request sent by the client was syntactically incorrect.</u></p><HR size="1" noshade="noshade"><h3>Apache Tomcat/7.0.75</h3></body></html>'}

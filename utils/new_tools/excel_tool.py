@@ -3,8 +3,9 @@ import os
 import openpyxl
 
 from utils.config_tool.file_config_path import ExcelConfig
+from utils.logger import Log
 
-
+logger = Log(logger='excel_tool').get_log()
 class ExcelTool:
 	def __init__(self,excelFile,sheetName=None):
 		self.excelFile=excelFile
@@ -96,10 +97,12 @@ class DealExcelTool:
 	# 获取用例文件的全路径
 	def getTestFileName(self):
 		testFileName=self.getFilePath()+'/'+ ExcelConfig.TESTCASEALLFile
+		testFileName = testFileName.replace('\\','/')
 		return testFileName
 	# 获取报告文件的全路径
 	def getReportFileName(self):
 		reportFileName=self.getFileReport() + '/' + ExcelConfig.REPORTPATHFILE
+		reportFileName = reportFileName.replace('\\','/')
 		return reportFileName
 	# 获取用例文件的路径
 	def getFilePath(self):
@@ -107,22 +110,33 @@ class DealExcelTool:
 		return testCaseFilePath
 	# 获取报告文件的路径
 	def getFileReport(self):
-		reportFilePath=self.getProjectPath() + ExcelConfig.REPORTPATH
+		reportFilePath=self.getProjectPath()+ ExcelConfig.REPORTPATH
 		return reportFilePath
 	# 获取项目路径
 	def getProjectPath(self):
 		projectPath=ExcelConfig.PROJECTPATH
 		root_path = os.path.abspath(os.path.dirname(__file__)).split(projectPath)
-		proPath = root_path[0]+ projectPath
+		proPath = root_path[0]
+		logger.info(proPath)
+		proPath = proPath + projectPath
 		return proPath
 
 
 if __name__ == '__main__':
-	proPath=DealExcelTool().getProjectPath()
-	print(proPath)
-	getfilepath=DealExcelTool().getFilePath()
-	print(getfilepath)
-	filename = DealExcelTool().getTestFileName()
-	print(filename)
-	value=ExcelTool(excelFile=filename,sheetName='testCasejModle').get_col_value(1)
-	print(value)
+	# proPath=DealExcelTool().getProjectPath()
+	# print(proPath)
+	# getfilepath=DealExcelTool().getFilePath()
+	# print(getfilepath)
+	# filename = DealExcelTool().getTestFileName()
+	# print(filename)
+	# value=ExcelTool(excelFile=filename,sheetName='testCasejModle').get_col_value(1)
+	# print(value)
+	de=DealExcelTool()
+	rf=de.getReportFileName()
+	tf=de.getTestFileName()
+	print(rf,tf)
+	path = de.getFilePath()
+	pathReport = de.getFileReport()
+	print(path)
+	print(pathReport)
+	print(de.getProjectPath())
