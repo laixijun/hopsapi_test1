@@ -1,7 +1,8 @@
 # @Time ： 2020/6/21 00:50
 # @Auth ： Yang Xiaobai
 # @Email:  yangzhiyongtest@163.com
-import datetime
+from datetime import datetime
+import json
 
 from pyapi.get_source import SourceGet
 from utils.api_tools.api_classfication import ApiClassification
@@ -30,12 +31,12 @@ class SourceDeal:
 		responseValue= None
 		resultList = []
 		responseValue={}
-		responseValue['header']=None
+		responseValue['headers']=None
 		responseValue['text']=None
 		testCaseDict = {}
 		for testCaseListItem in testCaseList:
-			resultList.append(resultCaseList)
 			resultCaseList = testCaseListItem[:3]
+			resultList.append(resultCaseList)
 			requestMethod = testCaseListItem[5]
 			logger.info(requestMethod)
 			requestUrl = UrlClassfication().estimateUrl(testCaseListItem)
@@ -84,6 +85,8 @@ class SourceDeal:
 		excelRow=None
 		for operateIdKey in operateId.keys():
 			resultDic=self.operationDeal(operateId[operateIdKey])
+			resultDic = json.dumps(resultDic,ensure_ascii=False)
+			resultDic = json.loads(resultDic,encoding='utf-8')
 			rte=self.resultToExcel(testCaseDict=resultDic,excelRow=excelRow)
 			excelRow=rte['excelRow']
 		rte['et'].saveWorkbook(pathFile=ExcelConfig.REPORTPATHSHEETCURRENT)
