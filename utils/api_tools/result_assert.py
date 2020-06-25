@@ -5,7 +5,9 @@ import json
 
 import jsonpath
 
+from utils.logger import Log
 
+logger = Log(logger='result_assert').get_log()
 class ResultAssert:
 	def __init__(self):
 		pass
@@ -16,9 +18,17 @@ class ResultAssert:
 		compareResults = {}
 		compareResults['SUC']={}
 		compareResults['FAIL']={}
-		jsonActual = json.dumps(jsonActual,ensure_ascii=False)
-		for exItem in jsonExpect.keys:
+		if isinstance(jsonActual,str):
+			jsonActual = json.loads(jsonActual,encoding='utf-8')
+		logger.info(jsonActual)
+		logger.info(type(jsonActual))
+		if isinstance(jsonExpect,str):
+			jsonExpect = json.loads(jsonExpect,encoding='utf-8')
+		logger.info(jsonExpect)
+		logger.info(type(jsonExpect))
+		for exItem in jsonExpect.keys():
 			actualResult = jsonpath.jsonpath(jsonActual,exItem)
+			actualResult = actualResult[0]
 			if not isinstance(actualResult,str):
 				actualResult = str(actualResult)
 			if actualResult == jsonExpect[exItem]:

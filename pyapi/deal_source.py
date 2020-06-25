@@ -50,10 +50,10 @@ class SourceDeal:
 			requestData = ParaAnalysis().choosePara(caseList=testCaseListItem,responseValue=responseValue['text'])
 			logger.info(requestData)
 			a = datetime.now()
-			resultRequst=ApiClassification(headerData=requestHeader).requestEstimate(methodRequest=requestMethod, urlRequest=requestUrl, dataRequest=requestData)
+			resultRequst=ApiClassification(headerData=requestHeader).requestEstimate(methodRequest=requestMethod, urlRequest=requestUrl, dataRequest=requestData['requestDataJson'])
 			b = datetime.now()
 			# 执行时间 durn
-			durn = (b - a).seconds
+			durn = (b - a).microseconds/1000000
 			logger.info(resultRequst)
 			# 是否执行通过 isPass
 			isTwo = None
@@ -79,7 +79,7 @@ class SourceDeal:
 				if resultRequst['status_code']==200:
 					resultList.append(failResponse)
 					resultList.append(failRequests)
-			resultList.append(isPass)
+			# resultList.append(isPass)
 			responseValue=resultRequst
 			testCaseDict[testCaseListItem[1]]=resultList
 		return testCaseDict
@@ -88,19 +88,22 @@ class SourceDeal:
 	def operationAllDeal(self):
 		operateId = SourceGet().getOperateId()
 		excelRow=None
+		logger.info(operateId)
 		for operateIdKey in operateId.keys():
 			resultDic=self.operationDeal(operateId[operateIdKey])
-			resultDic = json.dumps(resultDic,ensure_ascii=False)
-			resultDic = json.loads(resultDic,encoding='utf-8')
+			# resultDic = json.dumps(resultDic,ensure_ascii=False)
+			if isinstance(resultDic,str):
+				resultDic = json.loads(resultDic,encoding='utf-8')
 			logger.info(resultDic)
 			logger.info(type(resultDic))
 			rte=self.resultToExcel(testCaseDict=resultDic,excelRow=excelRow)
 			excelRow=rte['excelRow']
-		rte['et'].saveWorkbook(pathFile=ExcelConfig.REPORTPATHSHEETCURRENT)
+		rte['et'].saveWorkbook(pathFile=DealExcelTool().getReportFileName())
+
 	# 将测试结果写入到Excel
 	def resultToExcel(self,testCaseDict,excelRow=None):
 		rte={}
-		et=ExcelTool(excelFile=DealExcelTool().getReportFileName(),sheetName=ExcelConfig.REPORTPATHSHEET)
+		et=ExcelTool(excelFile=DealExcelTool().getReportFilePreName(),sheetName=ExcelConfig.REPORTPATHSHEET)
 		if excelRow != None:
 			excelRow = excelRow
 		else:

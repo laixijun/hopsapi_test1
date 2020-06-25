@@ -20,7 +20,7 @@ class SourceGet:
 	#获取业务ID
 	def getOperateId(self):
 		et=self.getExcelHandle()
-		operateId=et.get_col_value(column=1)
+		operateId=et.get_col_value(column=1,rowNum=2)
 		operateDic=Common().itemListCount(operateId)
 		return operateDic
 

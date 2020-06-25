@@ -73,6 +73,8 @@ class ExcelTool:
 	#向指定位置写入数据
 	def writeCellValue(self,row,column,rcValue):
 		cellIndex=self.getSheetValue().cell(row,column)
+		if not isinstance(rcValue,str):
+			rcValue = str(rcValue)
 		cellIndex.value=rcValue
 
 	# 向一行写入一条list
@@ -101,9 +103,19 @@ class DealExcelTool:
 		return testFileName
 	# 获取报告文件的全路径
 	def getReportFileName(self):
-		reportFileName=self.getFileReport() + '/' + ExcelConfig.REPORTPATHSHEETCURRENT
+		reportFileName=self.getFileReport() + '/' + ExcelConfig.REPORTPATHFILECURRENT
 		reportFileName = reportFileName.replace('\\','/')
 		return reportFileName
+	# 获取报告文件的全路径复制前
+	def getReportFilePreName(self):
+		reportFileName=self.getFileReport() + '/' + ExcelConfig.REPORTPATHFILE
+		reportFileName = reportFileName.replace('\\','/')
+		return reportFileName
+	# 获取临时存储文件的全路径
+	def getTempFileName(self):
+		tempDBFileName=self.getProjectPath() +  ExcelConfig.TEMPDBFILEPATH
+		tempDBFileName = tempDBFileName.replace('\\','/')
+		return tempDBFileName
 	# 获取用例文件的路径
 	def getFilePath(self):
 		testCaseFilePath = self.getProjectPath()+ ExcelConfig.TESTCASEALL

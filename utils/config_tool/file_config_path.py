@@ -12,7 +12,8 @@ class ExcelConfig:
 	TESTCASEALLSHEET = 'testSheet'
 	REPORTPATHFILE = 'testReport.xlsx'
 	REPORTPATHSHEET = 'testReport'
-	REPORTPATHSHEETCURRENT = 'testReport' + str(time.strftime('%Y-%m-%d',time.localtime(time.time()))) + '.xlsx'
+	TEMPDBFILEPATH = '/db_file/TempDB.txt'
+	REPORTPATHFILECURRENT = 'testReport' + str(time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time()))) + '.xlsx'
 	
 
 if __name__ == '__main__':

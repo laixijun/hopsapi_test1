@@ -19,7 +19,8 @@ class ParaAnalysis:
         requestPara=requestPara[7]
         logger.info(requestPara)
         # requestPara = json.dumps(requestPara,ensure_ascii=False)
-        requestPara = json.loads(requestPara,encoding='utf-8')
+        if isinstance(requestPara,str):
+            requestPara = json.loads(requestPara,encoding='utf-8')
         logger.info(requestPara["isTransmit"])
         header_tokenKey = requestPara["isTransmit"]["tokenName"]
         logger.info(header_tokenKey)
