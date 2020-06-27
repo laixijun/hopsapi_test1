@@ -52,5 +52,13 @@ class Common:
                     countGap += 1
             countEnd = countEnd + countGap
             itemDic[item] = [item, countGap, countEnd]
+        itemDic['list']=lstSet
         return itemDic
-
+    #itemKey, itemValue, needKey
+    def getValueFalse(self,lst, itemKey, itemValue, needKey):
+        for i in lst:
+            try:
+                if i[itemKey] == itemValue:
+                    return i[needKey]
+            except:
+                return False

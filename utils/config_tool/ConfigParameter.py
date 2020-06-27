@@ -4,3 +4,6 @@
 
 # 参数测试
 TESTPARAMTER = None
+TRANSMITPARAMETER_MODLE = {"transmitData":{"transmitKey":{"transmitValue":"value","transmitDescribe":"describe"}},
+					 "parameterData":{"testExecuteID":{"testCaseId":{"parameterValue":{"getValuePath":"value"},"requestData":"data"}}}}
+TRANSMITPARAMETER = {"transmitData": {}, "parameterData": {}}

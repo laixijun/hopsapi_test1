@@ -1,1 +1,1 @@
-{"brokerPhone": "15718868478", "clientId": "77a8a4b9e5ba1c9b6a21ca1b839c3581", "password": "123456"}
+{"transmitData": {}, "parameterData": {}}

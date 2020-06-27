@@ -31,3 +31,137 @@
 2020-06-26 01:20:29,217 testApi_01.py [line:80] INFO {'isApp': 'False', 'isTransmit': {'tokenName': '[tokenKey,valueKey]', 'transmitName': ['transmitKey', {'valueKey': '[tokenKey,valueKey]', 'getValuePath': 'False'}]}}
 2020-06-26 01:20:29,218 excel_tool.py [line:132] INFO /Users/yangzhiyong/PycharmProjects/
 2020-06-26 01:20:29,219 excel_tool.py [line:132] INFO /Users/yangzhiyong/PycharmProjects/
+2020-06-26 19:26:08,248 testApi_01.py [line:71] INFO 1
+2020-06-26 19:26:08,248 testApi_01.py [line:71] INFO 1
+2020-06-26 19:26:08,248 testApi_01.py [line:75] INFO getValuePath
+2020-06-26 19:26:08,248 testApi_01.py [line:75] INFO getValuePath
+2020-06-26 19:26:08,249 testApi_01.py [line:77] INFO [tokenKey,valueKey]
+2020-06-26 19:26:08,249 testApi_01.py [line:77] INFO [tokenKey,valueKey]
+2020-06-26 19:26:08,249 testApi_01.py [line:80] INFO {'isApp': 'False', 'isTransmit': {'tokenName': '[tokenKey,valueKey]', 'transmitName': ['transmitKey', {'valueKey': '[tokenKey,valueKey]', 'getValuePath': '{valueKey}'}]}}
+2020-06-26 19:26:08,249 testApi_01.py [line:80] INFO {'isApp': 'False', 'isTransmit': {'tokenName': '[tokenKey,valueKey]', 'transmitName': ['transmitKey', {'valueKey': '[tokenKey,valueKey]', 'getValuePath': '{valueKey}'}]}}
+2020-06-26 19:26:08,249 testApi_01.py [line:75] INFO valueKey
+2020-06-26 19:26:08,249 testApi_01.py [line:75] INFO valueKey
+2020-06-26 19:26:08,249 testApi_01.py [line:77] INFO False
+2020-06-26 19:26:08,249 testApi_01.py [line:77] INFO False
+2020-06-26 19:26:08,250 testApi_01.py [line:80] INFO {'isApp': 'False', 'isTransmit': {'tokenName': '[tokenKey,valueKey]', 'transmitName': ['transmitKey', {'valueKey': '[tokenKey,valueKey]', 'getValuePath': 'False'}]}}
+2020-06-26 19:26:08,250 testApi_01.py [line:80] INFO {'isApp': 'False', 'isTransmit': {'tokenName': '[tokenKey,valueKey]', 'transmitName': ['transmitKey', {'valueKey': '[tokenKey,valueKey]', 'getValuePath': 'False'}]}}
+2020-06-26 19:26:08,250 excel_tool.py [line:132] INFO /Users/yangzhiyong/PycharmProjects/
+2020-06-26 19:26:45,690 testApi_01.py [line:71] INFO 1
+2020-06-26 19:26:45,690 testApi_01.py [line:71] INFO 1
+2020-06-26 19:26:45,690 testApi_01.py [line:75] INFO getValuePath
+2020-06-26 19:26:45,690 testApi_01.py [line:75] INFO getValuePath
+2020-06-26 19:26:45,691 testApi_01.py [line:77] INFO [tokenKey,valueKey]
+2020-06-26 19:26:45,691 testApi_01.py [line:77] INFO [tokenKey,valueKey]
+2020-06-26 19:26:45,691 testApi_01.py [line:80] INFO {'isApp': 'False', 'isTransmit': {'tokenName': '[tokenKey,valueKey]', 'transmitName': ['transmitKey', {'valueKey': '[tokenKey,valueKey]', 'getValuePath': '{valueKey}'}]}}
+2020-06-26 19:26:45,691 testApi_01.py [line:80] INFO {'isApp': 'False', 'isTransmit': {'tokenName': '[tokenKey,valueKey]', 'transmitName': ['transmitKey', {'valueKey': '[tokenKey,valueKey]', 'getValuePath': '{valueKey}'}]}}
+2020-06-26 19:26:45,691 testApi_01.py [line:75] INFO valueKey
+2020-06-26 19:26:45,691 testApi_01.py [line:75] INFO valueKey
+2020-06-26 19:26:45,691 testApi_01.py [line:77] INFO False
+2020-06-26 19:26:45,691 testApi_01.py [line:77] INFO False
+2020-06-26 19:26:45,691 testApi_01.py [line:80] INFO {'isApp': 'False', 'isTransmit': {'tokenName': '[tokenKey,valueKey]', 'transmitName': ['transmitKey', {'valueKey': '[tokenKey,valueKey]', 'getValuePath': 'False'}]}}
+2020-06-26 19:26:45,691 testApi_01.py [line:80] INFO {'isApp': 'False', 'isTransmit': {'tokenName': '[tokenKey,valueKey]', 'transmitName': ['transmitKey', {'valueKey': '[tokenKey,valueKey]', 'getValuePath': 'False'}]}}
+2020-06-26 19:26:45,691 excel_tool.py [line:132] INFO /Users/yangzhiyong/PycharmProjects/
+2020-06-26 19:27:19,879 testApi_01.py [line:71] INFO 1
+2020-06-26 19:27:19,879 testApi_01.py [line:71] INFO 1
+2020-06-26 19:27:19,879 testApi_01.py [line:75] INFO getValuePath
+2020-06-26 19:27:19,879 testApi_01.py [line:75] INFO getValuePath
+2020-06-26 19:27:19,880 testApi_01.py [line:77] INFO [tokenKey,valueKey]
+2020-06-26 19:27:19,880 testApi_01.py [line:77] INFO [tokenKey,valueKey]
+2020-06-26 19:27:19,880 testApi_01.py [line:80] INFO {'isApp': 'False', 'isTransmit': {'tokenName': '[tokenKey,valueKey]', 'transmitName': ['transmitKey', {'valueKey': '[tokenKey,valueKey]', 'getValuePath': '{valueKey}'}]}}
+2020-06-26 19:27:19,880 testApi_01.py [line:80] INFO {'isApp': 'False', 'isTransmit': {'tokenName': '[tokenKey,valueKey]', 'transmitName': ['transmitKey', {'valueKey': '[tokenKey,valueKey]', 'getValuePath': '{valueKey}'}]}}
+2020-06-26 19:27:19,880 testApi_01.py [line:75] INFO valueKey
+2020-06-26 19:27:19,880 testApi_01.py [line:75] INFO valueKey
+2020-06-26 19:27:19,880 testApi_01.py [line:77] INFO False
+2020-06-26 19:27:19,880 testApi_01.py [line:77] INFO False
+2020-06-26 19:27:19,880 testApi_01.py [line:80] INFO {'isApp': 'False', 'isTransmit': {'tokenName': '[tokenKey,valueKey]', 'transmitName': ['transmitKey', {'valueKey': '[tokenKey,valueKey]', 'getValuePath': 'False'}]}}
+2020-06-26 19:27:19,880 testApi_01.py [line:80] INFO {'isApp': 'False', 'isTransmit': {'tokenName': '[tokenKey,valueKey]', 'transmitName': ['transmitKey', {'valueKey': '[tokenKey,valueKey]', 'getValuePath': 'False'}]}}
+2020-06-26 19:27:19,880 excel_tool.py [line:132] INFO /Users/yangzhiyong/PycharmProjects/
+2020-06-26 19:29:00,554 testApi_01.py [line:71] INFO 1
+2020-06-26 19:29:00,554 testApi_01.py [line:71] INFO 1
+2020-06-26 19:29:00,554 testApi_01.py [line:75] INFO getValuePath
+2020-06-26 19:29:00,554 testApi_01.py [line:75] INFO getValuePath
+2020-06-26 19:29:00,555 testApi_01.py [line:77] INFO [tokenKey,valueKey]
+2020-06-26 19:29:00,555 testApi_01.py [line:77] INFO [tokenKey,valueKey]
+2020-06-26 19:29:00,556 testApi_01.py [line:80] INFO {'isApp': 'False', 'isTransmit': {'tokenName': '[tokenKey,valueKey]', 'transmitName': ['transmitKey', {'valueKey': '[tokenKey,valueKey]', 'getValuePath': '{valueKey}'}]}}
+2020-06-26 19:29:00,556 testApi_01.py [line:80] INFO {'isApp': 'False', 'isTransmit': {'tokenName': '[tokenKey,valueKey]', 'transmitName': ['transmitKey', {'valueKey': '[tokenKey,valueKey]', 'getValuePath': '{valueKey}'}]}}
+2020-06-26 19:29:00,556 testApi_01.py [line:75] INFO valueKey
+2020-06-26 19:29:00,556 testApi_01.py [line:75] INFO valueKey
+2020-06-26 19:29:00,556 testApi_01.py [line:77] INFO False
+2020-06-26 19:29:00,556 testApi_01.py [line:77] INFO False
+2020-06-26 19:29:00,556 testApi_01.py [line:80] INFO {'isApp': 'False', 'isTransmit': {'tokenName': '[tokenKey,valueKey]', 'transmitName': ['transmitKey', {'valueKey': '[tokenKey,valueKey]', 'getValuePath': 'False'}]}}
+2020-06-26 19:29:00,556 testApi_01.py [line:80] INFO {'isApp': 'False', 'isTransmit': {'tokenName': '[tokenKey,valueKey]', 'transmitName': ['transmitKey', {'valueKey': '[tokenKey,valueKey]', 'getValuePath': 'False'}]}}
+2020-06-26 19:29:00,557 excel_tool.py [line:132] INFO /Users/yangzhiyong/PycharmProjects/
+2020-06-26 19:32:43,193 testApi_01.py [line:71] INFO 1
+2020-06-26 19:32:43,193 testApi_01.py [line:71] INFO 1
+2020-06-26 19:32:43,194 testApi_01.py [line:75] INFO getValuePath
+2020-06-26 19:32:43,194 testApi_01.py [line:75] INFO getValuePath
+2020-06-26 19:32:43,194 testApi_01.py [line:77] INFO [tokenKey,valueKey]
+2020-06-26 19:32:43,194 testApi_01.py [line:77] INFO [tokenKey,valueKey]
+2020-06-26 19:32:43,195 testApi_01.py [line:80] INFO {'isApp': 'False', 'isTransmit': {'tokenName': '[tokenKey,valueKey]', 'transmitName': ['transmitKey', {'valueKey': '[tokenKey,valueKey]', 'getValuePath': '{valueKey}'}]}}
+2020-06-26 19:32:43,195 testApi_01.py [line:80] INFO {'isApp': 'False', 'isTransmit': {'tokenName': '[tokenKey,valueKey]', 'transmitName': ['transmitKey', {'valueKey': '[tokenKey,valueKey]', 'getValuePath': '{valueKey}'}]}}
+2020-06-26 19:32:43,195 testApi_01.py [line:75] INFO valueKey
+2020-06-26 19:32:43,195 testApi_01.py [line:75] INFO valueKey
+2020-06-26 19:32:43,195 testApi_01.py [line:77] INFO False
+2020-06-26 19:32:43,195 testApi_01.py [line:77] INFO False
+2020-06-26 19:32:43,195 testApi_01.py [line:80] INFO {'isApp': 'False', 'isTransmit': {'tokenName': '[tokenKey,valueKey]', 'transmitName': ['transmitKey', {'valueKey': '[tokenKey,valueKey]', 'getValuePath': 'False'}]}}
+2020-06-26 19:32:43,195 testApi_01.py [line:80] INFO {'isApp': 'False', 'isTransmit': {'tokenName': '[tokenKey,valueKey]', 'transmitName': ['transmitKey', {'valueKey': '[tokenKey,valueKey]', 'getValuePath': 'False'}]}}
+2020-06-26 19:32:43,195 excel_tool.py [line:132] INFO /Users/yangzhiyong/PycharmProjects/
+2020-06-26 19:33:44,921 testApi_01.py [line:71] INFO 1
+2020-06-26 19:33:44,921 testApi_01.py [line:71] INFO 1
+2020-06-26 19:33:44,922 testApi_01.py [line:75] INFO getValuePath
+2020-06-26 19:33:44,922 testApi_01.py [line:75] INFO getValuePath
+2020-06-26 19:33:44,922 testApi_01.py [line:77] INFO [tokenKey,valueKey]
+2020-06-26 19:33:44,922 testApi_01.py [line:77] INFO [tokenKey,valueKey]
+2020-06-26 19:33:44,923 testApi_01.py [line:80] INFO {'isApp': 'False', 'isTransmit': {'tokenName': '[tokenKey,valueKey]', 'transmitName': ['transmitKey', {'valueKey': '[tokenKey,valueKey]', 'getValuePath': '{valueKey}'}]}}
+2020-06-26 19:33:44,923 testApi_01.py [line:80] INFO {'isApp': 'False', 'isTransmit': {'tokenName': '[tokenKey,valueKey]', 'transmitName': ['transmitKey', {'valueKey': '[tokenKey,valueKey]', 'getValuePath': '{valueKey}'}]}}
+2020-06-26 19:33:44,923 testApi_01.py [line:75] INFO valueKey
+2020-06-26 19:33:44,923 testApi_01.py [line:75] INFO valueKey
+2020-06-26 19:33:44,923 testApi_01.py [line:77] INFO False
+2020-06-26 19:33:44,923 testApi_01.py [line:77] INFO False
+2020-06-26 19:33:44,923 testApi_01.py [line:80] INFO {'isApp': 'False', 'isTransmit': {'tokenName': '[tokenKey,valueKey]', 'transmitName': ['transmitKey', {'valueKey': '[tokenKey,valueKey]', 'getValuePath': 'False'}]}}
+2020-06-26 19:33:44,923 testApi_01.py [line:80] INFO {'isApp': 'False', 'isTransmit': {'tokenName': '[tokenKey,valueKey]', 'transmitName': ['transmitKey', {'valueKey': '[tokenKey,valueKey]', 'getValuePath': 'False'}]}}
+2020-06-26 19:33:44,923 excel_tool.py [line:132] INFO /Users/yangzhiyong/PycharmProjects/
+2020-06-26 19:34:46,064 testApi_01.py [line:71] INFO 1
+2020-06-26 19:34:46,064 testApi_01.py [line:71] INFO 1
+2020-06-26 19:34:46,064 testApi_01.py [line:75] INFO getValuePath
+2020-06-26 19:34:46,064 testApi_01.py [line:75] INFO getValuePath
+2020-06-26 19:34:46,065 testApi_01.py [line:77] INFO [tokenKey,valueKey]
+2020-06-26 19:34:46,065 testApi_01.py [line:77] INFO [tokenKey,valueKey]
+2020-06-26 19:34:46,065 testApi_01.py [line:80] INFO {'isApp': 'False', 'isTransmit': {'tokenName': '[tokenKey,valueKey]', 'transmitName': ['transmitKey', {'valueKey': '[tokenKey,valueKey]', 'getValuePath': '{valueKey}'}]}}
+2020-06-26 19:34:46,065 testApi_01.py [line:80] INFO {'isApp': 'False', 'isTransmit': {'tokenName': '[tokenKey,valueKey]', 'transmitName': ['transmitKey', {'valueKey': '[tokenKey,valueKey]', 'getValuePath': '{valueKey}'}]}}
+2020-06-26 19:34:46,065 testApi_01.py [line:75] INFO valueKey
+2020-06-26 19:34:46,065 testApi_01.py [line:75] INFO valueKey
+2020-06-26 19:34:46,065 testApi_01.py [line:77] INFO False
+2020-06-26 19:34:46,065 testApi_01.py [line:77] INFO False
+2020-06-26 19:34:46,065 testApi_01.py [line:80] INFO {'isApp': 'False', 'isTransmit': {'tokenName': '[tokenKey,valueKey]', 'transmitName': ['transmitKey', {'valueKey': '[tokenKey,valueKey]', 'getValuePath': 'False'}]}}
+2020-06-26 19:34:46,065 testApi_01.py [line:80] INFO {'isApp': 'False', 'isTransmit': {'tokenName': '[tokenKey,valueKey]', 'transmitName': ['transmitKey', {'valueKey': '[tokenKey,valueKey]', 'getValuePath': 'False'}]}}
+2020-06-26 19:34:46,065 excel_tool.py [line:132] INFO /Users/yangzhiyong/PycharmProjects/
+2020-06-26 19:35:22,119 testApi_01.py [line:71] INFO 1
+2020-06-26 19:35:22,119 testApi_01.py [line:71] INFO 1
+2020-06-26 19:35:22,119 testApi_01.py [line:75] INFO getValuePath
+2020-06-26 19:35:22,119 testApi_01.py [line:75] INFO getValuePath
+2020-06-26 19:35:22,120 testApi_01.py [line:77] INFO [tokenKey,valueKey]
+2020-06-26 19:35:22,120 testApi_01.py [line:77] INFO [tokenKey,valueKey]
+2020-06-26 19:35:22,120 testApi_01.py [line:80] INFO {'isApp': 'False', 'isTransmit': {'tokenName': '[tokenKey,valueKey]', 'transmitName': ['transmitKey', {'valueKey': '[tokenKey,valueKey]', 'getValuePath': '{valueKey}'}]}}
+2020-06-26 19:35:22,120 testApi_01.py [line:80] INFO {'isApp': 'False', 'isTransmit': {'tokenName': '[tokenKey,valueKey]', 'transmitName': ['transmitKey', {'valueKey': '[tokenKey,valueKey]', 'getValuePath': '{valueKey}'}]}}
+2020-06-26 19:35:22,120 testApi_01.py [line:75] INFO valueKey
+2020-06-26 19:35:22,120 testApi_01.py [line:75] INFO valueKey
+2020-06-26 19:35:22,120 testApi_01.py [line:77] INFO False
+2020-06-26 19:35:22,120 testApi_01.py [line:77] INFO False
+2020-06-26 19:35:22,120 testApi_01.py [line:80] INFO {'isApp': 'False', 'isTransmit': {'tokenName': '[tokenKey,valueKey]', 'transmitName': ['transmitKey', {'valueKey': '[tokenKey,valueKey]', 'getValuePath': 'False'}]}}
+2020-06-26 19:35:22,120 testApi_01.py [line:80] INFO {'isApp': 'False', 'isTransmit': {'tokenName': '[tokenKey,valueKey]', 'transmitName': ['transmitKey', {'valueKey': '[tokenKey,valueKey]', 'getValuePath': 'False'}]}}
+2020-06-26 19:35:22,120 excel_tool.py [line:132] INFO /Users/yangzhiyong/PycharmProjects/
+2020-06-26 20:25:42,433 testApi_01.py [line:71] INFO 1
+2020-06-26 20:25:42,433 testApi_01.py [line:71] INFO 1
+2020-06-26 20:25:42,433 testApi_01.py [line:75] INFO getValuePath
+2020-06-26 20:25:42,433 testApi_01.py [line:75] INFO getValuePath
+2020-06-26 20:25:42,433 testApi_01.py [line:77] INFO [tokenKey,valueKey]
+2020-06-26 20:25:42,433 testApi_01.py [line:77] INFO [tokenKey,valueKey]
+2020-06-26 20:25:42,434 testApi_01.py [line:80] INFO {'isApp': 'False', 'isTransmit': {'tokenName': '[tokenKey,valueKey]', 'transmitName': ['transmitKey', {'valueKey': '[tokenKey,valueKey]', 'getValuePath': '{valueKey}'}]}}
+2020-06-26 20:25:42,434 testApi_01.py [line:80] INFO {'isApp': 'False', 'isTransmit': {'tokenName': '[tokenKey,valueKey]', 'transmitName': ['transmitKey', {'valueKey': '[tokenKey,valueKey]', 'getValuePath': '{valueKey}'}]}}
+2020-06-26 20:25:42,434 testApi_01.py [line:75] INFO valueKey
+2020-06-26 20:25:42,434 testApi_01.py [line:75] INFO valueKey
+2020-06-26 20:25:42,434 testApi_01.py [line:77] INFO False
+2020-06-26 20:25:42,434 testApi_01.py [line:77] INFO False
+2020-06-26 20:25:42,434 testApi_01.py [line:80] INFO {'isApp': 'False', 'isTransmit': {'tokenName': '[tokenKey,valueKey]', 'transmitName': ['transmitKey', {'valueKey': '[tokenKey,valueKey]', 'getValuePath': 'False'}]}}
+2020-06-26 20:25:42,434 testApi_01.py [line:80] INFO {'isApp': 'False', 'isTransmit': {'tokenName': '[tokenKey,valueKey]', 'transmitName': ['transmitKey', {'valueKey': '[tokenKey,valueKey]', 'getValuePath': 'False'}]}}

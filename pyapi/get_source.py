@@ -10,19 +10,43 @@ class SourceGet:
 	def __init__(self):
 		pass
 
-	# 获取Excel操作手柄
+	# 获取Excel用例操作手柄
 	def getExcelHandle(self):
 		testFile = DealExcelTool().getTestFileName()
 		testSheet = ExcelConfig.TESTCASEALLSHEET
 		et=ExcelTool(excelFile=testFile,sheetName=testSheet)
 		return et
 
-	#获取业务ID
+	# 获取Excel参数操作手柄
+	def getParameterExcelHandle(self):
+		testFile = DealExcelTool().getTestFileName()
+		testSheet = ExcelConfig.PARAMETERCASESHEET
+		et = ExcelTool(excelFile=testFile, sheetName=testSheet)
+		return et
+
+	#获取用例表业务ID
+	#{'KHGJ001': ['KHGJ001', 2, 3], 'list': ['KHGJ001']}
 	def getOperateId(self):
 		et=self.getExcelHandle()
 		operateId=et.get_col_value(column=1,rowNum=2)
 		operateDic=Common().itemListCount(operateId)
 		return operateDic
+
+	#获取参数表业务ID
+	#{'KHGJ001': ['KHGJ001', 2, 3], 'list': ['KHGJ001']}
+	def getParameterOperateId(self):
+		testFile = DealExcelTool().getTestFileName()
+		et = ExcelTool(excelFile=testFile, sheetName=ExcelConfig.PARAMETERCASESHEET)
+		operateId = et.get_col_value(column=1, rowNum=2)
+		operateDic = Common().itemListCount(operateId)
+		return operateDic
+
+	# 获取参数表业务执行ID
+	def getTestExecuteID(self):
+		testFile = DealExcelTool().getTestFileName()
+		et = ExcelTool(excelFile=testFile, sheetName=ExcelConfig.PARAMETERCASESHEET)
+		testExecuteID = et.get_col_value(column=2, rowNum=2)
+		return testExecuteID
 
 	# 获取业务下的测试用例
 	def getIdOfTestOperate(self,lstNum):
@@ -34,8 +58,18 @@ class SourceGet:
 			testCaseList.append(lsti)
 		return testCaseList
 
+	# 	# 获取业务下的测试参数
+	def getIdOfParameterOperate(self,lstNum):
+		startNum= lstNum[2]+1-lstNum[1]
+		endNum = lstNum[2]+1
+		testCaseList = []
+		for i in range(startNum,endNum):
+			lsti=self.getParameterExcelHandle().get_row_value(row=i)
+			testCaseList.append(lsti)
+		return testCaseList
+
 
 if __name__ == '__main__':
 	lstid=[8, 3, 4]
-	re=SourceGet().getIdOfTestOperate(lstid)
+	re=SourceGet().getOperateId()
 	print(re)
