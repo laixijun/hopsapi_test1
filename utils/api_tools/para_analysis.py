@@ -107,9 +107,10 @@ class ParaAnalysis:
                     strValue=Common().getValueFalse(lst=lst[0],itemKey=getValueFalseList[0],itemValue=getValueFalseList[1],needKey=getValueFalseList[2])
                 else:
                     strValue = jsonpath.jsonpath(responseValue, list_item[1]["getValuePath"])
-                logger.info(strValue)
+                    logger.info(strValue)
                 if strValue:
-                    strValue = strValue[0]
+                    if isinstance(strValue,list):
+                        strValue = strValue[0]
                     ttr["transmitData"][list_item[1]["valueKey"]] = strValue
                     envContentDic[strKey]=strValue
                 else:

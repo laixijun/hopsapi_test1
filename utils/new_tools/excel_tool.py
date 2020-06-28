@@ -40,7 +40,10 @@ class ExcelTool:
 		column_data = []
 		for i in range(rowNum, rows + 1):
 			cell_value = self.getSheetValue().cell(row=i, column=column).value
-			column_data.append(cell_value)
+			if cell_value != None:
+				column_data.append(cell_value)
+			else:
+				break
 		return column_data
 
 	# 获取某行所有值
@@ -49,7 +52,10 @@ class ExcelTool:
 		row_data = []
 		for i in range(columnNum, columns + 1):
 			cell_value = self.getSheetValue().cell(row=row, column=i).value
-			row_data.append(cell_value)
+			if cell_value != None:
+				row_data.append(cell_value)
+			else:
+				break
 		return row_data
 
 	# 获取

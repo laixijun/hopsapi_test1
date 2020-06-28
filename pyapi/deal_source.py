@@ -106,6 +106,8 @@ class SourceDeal:
 		excelRow=None
 		logger.info(operateId)
 		for operateIdKey in operateId.keys():
+			if operateIdKey == "list":
+				break
 			if operateIdKey in parameterOperateId['list']:
 				parameterCaseList=SourceGet().getIdOfParameterOperate(parameterOperateId[operateIdKey])
 				for parameterCase in parameterCaseList:
