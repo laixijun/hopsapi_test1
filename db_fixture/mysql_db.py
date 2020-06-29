@@ -4,7 +4,7 @@ import os
 
 base_dir = str(os.path.dirname(os.path.dirname(__file__)))
 base_dir = base_dir.replace('\\', '/')
-file_path = base_dir + '/config.ini'
+file_path = base_dir + '/db_file.ini'
 
 cf = cparser.ConfigParser()
 cf.read(file_path)

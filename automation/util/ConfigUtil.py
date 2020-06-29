@@ -10,11 +10,11 @@ import configparser, os
 from automation.util.SystemOsUtil import SystemOs
 
 class Config:
-    def __init__(self, group,configPath="automation/configs/config.cfg"):
+    def __init__(self, group,configPath="automation/configs/db_file.cfg"):
         """
 
         :param group: 配置[ ]中的属性
-        :param configPath: "automation/configs/config.cfg"，获取相对路径，绝对路径需要从根开始
+        :param configPath: "automation/configs/db_file.cfg"，获取相对路径，绝对路径需要从根开始
         """
         self.group = group
         self.configPath = configPath
@@ -88,12 +88,12 @@ class Config:
         return self.parsing_config(configPath)
 if __name__=='__main__':
 
-    #conf = Config("FilePath",configPath="E:/python_workspace/DestroyerRobot/automation/com/cn/markerting_points/config/config.cfg")
+    #conf = Config("FilePath",configPath="E:/python_workspace/DestroyerRobot/automation/com/cn/markerting_points/db_file/db_file.cfg")
     conf = Config("YamlFile")
     keys = conf.parsing_config("marketing")
     # s = SystemOs().sys_path()
     # print("s=",s)
-    # filepath = s+"automation/com/cn/markerting_points/config/config.cfg"
+    # filepath = s+"automation/com/cn/markerting_points/db_file/db_file.cfg"
     # conf = Config("FilePath",
     #               configPath=filepath)
     # keys=conf.parsing_config("user_login")

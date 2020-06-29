@@ -10,9 +10,13 @@ class ExcelConfig:
 	REPORTPATH = '/report/excelReport'
 	TESTCASEALLFile = 'testCase.xlsx'
 	TESTCASEALLSHEET = 'testSheet'
+	#参数化的sheet
+	PARAMETERCASESHEET = 'parameterSheet'
 	REPORTPATHFILE = 'testReport.xlsx'
 	REPORTPATHSHEET = 'testReport'
-	REPORTPATHSHEETCURRENT = 'testReport' + str(time.strftime('%Y-%m-%d',time.localtime(time.time()))) + '.xlsx'
+	#临时存储文本
+	TEMPDBFILEPATH = '/db_file/TempDB.txt'
+	REPORTPATHFILECURRENT = 'testReport' + str(time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time()))) + '.xlsx'
 	
 
 if __name__ == '__main__':

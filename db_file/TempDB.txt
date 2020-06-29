@@ -1,0 +1,1 @@
+{"transmitData": {"brokerCode": "866fce5e-95cd-11ea-ac1a-000c29af0c0c", "token": "ede84ec3-7cc5-44b7-995b-b7f91ff12a76", "brokerCity": "110100", "name": "大股东法国队", "devId": "11392"}, "parameterData": {}}

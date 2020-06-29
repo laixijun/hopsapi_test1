@@ -61,6 +61,7 @@ class ApiClassification:
         else:
             post_response_fail["status_code"] = post_response.status_code
             post_response_fail["text"] = post_response.text
+            post_response_fail["headers"] = post_response.headers
             logger.info(post_response_fail)
             return post_response_fail
     # 如果需要处理token

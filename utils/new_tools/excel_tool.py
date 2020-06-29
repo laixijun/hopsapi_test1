@@ -40,7 +40,10 @@ class ExcelTool:
 		column_data = []
 		for i in range(rowNum, rows + 1):
 			cell_value = self.getSheetValue().cell(row=i, column=column).value
-			column_data.append(cell_value)
+			if cell_value != None:
+				column_data.append(cell_value)
+			else:
+				break
 		return column_data
 
 	# 获取某行所有值
@@ -49,7 +52,10 @@ class ExcelTool:
 		row_data = []
 		for i in range(columnNum, columns + 1):
 			cell_value = self.getSheetValue().cell(row=row, column=i).value
-			row_data.append(cell_value)
+			if cell_value != None:
+				row_data.append(cell_value)
+			else:
+				break
 		return row_data
 
 	# 获取
@@ -73,6 +79,8 @@ class ExcelTool:
 	#向指定位置写入数据
 	def writeCellValue(self,row,column,rcValue):
 		cellIndex=self.getSheetValue().cell(row,column)
+		if not isinstance(rcValue,str):
+			rcValue = str(rcValue)
 		cellIndex.value=rcValue
 
 	# 向一行写入一条list
@@ -101,9 +109,19 @@ class DealExcelTool:
 		return testFileName
 	# 获取报告文件的全路径
 	def getReportFileName(self):
-		reportFileName=self.getFileReport() + '/' + ExcelConfig.REPORTPATHSHEETCURRENT
+		reportFileName=self.getFileReport() + '/' + ExcelConfig.REPORTPATHFILECURRENT
 		reportFileName = reportFileName.replace('\\','/')
 		return reportFileName
+	# 获取报告文件的全路径复制前
+	def getReportFilePreName(self):
+		reportFileName=self.getFileReport() + '/' + ExcelConfig.REPORTPATHFILE
+		reportFileName = reportFileName.replace('\\','/')
+		return reportFileName
+	# 获取临时存储文件的全路径
+	def getTempFileName(self):
+		tempDBFileName=self.getProjectPath() +  ExcelConfig.TEMPDBFILEPATH
+		tempDBFileName = tempDBFileName.replace('\\','/')
+		return tempDBFileName
 	# 获取用例文件的路径
 	def getFilePath(self):
 		testCaseFilePath = self.getProjectPath()+ ExcelConfig.TESTCASEALL
