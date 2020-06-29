@@ -153,9 +153,9 @@ class ParaAnalysis:
     def paraToRequestExchangeData(self,requestPara,requestData,responseValue=None,parameterCase=None,envContentDic={}):
         # requestData = requestData["requestDataJson"]
         requestData = json.dumps(requestData,ensure_ascii=False)
-        for para_item in requestPara["parameterData"].keys():
+        for para_item in requestPara.keys():
             strKey = para_item
-            strValue = requestPara["parameterData"][strKey]
+            strValue = requestPara[strKey]
             requestData = Common().replaceStr(requestData, strKey, strValue)
         requestDataJson =json.loads(requestData,encoding='utf-8')
         return {"requestDataJson":requestDataJson,"envContentDic":envContentDic}
@@ -178,12 +178,14 @@ class ParaAnalysis:
             requestDataJson = {"requestDataJson":requestDataJson,"envContentDic":envContentDic}
         else:
             requestDataJson = self.paraToRequestData(requestPara=paraRequestDict,requestData=paraRequestJson,responseValue=responseValue,parameterCase=None)
+        # {"BOHUI03":{"customerName":"王小王","customerPhone":"13712321234","customerSex":"0","arriveTime":"2020-06-27","isHiddenPhone":"isHiddenPhone"}}
         if parameterCase != None:
-            if testCaseId in parameterCase:
-                parameterCasePara = parameterCase[2]
-                parameterCasePara = json.loads(parameterCasePara,encoding='utf-8')
-                parameterCasePara = parameterCasePara[testCaseId]
-                requestDataJson=self.paraToRequestExchangeData(requestPara=parameterCasePara, requestData=requestDataJson['requestDataJson'])
+            parameterCase = parameterCase[2]
+            parameterCase = json.loads(parameterCase,encoding='utf-8')
+            for testCaseIdParameter in parameterCase.keys():
+                if testCaseId == testCaseIdParameter:
+                    parameterCasePara = parameterCase[testCaseIdParameter]
+                    requestDataJson=self.paraToRequestExchangeData(requestPara=parameterCasePara, requestData=requestDataJson['requestDataJson'])
         return requestDataJson
 
 

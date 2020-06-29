@@ -16,8 +16,8 @@ class ExcelConfig:
 	REPORTPATHSHEET = 'testReport'
 	#临时存储文本
 	TEMPDBFILEPATH = '/db_file/TempDB.txt'
-	REPORTPATHFILECURRENT = 'testReport' + str(time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time()))) + '.xlsx'
+	REPORTPATHFILECURRENT = 'testReport' + str(time.strftime('%Y-%m-%d%H%M%S',time.localtime(time.time()))) + '.xlsx'
 	
 
 if __name__ == '__main__':
-	print(ExcelConfig.REPORTPATHSHEETCURRENT)
+	print(ExcelConfig.REPORTPATHFILECURRENT)

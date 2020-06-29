@@ -6,6 +6,7 @@ import json
 import jsonpath
 
 from utils.logger import Log
+from utils.new_tools.common_tool import Common
 
 logger = Log(logger='result_assert').get_log()
 class ResultAssert:
@@ -28,15 +29,24 @@ class ResultAssert:
 		logger.info(type(jsonExpect))
 		for exItem in jsonExpect.keys():
 			actualResult = jsonpath.jsonpath(jsonActual,exItem)
-			actualResult = actualResult[0]
+			if actualResult:
+				actualResult = actualResult[0]
+				expectValue=jsonExpect[exItem]
+			else:
+				#{"estateProjectDevId"：{"jsonExpectValue":"expectValue","getValuePath":{"threeListAll":"$.data","threeList":"name-大股东法国队-devId"}}}
+				getValueFalseList = jsonExpect[exItem]["getValuePath"]['threeList'].split("-")
+				lst = jsonpath.jsonpath(jsonActual, jsonExpect[exItem]["getValuePath"]['threeListAll'])
+				actualResult = Common().getValueFalse(lst=lst[0], itemKey=getValueFalseList[0],
+												  itemValue=getValueFalseList[1], needKey=getValueFalseList[2])
+				expectValue = jsonExpect[exItem]["jsonExpectValue"]
 			if not isinstance(actualResult,str):
 				actualResult = str(actualResult)
-			if actualResult == jsonExpect[exItem]:
+			if actualResult == expectValue:
 				compareResult['executeResult']='SUC'
 				compareResults['SUC'][exItem]=compareResult
 			else:
 				compareResult['executeResult']='FAIL'
-				compareResult['failField']='exItem'
+				compareResult['failField']=exItem
 				compareResult['fieldExpect']=jsonExpect[exItem]
 				compareResult['fieldActual']=actualResult
 

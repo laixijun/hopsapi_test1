@@ -48,8 +48,6 @@ class SourceDeal:
 			resultList = resultCaseList
 			requestMethod = testCaseListItem[5]
 			logger.info(requestMethod)
-			requestUrl = UrlClassfication().estimateUrl(testCaseListItem)
-			logger.info(requestUrl)
 			logger.info(responseValue['headers'])
 			logger.info(responseValue['text'])
 			requestData = ParaAnalysis().choosePara(caseList=testCaseListItem, responseValue=responseValue['text'],
@@ -60,6 +58,8 @@ class SourceDeal:
 			logger.info(type(requestData))
 			requestHeader = ParaAnalysis().chooseHeader(caseList=testCaseListItem,responseValue=responseValue["headers"])
 			logger.info(requestHeader)
+			requestUrl = UrlClassfication().estimateUrl(testCaseListItem)
+			logger.info(requestUrl)
 			a = datetime.now()
 			resultRequst=ApiClassification(headerData=requestHeader).requestEstimate(methodRequest=requestMethod, urlRequest=requestUrl, dataRequest=requestData)
 			b = datetime.now()

@@ -28,6 +28,8 @@ class ApiClassification:
     def get_request(self, url_get, pydata = None):
         get_response_dic={}
         get_response_fail={}
+        if pydata != None:
+            pydata = pydata.encode("utf-8")
         get_response = requests.get(url=url_get, params=pydata,headers=self.header_app,verify=False)
         logger.info(get_response.status_code)
         if get_response.status_code == requests.codes.ok:
@@ -50,6 +52,7 @@ class ApiClassification:
         logger.info(post_data_json)
         logger.info(url_post)
         logger.info(self.header_app)
+        post_data_json = post_data_json.encode("utf-8")
         post_response = requests.post(url=url_post, data=post_data_json, headers=self.header_app, verify=False)
         logger.info(post_response.status_code)
         if post_response.status_code == requests.codes.ok:

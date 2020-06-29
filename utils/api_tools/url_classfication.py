@@ -4,6 +4,7 @@
 import json
 
 from utils.logger import Log
+from utils.new_tools.txt_tool import TxtTool
 
 logger = Log(logger='url_classfication').get_log()
 class UrlClassfication:
@@ -12,9 +13,17 @@ class UrlClassfication:
     # 4、 参数在URL中存在
     def havaVars(self,url_hava,param_dic):
         param_dic_items = param_dic.keys()
+        ttr = TxtTool().readTxt()
+        if ttr:
+            ttr = json.loads(ttr, encoding="utf-8")
         for param_dic_item in param_dic_items :
+            urlParameter=param_dic[param_dic_item]
+            if not isinstance(urlParameter,str):
+                for k,v in urlParameter.items():
+                    param_dic_value = ttr["transmitData"][v]
+            else:
+                param_dic_value = param_dic[param_dic_item]
             param_dic_item_re = "{" + param_dic_item + "}"
-            param_dic_value = param_dic[param_dic_item]
             if not isinstance(param_dic[param_dic_item],str):
                 param_dic_value = str(param_dic_value)
             url_hava = url_hava.replace(param_dic_item_re,param_dic_value)
@@ -33,7 +42,6 @@ class UrlClassfication:
         url_estimate=testList[4]
         if "{" in url_estimate:
             param_dic = testList[6]
-            param_dic = json.dumps(param_dic,ensure_ascii=False)
             param_dic = json.loads(param_dic,encoding='utf-8')
             url_result = self.havaVars(url_hava = url_estimate,param_dic = param_dic['PaData']['urlData'])
         else:
