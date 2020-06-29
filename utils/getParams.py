@@ -4,7 +4,7 @@ from utils.readExcel import *
 import json
 from utils.logger import Log
 from json.decoder import JSONDecodeError
-# fp = '/Users/rasule/PycharmProjects/hopsapi_test/testcase/test_datas.xlsx'
+# fp = '/Users/rasule/PycharmProjects/hopsapi_test1/testcase/test_datas.xlsx'
 fp = excel_path('test_datas.xlsx')
 logger = Log(logger='get_params').get_log()
 

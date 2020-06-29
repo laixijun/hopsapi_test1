@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/hopsapi_test.iml" filepath="$PROJECT_DIR$/.idea/hopsapi_test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../hopsapi_test1/.idea/hopsapi_test1.iml" filepath="$PROJECT_DIR$/../hopsapi_test1/.idea/hopsapi_test1.iml" />
     </modules>
   </component>
 </project>
