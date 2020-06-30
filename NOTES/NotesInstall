@@ -21,6 +21,15 @@ HTMLTestRunnerChinese
 安装
 pyyaml
 appium
+pip3 install pyyaml Appium-Python-Client -i  http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
+pip3 install Appium-Python-Client -i  http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
+pip3 install cryptography pyOpenSSL certifi -i  http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
+pip3 install pyOpenSSL-19.1.0-py2.py3-none-any.whl -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
+pip3 install pymysql requests xlrd xlsxwriter openpyxl pymongo selenium xlwt xlutils pyyaml BeautifulReport -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
+pip3 install jsonpath -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
+pip3 install unittest -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
+pip3 install openpyxl -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
+
 pip installpyyaml Appium-Python-Client -i  http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
 pip install Appium-Python-Client -i  http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
 pip install cryptography pyOpenSSL certifi -i  http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
@@ -29,4 +38,13 @@ pip install pyOpenSSL-19.1.0-py2.py3-none-any.whl -i http://pypi.douban.com/simp
 pip install pymysql requests xlrd xlsxwriter openpyxl pymongo selenium xlwt xlutils pyyaml BeautifulReport -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
 pip install jsonpath -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
 pip install unittest -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
+pip isntall openpyxl -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
+
+pip3 install pymysql requests xlrd xlsxwriter openpyxl pymongo selenium xlwt xlutils pyyaml BeautifulReport -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
+pip3 install jsonpath -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
+pip3 install unittest -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
+pip3 install openpyxl -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
+
+
+
 
