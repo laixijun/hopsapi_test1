@@ -146,4 +146,10 @@ def test108():
     a_dict = {'$.status.code': '1000'}
     for k, v in a_dict.items():
         print(k, v)
-test108()
+        
+def test109():
+    ifnotest ='{"code":200,"msg":"成功","data":{"token":"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiMTU3MTg4Njg0NzgiLCJpYXQiOjE1OTM1OTQ4MzgsImV4cCI6MTU5MzYwMjAzOCwibmJmIjoxNTkzNTk0ODM4fQ.aYkCGFtqTR_Llanf0FwGJdY-R5RUCXTcMiroAaGWNoM","applicationToken":"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiOTUxIiwiaWF0IjoxNTkzNTk0ODM4LCJleHAiOjE1OTM2MDIwMzgsIm5iZiI6MTU5MzU5NDgzOH0.5hnmlyab5a_LEVPCDysZuemsEFDj7ICRbmYe_77rXag","isDirectLogin":true,"tenants":null,"apps":[{"id":3,"appName":"新运营端管理系统","appIcon":"","appUrl":"http://localhost:8089/,https://ndcms.lifeat.cn:45788/cms/,https://ntcms.lifeat.cn:45788/cms/,https://nhcms.lifeat.cn:45788/cms/,https://hb-ncms.lifeat.cn/cms/"},{"id":0,"appName":"权限系统","appIcon":"https://kf-pms-cdn.hopsontong.com/1585129410411-10947/cms/permission-system-logo-258x86.png","appUrl":"https://uat-pms-tenant.hopsontong.com:11013/#/login"}]},"success":true}'
+    ifnotest = json.loads(ifnotest,encoding=False)
+    ifnotestlsit = jsonpath.jsonpath(ifnotest,"$.data.apps[?(@id = 3)].appUrl")
+    print(ifnotestlsit)
+test109()
