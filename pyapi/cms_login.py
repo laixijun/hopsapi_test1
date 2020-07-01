@@ -68,7 +68,10 @@ class CmsLogin:
             newCmsUrldic['ncms'] =newCmsUrlList[4]
             self.headers["token"]=tokenWeb[0]
             self.headers["applicationToken"] = applicationToken[0]
-            if env != None:
+            authstr = "Bearer " + applicationToken[0]
+            logger.info(authstr)
+            self.headers["Authorization"] = authstr
+            if env == None:
                 env = newCmsUrldic['ntcms']
             else:
                 env = newCmsUrldic[env]

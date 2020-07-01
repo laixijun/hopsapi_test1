@@ -6,6 +6,8 @@ import json
 
 import jsonpath
 
+from pyapi.cms_login import CmsLogin
+from test.test_api.httpTestTool import httpRequests
 from utils.new_tools.excel_tool import DealExcelTool, ExcelTool
 from utils.new_tools.txt_tool import TxtTool
 
@@ -152,4 +154,16 @@ def test109():
     ifnotest = json.loads(ifnotest,encoding=False)
     ifnotestlsit = jsonpath.jsonpath(ifnotest,"$.data.apps[?(@id = 3)].appUrl")
     print(ifnotestlsit)
-test109()
+
+def test10():
+    urlData="https://tcmsapi.lifeat.cn:45788/sso/getUserAndMenuTree"
+    dataData = {}
+    dataData= json.dumps(dataData,ensure_ascii=False)
+    headersData=CmsLogin().getToken()
+    headersData=headersData["headers"]
+    resultData = httpRequests(urlData=urlData, dataData=dataData, headersData=headersData)
+    print(resultData)
+
+def test101():
+    info = {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'Connection': 'keep-alive', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36', 'token': 'eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiMTU3MTg4Njg0NzgiLCJpYXQiOjE1OTM2MTUwODIsImV4cCI6MTU5MzYyMjI4MiwibmJmIjoxNTkzNjE1MDgyfQ.CJtHOs2ki2P5Z5xCWhZpn9cY1_NnUaDL4tVHDP2k0yM', 'applicationToken': 'eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiOTUxIiwiaWF0IjoxNTkzNjE1MDgyLCJleHAiOjE1OTM2MjIyODIsIm5iZiI6MTU5MzYxNTA4Mn0.XRMwEiRoPMWOBUZZBX_PEFtc2dIu1mV2jUviDg1MHu0', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiOTUxIiwiaWF0IjoxNTkzNjE1MDgyLCJleHAiOjE1OTM2MjIyODIsIm5iZiI6MTU5MzYxNTA4Mn0.XRMwEiRoPMWOBUZZBX_PEFtc2dIu1mV2jUviDg1MHu0'}}
+test10()

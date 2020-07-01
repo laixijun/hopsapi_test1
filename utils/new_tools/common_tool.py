@@ -2,6 +2,7 @@
 # @Author  : Yang Xiaobai
 # @Email   : yangzhiyongtest@163.com
 import json
+import re
 
 from utils.logger import Log
 
@@ -62,3 +63,23 @@ class Common:
                     return i[needKey]
             except:
                 return False
+
+    # 正则内容对比返回true
+    def getConpareResult(self,strData,regular,value):
+        prog = re.compile(regular)
+        result = prog.findall(strData)
+        logger.info(result)
+        if result == value:
+            return True
+        else:
+            return False
+
+
+
+
+if __name__ == "__main__":
+    strData="outerOrgId"
+    regular = "ou(^.*?)rgId"
+    value= "terO"
+    result = Common().getConpareResult(strData,regular,value)
+    print(result)
