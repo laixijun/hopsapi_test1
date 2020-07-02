@@ -34,7 +34,13 @@ class Common:
     def replaceStr(self,strRes,strKey,strValue):
         strKey="{" + strKey + "}"
         strRes = json.dumps(strRes,ensure_ascii=False)
-        if not isinstance(strValue,str):
+        if isinstance(strValue,int):
+            strValue = str(strValue)
+            strKey1 = "'{" + strKey + "}'"
+            strKey2 = '"{' + strKey + '}"'
+            strRes = strRes.replace(strKey1, strValue)
+            strRes = strRes.replace(strKey1, strValue)
+        elif not isinstance(strValue,str):
             strValue=str(strValue)
         strRes = strRes.replace(strKey,strValue)
         strRes = json.loads(strRes)

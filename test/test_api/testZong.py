@@ -166,4 +166,25 @@ def test10():
 
 def test101():
     info = {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'Connection': 'keep-alive', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36', 'token': 'eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiMTU3MTg4Njg0NzgiLCJpYXQiOjE1OTM2MTUwODIsImV4cCI6MTU5MzYyMjI4MiwibmJmIjoxNTkzNjE1MDgyfQ.CJtHOs2ki2P5Z5xCWhZpn9cY1_NnUaDL4tVHDP2k0yM', 'applicationToken': 'eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiOTUxIiwiaWF0IjoxNTkzNjE1MDgyLCJleHAiOjE1OTM2MjIyODIsIm5iZiI6MTU5MzYxNTA4Mn0.XRMwEiRoPMWOBUZZBX_PEFtc2dIu1mV2jUviDg1MHu0', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiOTUxIiwiaWF0IjoxNTkzNjE1MDgyLCJleHAiOjE1OTM2MjIyODIsIm5iZiI6MTU5MzYxNTA4Mn0.XRMwEiRoPMWOBUZZBX_PEFtc2dIu1mV2jUviDg1MHu0'}}
-test10()
+
+def test102():
+    info = '{"isDefine":"","paData":{"urlData":"","paramData":{"mobile":"{userMobile}","appFlag":"easylife-cms-api-gateway","afsSessionId":"WjFlCkIWDpHT9odN","afsSig":"QuAncgq0hrmAVNX0","afsToken":"FFFF0N00000000009184:1591688607383:0.9844042761792562","afsScene":"nc_login","password":"{userPD}"}}}'
+    info = json.loads(info,encoding='utf-8')
+    print(info)
+
+
+def test103():
+    info = "{'Content-Type': 'application/json;charset=UTF-8','a':'{bb}'}"
+    b="int(100)"
+    print(b[:3])
+    if b[:3] == "int":
+        strValue = 100
+    strValue = str(strValue)
+    strKey = "bb"
+    strKey1 = "'{" + strKey + "}'"
+    strKey2 = '"{' + strKey + '}"'
+    strRes1 = info.replace(strKey1, strValue)
+    strRes2 = info.replace(strKey1, strValue)
+    print(info1)
+    print(info2)
+test103()

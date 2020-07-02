@@ -43,17 +43,34 @@ class ParaAnalysis:
                 try:
                     logger.info(list_item)
                     header_tokenValue = responseValue[list_item[1]]
-                    ttr["transmitData"][list_item[1]]=header_tokenValue
+                    if list_item[0] == "Authorization" and header_token["User-Agent"] == RequestHeader.WEBHEADER["User-Agent"]:
+                        header_tokenValue = "Bearer " + header_tokenValue
+                        ttr["transmitData"]["webAuthorization"] = header_tokenValue
+                    else:
+                        ttr["transmitData"][list_item[1]]=header_tokenValue
                     header_token[list_item[0]]=header_tokenValue
                 except:
-                    header_token[list_item[0]] = ttr["transmitData"][list_item[1]]
+                    if list_item[0] == "Authorization" and header_token["User-Agent"] == RequestHeader.WEBHEADER[
+                        "User-Agent"]:
+                        header_token[list_item[0]] = ttr["transmitData"]["webAuthorization"]
+                    else:
+                        header_token[list_item[0]] = ttr["transmitData"][list_item[1]]
         elif listNum == 0 and responseValue != None:
             try:
                 header_tokenValue = responseValue[header_tokenKey[1]]
-                ttr["transmitData"][header_tokenKey[1]] = header_tokenValue
+                if header_tokenKey[0] == "Authorization" and header_token["User-Agent"] == RequestHeader.WEBHEADER[
+                    "User-Agent"]:
+                    header_tokenValue = "Bearer " + header_tokenValue
+                    ttr["transmitData"]["webAuthorization"] = header_tokenValue
+                else:
+                    ttr["transmitData"][header_tokenKey[1]] = header_tokenValue
                 header_token[header_tokenKey[0]] = header_tokenValue
             except:
-                header_token[header_tokenKey[0]] = ttr["transmitData"][header_tokenKey[1]]
+                if header_tokenKey[0] == "Authorization" and header_token["User-Agent"] == RequestHeader.WEBHEADER[
+                    "User-Agent"]:
+                    header_token[header_tokenKey[0]] = ttr["transmitData"]["webAuthorization"]
+                else:
+                    header_token[header_tokenKey[0]] = ttr["transmitData"][header_tokenKey[1]]
         if not isinstance(ttr,str):
             ttr = json.dumps(ttr,ensure_ascii=False)
         logger.info(ttr)
@@ -104,7 +121,10 @@ class ParaAnalysis:
                 if not isinstance(list_item[1]["getValuePath"],str) and (list_item[1]["getValuePath"] != ""):
                     getValueFalseList = list_item[1]["getValuePath"]['threeList'].split("-")
                     lst=jsonpath.jsonpath(responseValue, list_item[1]["getValuePath"]['threeListAll'])
-                    strValue=Common().getValueFalse(lst=lst[0],itemKey=getValueFalseList[0],itemValue=getValueFalseList[1],needKey=getValueFalseList[2])
+                    if lst:
+                        strValue=Common().getValueFalse(lst=lst[0],itemKey=getValueFalseList[0],itemValue=getValueFalseList[1],needKey=getValueFalseList[2])
+                    else:
+                        strValue = "not found"
                 else:
                     strValue = jsonpath.jsonpath(responseValue, list_item[1]["getValuePath"])
                     logger.info(strValue)
@@ -127,8 +147,11 @@ class ParaAnalysis:
             if not isinstance(transmitKey[1]["getValuePath"], str) and (transmitKey[1]["getValuePath"] != ""):
                 getValueFalseList = transmitKey[1]["getValuePath"]['threeList'].split("-")
                 lst = jsonpath.jsonpath(responseValue, transmitKey[1]["getValuePath"]['threeListAll'])
-                strValue = Common().getValueFalse(lst=lst[0], itemKey=getValueFalseList[0], itemValue=getValueFalseList[1],
+                if lst:
+                    strValue = Common().getValueFalse(lst=lst[0], itemKey=getValueFalseList[0], itemValue=getValueFalseList[1],
                                                   needKey=getValueFalseList[2])
+                else:
+                    strValue = "not found"
             else:
                 strValue = jsonpath.jsonpath(responseValue, transmitKey[1]["getValuePath"])
             logger.info(strValue)
