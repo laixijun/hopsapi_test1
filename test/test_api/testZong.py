@@ -184,7 +184,17 @@ def test103():
     strKey1 = "'{" + strKey + "}'"
     strKey2 = '"{' + strKey + '}"'
     strRes1 = info.replace(strKey1, strValue)
-    strRes2 = info.replace(strKey1, strValue)
-    print(info1)
-    print(info2)
-test103()
+    strRes1 = strRes1.replace(strKey2, strValue)
+    print(strRes1)
+    # print(info2)
+
+def test104():
+    strValue="23abdi9898987678878787878900909890"
+    retest = strValue.isdigit()
+    if retest:
+        print(strValue)
+    if strValue[:3] == "989":
+        strValue = int(strValue[4:-1])
+    # print(strValue)
+    print(type(test104))
+test104()

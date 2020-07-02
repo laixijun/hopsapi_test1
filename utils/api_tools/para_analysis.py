@@ -52,7 +52,8 @@ class ParaAnalysis:
                 except:
                     if list_item[0] == "Authorization" and header_token["User-Agent"] == RequestHeader.WEBHEADER[
                         "User-Agent"]:
-                        header_token[list_item[0]] = ttr["transmitData"]["webAuthorization"]
+                        header_tokenValue = "Bearer " + ttr["transmitData"]["token"]
+                        header_token[list_item[0]] = header_tokenValue
                     else:
                         header_token[list_item[0]] = ttr["transmitData"][list_item[1]]
         elif listNum == 0 and responseValue != None:
@@ -68,7 +69,8 @@ class ParaAnalysis:
             except:
                 if header_tokenKey[0] == "Authorization" and header_token["User-Agent"] == RequestHeader.WEBHEADER[
                     "User-Agent"]:
-                    header_token[header_tokenKey[0]] = ttr["transmitData"]["webAuthorization"]
+                    header_tokenValue = "Bearer " + ttr["transmitData"]["token"]
+                    header_token[header_tokenKey[0]] = header_tokenValue
                 else:
                     header_token[header_tokenKey[0]] = ttr["transmitData"][header_tokenKey[1]]
         if not isinstance(ttr,str):
