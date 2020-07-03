@@ -31,7 +31,7 @@ class Common:
         return listNum
 
     # 替换字符串中指定的字符
-    def replaceStr(self,strRes,strKey,strValue):
+    def replaceStr_1(self,strRes,strKey,strValue):
         strKey="{" + strKey + "}"
         strRes = json.dumps(strRes,ensure_ascii=False)
         if isinstance(strValue,int):
@@ -45,6 +45,25 @@ class Common:
         strRes = strRes.replace(strKey,strValue)
         strRes = json.loads(strRes)
         return strRes
+
+    def replaceStr(self,mydict, key, value):
+        mydict = json.loads(mydict,encoding="utf-8")
+        if isinstance(mydict, dict):  # 使用isinstance检测数据类型，如果是字典
+            if key in mydict.keys():  # 替换字典第一层中所有key与传参一致的key
+                mydict[key] = value
+            for k in mydict.keys():  # 遍历字典的所有子层级，将子层级赋值为变量chdict，分别替换子层级第一层中所有key对应的value，最后在把替换后的子层级赋值给当前处理的key
+                chdict = mydict[k]
+                self.replaceStr(chdict, key, value)
+                mydict[k] = chdict
+        elif isinstance(mydict, list):  # 如是list
+            for element in mydict:  # 遍历list元素，以下重复上面的操作
+                if isinstance(element, dict):
+                    if key in element.keys():
+                        element[key] = value
+                    for k in element.keys():
+                        chdict = element[k]
+                        self.replaceStr(chdict, key, value)
+                        element[k] = chdict
 
     # 对列表中的数据进行计数
     def itemListCount(self,lst):
