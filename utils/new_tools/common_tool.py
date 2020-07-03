@@ -39,7 +39,7 @@ class Common:
             strKey1 = "'{" + strKey + "}'"
             strKey2 = '"{' + strKey + '}"'
             strRes = strRes.replace(strKey1, strValue)
-            strRes = strRes.replace(strKey1, strValue)
+            strRes = strRes.replace(strKey2, strValue)
         elif not isinstance(strValue,str):
             strValue=str(strValue)
         strRes = strRes.replace(strKey,strValue)
@@ -86,6 +86,11 @@ class Common:
             try:
                 if i[itemKey] == itemValue:
                     return i[needKey]
+                elif itemValue.isdigit():
+                    if i[itemKey] == int(itemValue):
+                        return i[needKey]
+                else:
+                    return False
             except:
                 return False
 
