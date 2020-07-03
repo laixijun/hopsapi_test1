@@ -101,7 +101,9 @@ class SourceDeal:
 		if not isinstance(ttr, str):
 			ttr = json.dumps(ttr, ensure_ascii=False)
 		TxtTool().writeTxt(contents=ttr)
+		# {'KHGJ002': ['KHGJ002', 3, 4], 'list': ['KHGJ002']}
 		operateId = SourceGet().getOperateId()
+		# {'KHGJ001': ['KHGJ001', 1, 2], 'KHGJ002': ['KHGJ002', 1, 3], 'list': ['KHGJ001', 'KHGJ002']}
 		parameterOperateId = SourceGet().getParameterOperateId()
 		excelRow=None
 		logger.info(operateId)

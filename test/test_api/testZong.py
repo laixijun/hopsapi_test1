@@ -8,6 +8,8 @@ import jsonpath
 
 from pyapi.cms_login import CmsLogin
 from test.test_api.httpTestTool import httpRequests
+from utils.config_tool.request_header import RequestHeader
+from utils.new_tools.common_tool import Common
 from utils.new_tools.excel_tool import DealExcelTool, ExcelTool
 from utils.new_tools.txt_tool import TxtTool
 
@@ -197,4 +199,51 @@ def test104():
         strValue = int(strValue[4:-1])
     # print(strValue)
     print(type(test104))
-test104()
+    
+def test105():
+    valuea={'mobile': '{userMobile}', 'appFlag': 'easylife-cms-api-gateway', 'afsSessionId': 'WjFlCkIWDpHT9odN', 'afsSig': 'QuAncgq0hrmAVNX0', 'afsToken': 'FFFF0N00000000009184:1591688607383:0.9844042761792562', 'afsScene': 'nc_login', 'password': '{userPD}'}
+    # valuea = json.dumps(valuea,ensure_ascii=False)
+    strKey = "userMobile"
+    strValue = 15718868478
+    
+    strva=Common().replaceStr(valuea, strKey, strValue)
+    print(strva)
+
+def test106():
+    valuea = {"isApp":"N","isTransmit":{"tokenName":[["token","token"],["Authorization","token"]],"transmitName":[["token",{"valueKey":"token","getValuePath":"$.data.token"}],["applicationToken",{"valueKey":"applicationToken","getValuePath":"$.data.applicationToken"}],["cityId",{"valueKey":"cityId","getValuePath":{"threeListAll":"$.data.cityList","threeList":"city-北京市-cityId"}}]]}}
+    valuea = json.dumps(valuea)
+    print(valuea)
+# {"code":200,"msg":"成功","data":{"token":"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiMTU3MTg4Njg0NzgiLCJpYXQiOjE1OTM3NjA1OTYsImV4cCI6MTU5Mzc2Nzc5NiwibmJmIjoxNTkzNzYwNTk2fQ.su4C7DwOwdnxo3YzbTJgVs-R38LtC5i_wl6afbdz4J4","applicationToken":"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiOTUxIiwiaWF0IjoxNTkzNzYwNTk2LCJleHAiOjE1OTM3Njc3OTYsIm5iZiI6MTU5Mzc2MDU5Nn0.HxBj8lXyc-zwQ0Pz4uqsX1ZBns710pFZb6_glxnUixc","isDirectLogin":true,"tenants":null,"apps":[{"id":3,"appName":"新运营端管理系统","appIcon":"","appUrl":"http://localhost:8089/,https://ndcms.lifeat.cn:45788/cms/,https://ntcms.lifeat.cn:45788/cms/,https://nhcms.lifeat.cn:45788/cms/,https://hb-ncms.lifeat.cn/cms/"},{"id":0,"appName":"权限系统","appIcon":"https://kf-pms-cdn.hopsontong.com/1585129410411-10947/cms/permission-system-logo-258x86.png","appUrl":"https://uat-pms-tenant.hopsontong.com:11013/#/login"}]},"success":true}
+def test107():
+    urlData = "https://uat-pms-sso.hopsontong.com:11013/api/login"
+    dataData = {"mobile":15718868478,"appFlag":"easylife-cms-api-gateway","afsSessionId":"WjFlCkIWDpHT9odN","afsSig":"QuAncgq0hrmAVNX0","afsToken":"FFFF0N00000000009184:1591688607383:0.9844042761792562","afsScene":"nc_login","password":"123456"}
+    dataData = json.dumps(dataData,ensure_ascii=False)
+    headersData = RequestHeader.WEBHEADER
+    valuea=httpRequests(urlData=urlData, dataData=dataData, headersData=headersData,)
+    print(valuea)
+    urlData = "https://uat-pms-sso.hopsontong.com:11013/api/checkToken"
+    dataData={}
+    dataData["token"]=headersData["token"] = valuea["data"]["token"]
+    dataData["applicationToken"]=valuea["data"]["applicationToken"]
+    dataData["appFlag"]="easylife-cms-api-gateway"
+    # valueJson = json.loads(valuea.text,encoding=Fal
+    # se)
+    dataData =json.dumps(dataData,ensure_ascii=False)
+    print(type(headersData))
+    print(type(valuea))
+    # headersData["token"] = valuea["data"]["token"]
+    # headersData["Authorization"] = "Bearer " + valuea["data"]["token"]
+    headersData1 = RequestHeader.WEBHEADER
+    valuea1 = httpRequests(urlData=urlData, dataData=dataData, headersData=headersData1)
+    print(valuea1)
+    dataData = ""
+    urlData = "https://tcmsapi.lifeat.cn:45788/city/cityList"
+    headersData["token"] = valuea["data"]["applicationToken"]
+    headersData["Authorization"] = "Bearer " + valuea["data"]["applicationToken"]
+    valuea = httpRequests(urlData=urlData, dataData=dataData, headersData=headersData)
+    print(valuea)
+
+def test108():
+    vainfo = {"isApp":"N","isTransmit":{"tokenName":[["token","applicationToken"],["Authorization","applicationToken"]],"transmitName":[["cityId",{"valueKey":"cityId","getValuePath":{"threeListAll":"$.data.cityList","threeList":"city-北京市-cityId"}}],["brokerageTypeId",{"valueKey":"brokerageTypeCode","getValuePath":{"threeListAll":"$.data.list","threeList":"brokerageTypeCode-YJ20200506000002-id"}}]]}}
+    print(type(vainfo))
+test108()

@@ -122,3 +122,8 @@ class HttpUtil:
             return {'code': 0, 'result': json_response}
         except Exception as e:
             return {'code': 1, 'result': 'put请求出错，出错原因:%s' % e}
+        
+        
+if __name__ == "__main__":
+    a=HttpUtil().get_token()
+    print(a)

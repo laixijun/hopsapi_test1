@@ -31,22 +31,22 @@ class Common:
         return listNum
 
     # 替换字符串中指定的字符
-    def replaceStr_1(self,strRes,strKey,strValue):
-        strKey="{" + strKey + "}"
+    def replaceStr(self,strRes,strKey,strValue):
         strRes = json.dumps(strRes,ensure_ascii=False)
-        if isinstance(strValue,int):
+        logger.info(strValue)
+        if not isinstance(strValue,str):
             strValue = str(strValue)
             strKey1 = "'{" + strKey + "}'"
             strKey2 = '"{' + strKey + '}"'
-            strRes = strRes.replace(strKey1, strValue)
-            strRes = strRes.replace(strKey2, strValue)
-        elif not isinstance(strValue,str):
-            strValue=str(strValue)
-        strRes = strRes.replace(strKey,strValue)
-        strRes = json.loads(strRes)
-        return strRes
+            strRes1 = strRes.replace(strKey1, strValue)
+            strRes2 = strRes1.replace(strKey2, strValue)
+        else:
+            strKey = "{" + strKey + "}"
+            strRes2 = strRes.replace(strKey,strValue)
+        strRes3 = json.loads(strRes2,encoding='utf-8')
+        return strRes3
 
-    def replaceStr(self,mydict, key, value):
+    def replaceStr_1(self,mydict, key, value):
         mydict = json.loads(mydict,encoding="utf-8")
         if isinstance(mydict, dict):  # 使用isinstance检测数据类型，如果是字典
             if key in mydict.keys():  # 替换字典第一层中所有key与传参一致的key

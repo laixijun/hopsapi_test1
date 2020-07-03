@@ -26,7 +26,7 @@ class ParaAnalysis:
         logger.info(requestPara["isTransmit"])
         header_tokenKey = requestPara["isTransmit"]["tokenName"]
         logger.info(header_tokenKey)
-        if header_tokenKey != "" and (not isinstance(header_tokenKey,list)):
+        if header_tokenKey != "" and ( not isinstance(header_tokenKey,list)):
             header_tokenKey = eval(header_tokenKey)
         listNum = Common().estimateList(header_tokenKey)
         if self.isAppRequest(isAppDic=requestPara):
@@ -50,12 +50,15 @@ class ParaAnalysis:
                         ttr["transmitData"][list_item[1]]=header_tokenValue
                     header_token[list_item[0]]=header_tokenValue
                 except:
-                    if list_item[0] == "Authorization" and header_token["User-Agent"] == RequestHeader.WEBHEADER[
-                        "User-Agent"]:
-                        header_tokenValue = "Bearer " + ttr["transmitData"]["token"]
-                        header_token[list_item[0]] = header_tokenValue
-                    else:
-                        header_token[list_item[0]] = ttr["transmitData"][list_item[1]]
+                    try:
+                        if list_item[0] == "Authorization" and header_token["User-Agent"] == RequestHeader.WEBHEADER[
+                            "User-Agent"]:
+                            header_tokenValue = "Bearer " + ttr["transmitData"]["applicationToken"]
+                            header_token[list_item[0]] = header_tokenValue
+                        else:
+                            header_token[list_item[0]] = ttr["transmitData"][list_item[1]]
+                    except:
+                        header_token[list_item[0]] = "not found"
         elif listNum == 0 and responseValue != None:
             try:
                 header_tokenValue = responseValue[header_tokenKey[1]]
@@ -67,12 +70,15 @@ class ParaAnalysis:
                     ttr["transmitData"][header_tokenKey[1]] = header_tokenValue
                 header_token[header_tokenKey[0]] = header_tokenValue
             except:
-                if header_tokenKey[0] == "Authorization" and header_token["User-Agent"] == RequestHeader.WEBHEADER[
-                    "User-Agent"]:
-                    header_tokenValue = "Bearer " + ttr["transmitData"]["token"]
-                    header_token[header_tokenKey[0]] = header_tokenValue
-                else:
-                    header_token[header_tokenKey[0]] = ttr["transmitData"][header_tokenKey[1]]
+                try:
+                    if header_tokenKey[0] == "Authorization" and header_token["User-Agent"] == RequestHeader.WEBHEADER[
+                        "User-Agent"]:
+                        header_tokenValue = "Bearer " + ttr["transmitData"]["applicationToken"]
+                        header_token[header_tokenKey[0]] = header_tokenValue
+                    else:
+                        header_token[header_tokenKey[0]] = ttr["transmitData"][header_tokenKey[1]]
+                except:
+                    header_token[header_tokenKey[0]] = "not fonnd"
         if not isinstance(ttr,str):
             ttr = json.dumps(ttr,ensure_ascii=False)
         logger.info(ttr)
@@ -177,13 +183,16 @@ class ParaAnalysis:
     # 2、将需要参数化的健值添加参数
     def paraToRequestExchangeData(self,requestPara,requestData,responseValue=None,parameterCase=None,envContentDic={}):
         # requestData = requestData["requestDataJson"]
-        requestData = json.dumps(requestData,ensure_ascii=False)
+        # requestData = json.dumps(requestData,ensure_ascii=False)
         for para_item in requestPara.keys():
             strKey = para_item
             strValue = requestPara[strKey]
-            requestData = Common().replaceStr(requestData, strKey, strValue)
-        requestDataJson =json.loads(requestData,encoding='utf-8')
-        return {"requestDataJson":requestDataJson,"envContentDic":envContentDic}
+            requestDataJson = Common().replaceStr(requestData, strKey, strValue)
+            requestData = requestDataJson
+            # requestDataJson =json.loads(requestData,encoding='utf-8')
+            logger.info(requestDataJson)
+        logger.info(requestDataJson)
+        return {"requestDataJson":requestData,"envContentDic":envContentDic}
 
     # 获取参数
     #parameterCase= {"testCaseId":{"parameterKey":"parameterValue"}}
@@ -211,6 +220,8 @@ class ParaAnalysis:
                 if testCaseId == testCaseIdParameter:
                     parameterCasePara = parameterCase[testCaseIdParameter]
                     requestDataJson=self.paraToRequestExchangeData(requestPara=parameterCasePara, requestData=requestDataJson['requestDataJson'])
+            logger.info(requestDataJson)
+        logger.info(requestDataJson)
         return requestDataJson
 
 
