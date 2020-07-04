@@ -46,24 +46,42 @@ class Common:
         strRes3 = json.loads(strRes2,encoding='utf-8')
         return strRes3
 
-    def replaceStr_1(self,mydict, key, value):
-        mydict = json.loads(mydict,encoding="utf-8")
+    def getJsonValue(self,mydict, key, assitValue=None,assitKey=None):
+        # mydict = json.loads(mydict,encoding="utf-8")
         if isinstance(mydict, dict):  # 使用isinstance检测数据类型，如果是字典
             if key in mydict.keys():  # 替换字典第一层中所有key与传参一致的key
-                mydict[key] = value
+                if assitValue == None:
+                    needValue=mydict[key]
+                    return needValue
+                elif  assitValue == mydict[assitKey]:
+                    needValue = mydict[key]
+                    return needValue
             for k in mydict.keys():  # 遍历字典的所有子层级，将子层级赋值为变量chdict，分别替换子层级第一层中所有key对应的value，最后在把替换后的子层级赋值给当前处理的key
                 chdict = mydict[k]
-                self.replaceStr(chdict, key, value)
-                mydict[k] = chdict
+                if self.getJsonValue(chdict, key, assitValue=assitValue,assitKey=assitKey):
+                    return self.getJsonValue(chdict, key, assitValue=assitValue,assitKey=assitKey)
         elif isinstance(mydict, list):  # 如是list
             for element in mydict:  # 遍历list元素，以下重复上面的操作
                 if isinstance(element, dict):
                     if key in element.keys():
-                        element[key] = value
+                        if assitValue == None:
+                            needValue = element[key]
+                            return needValue
+                        elif assitValue == element[assitKey]:
+                            needValue = element[key]
+                            return needValue
                     for k in element.keys():
                         chdict = element[k]
-                        self.replaceStr(chdict, key, value)
-                        element[k] = chdict
+                        if self.getJsonValue(chdict, key, assitValue=assitValue,assitKey=assitKey):
+                            return self.getJsonValue(chdict, key, assitValue=assitValue, assitKey=assitKey)
+                else:
+                    for elementItem in element:
+                        chdict = elementItem
+                        if self.getJsonValue(chdict, key, assitValue=assitValue,assitKey=assitKey):
+                            return self.getJsonValue(chdict, key, assitValue=assitValue, assitKey=assitKey)
+
+        else:
+            return False
 
     # 对列表中的数据进行计数
     def itemListCount(self,lst):
@@ -108,8 +126,8 @@ class Common:
 
 
 if __name__ == "__main__":
-    strData="outerOrgId"
-    regular = "ou(^.*?)rgId"
-    value= "terO"
-    result = Common().getConpareResult(strData,regular,value)
-    print(result)
+    valuea = {"isApp":"N","isTransmit":{"tokenName":[["token","token"],["Authorization","token"]],"transmitName":[["token",{"valueKey":"token","getValuePath":"$.data.token"}],["applicationToken",{"valueKey":"applicationToken","getValuePath":"$.data.applicationToken"}],["cityId",{"valueKey":"cityId","getValuePath":{"threeListAll":"$.data.cityList","threeList":"city-北京市-cityId"}}]]}}
+    assitValue={"threeListAll": "$.data.cityList", "threeList": "city-北京市-cityId"}
+    assitKey="getValuePath"
+    valueab=Common().getJsonValue(mydict=valuea, key="valueKey1", assitValue=assitValue,assitKey=assitKey)
+    print(valueab)

@@ -126,19 +126,12 @@ class ParaAnalysis:
         if listNum ==1 and responseValue != None:
             for list_item in transmitKey:
                 strKey = list_item[0]
-                if not isinstance(list_item[1]["getValuePath"],str) and (list_item[1]["getValuePath"] != ""):
-                    getValueFalseList = list_item[1]["getValuePath"]['threeList'].split("-")
-                    lst=jsonpath.jsonpath(responseValue, list_item[1]["getValuePath"]['threeListAll'])
-                    if lst:
-                        strValue=Common().getValueFalse(lst=lst[0],itemKey=getValueFalseList[0],itemValue=getValueFalseList[1],needKey=getValueFalseList[2])
-                    else:
-                        strValue = "not found"
+                if list_item[1]["getValuePath"] != "":
+                    getValueFalseList = list_item[1]["getValuePath"].split("-")
+                    strValue=Common().getJsonValue(mydict=responseValue, key=list_item[1]["valueKey"], assitValue=getValueFalseList[1],assitKey=getValueFalseList[0])
                 else:
-                    strValue = jsonpath.jsonpath(responseValue, list_item[1]["getValuePath"])
-                    logger.info(strValue)
-                if strValue:
-                    if isinstance(strValue,list):
-                        strValue = strValue[0]
+                    strValue = Common().getJsonValue(mydict=responseValue, key=list_item[1]["valueKey"])
+                if strValue != None:
                     ttr["transmitData"][list_item[1]["valueKey"]] = strValue
                     envContentDic[strKey]=strValue
                 else:
@@ -152,20 +145,14 @@ class ParaAnalysis:
         elif listNum == 0  and responseValue != None:
             strKey = transmitKey[0]
             logger.info(strKey)
-            if not isinstance(transmitKey[1]["getValuePath"], str) and (transmitKey[1]["getValuePath"] != ""):
-                getValueFalseList = transmitKey[1]["getValuePath"]['threeList'].split("-")
-                lst = jsonpath.jsonpath(responseValue, transmitKey[1]["getValuePath"]['threeListAll'])
-                if lst:
-                    strValue = Common().getValueFalse(lst=lst[0], itemKey=getValueFalseList[0], itemValue=getValueFalseList[1],
-                                                  needKey=getValueFalseList[2])
-                else:
-                    strValue = "not found"
+            if transmitKey[1]["getValuePath"] != "":
+                getValueFalseList = transmitKey[1]["getValuePath"].split("-")
+                strValue = Common().getJsonValue(mydict=responseValue, key=transmitKey[1]["valueKey"],
+                                                 assitValue=getValueFalseList[1], assitKey=getValueFalseList[0])
             else:
-                strValue = jsonpath.jsonpath(responseValue, transmitKey[1]["getValuePath"])
-            logger.info(strValue)
-            if strValue:
-                strValue = strValue[0]
-                ttr["transmitData"][transmitKey[1]['valueKey']] = strValue
+                strValue = Common().getJsonValue(mydict=responseValue, key=transmitKey[1]["valueKey"])
+            if strValue != None:
+                ttr["transmitData"][transmitKey[1]["valueKey"]] = strValue
                 envContentDic[strKey] = strValue
             else:
                 try:

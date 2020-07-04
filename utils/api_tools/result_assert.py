@@ -28,17 +28,14 @@ class ResultAssert:
 		logger.info(jsonExpect)
 		logger.info(type(jsonExpect))
 		for exItem in jsonExpect.keys():
-			actualResult = jsonpath.jsonpath(jsonActual,exItem)
-			if actualResult:
-				actualResult = actualResult[0]
-				expectValue=jsonExpect[exItem]
+			if exItem["getValuePath"] != "":
+				getValueFalseList = exItem["getValuePath"].split("-")
+				strValue = Common().getJsonValue(mydict=jsonActual, key=exItem,
+												 assitValue=getValueFalseList[1], assitKey=getValueFalseList[0])
 			else:
-				#{"estateProjectDevId"：{"jsonExpectValue":"expectValue","getValuePath":{"threeListAll":"$.data","threeList":"name-大股东法国队-devId"}}}
-				getValueFalseList = jsonExpect[exItem]["getValuePath"]['threeList'].split("-")
-				lst = jsonpath.jsonpath(jsonActual, jsonExpect[exItem]["getValuePath"]['threeListAll'])
-				actualResult = Common().getValueFalse(lst=lst[0], itemKey=getValueFalseList[0],
-												  itemValue=getValueFalseList[1], needKey=getValueFalseList[2])
-				expectValue = jsonExpect[exItem]["jsonExpectValue"]
+				strValue = Common().getJsonValue(mydict=jsonActual, key=exItem)
+			actualResult = strValue
+			expectValue=jsonExpect[exItem]["jsonExpectValue"]
 			if not isinstance(actualResult,str):
 				actualResult = str(actualResult)
 			if actualResult == expectValue:
