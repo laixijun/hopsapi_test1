@@ -23,13 +23,15 @@ class ResultAssert:
 			jsonActual = json.loads(jsonActual,encoding='utf-8')
 		logger.info(jsonActual)
 		logger.info(type(jsonActual))
+		logger.info(jsonExpect)
+		logger.info(type(jsonExpect))
 		if isinstance(jsonExpect,str):
 			jsonExpect = json.loads(jsonExpect,encoding='utf-8')
 		logger.info(jsonExpect)
 		logger.info(type(jsonExpect))
 		for exItem in jsonExpect.keys():
-			if exItem["getValuePath"] != "":
-				getValueFalseList = exItem["getValuePath"].split("-")
+			if jsonExpect[exItem]["getValuePath"] != "":
+				getValueFalseList = jsonExpect[exItem]["getValuePath"].split("-")
 				strValue = Common().getJsonValue(mydict=jsonActual, key=exItem,
 												 assitValue=getValueFalseList[1], assitKey=getValueFalseList[0])
 			else:

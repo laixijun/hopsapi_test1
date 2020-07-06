@@ -106,6 +106,9 @@ class SourceDeal:
 		# {'KHGJ001': ['KHGJ001', 1, 2], 'KHGJ002': ['KHGJ002', 1, 3], 'list': ['KHGJ001', 'KHGJ002']}
 		parameterOperateId = SourceGet().getParameterOperateId()
 		excelRow=None
+		fileName = None
+		fileBool = True
+		savaFile = DealExcelTool().getReportFileName()
 		logger.info(operateId)
 		for operateIdKey in operateId.keys():
 			if operateIdKey == "list":
@@ -118,10 +121,15 @@ class SourceDeal:
 					# 	resultDic = json.loads(resultDic, encoding='utf-8')
 					logger.info(resultDic)
 					logger.info(type(resultDic))
-					rte = self.resultToExcel(testCaseDict=resultDic, excelRow=excelRow)
+					rte = self.resultToExcel(testCaseDict=resultDic, excelRow=excelRow,fileName=fileName)
 					excelRow = rte['excelRow']
+					fileName = rte['fileName']
+					if fileBool:
+						fileName = savaFile
+						fileBool = False
 					ttr = json.dumps(TRANSMITPARAMETER,ensure_ascii=False)
 					TxtTool().writeTxt(contents=ttr)
+					rte['et'].saveWorkbook(pathFile=fileName)
 			else:
 				resultDic=self.operationDeal(operateId[operateIdKey])
 				# resultDic = json.dumps(resultDic,ensure_ascii=False)
@@ -129,18 +137,26 @@ class SourceDeal:
 					resultDic = json.loads(resultDic,encoding='utf-8')
 				logger.info(resultDic)
 				logger.info(type(resultDic))
-				rte=self.resultToExcel(testCaseDict=resultDic,excelRow=excelRow)
+				rte=self.resultToExcel(testCaseDict=resultDic,excelRow=excelRow,fileName=fileName)
 				excelRow=rte['excelRow']
+				fileName = rte['fileName']
+				if fileBool:
+					fileName = savaFile
+					fileBool = False
 				ttr = TRANSMITPARAMETER
 				if not isinstance(ttr,str):
 					ttr = json.dumps(ttr,ensure_ascii=False)
 				TxtTool().writeTxt(contents=ttr)
-			rte['et'].saveWorkbook(pathFile=DealExcelTool().getReportFileName())
+				rte['et'].saveWorkbook(pathFile=fileName)
 
 	# 将测试结果写入到Excel
-	def resultToExcel(self,testCaseDict,excelRow=None):
+	def resultToExcel(self,testCaseDict,excelRow=None,fileName=None):
 		rte={}
-		et=ExcelTool(excelFile=DealExcelTool().getReportFilePreName(),sheetName=ExcelConfig.REPORTPATHSHEET)
+		if fileName == None:
+			excelFile = DealExcelTool().getReportFilePreName()
+		else:
+			excelFile=fileName
+		et=ExcelTool(excelFile=excelFile,sheetName=ExcelConfig.REPORTPATHSHEET)
 		if excelRow != None:
 			excelRow = excelRow
 		else:
@@ -151,6 +167,7 @@ class SourceDeal:
 		# et.saveWorkbook()
 		rte['excelRow']=excelRow
 		rte['et']=et
+		rte["fileName"] = excelFile
 		return rte
 
 	# 判断用例表业务ID是否在参数表业务ID中

@@ -44,6 +44,8 @@ pip3 install pymysql requests xlrd xlsxwriter openpyxl pymongo selenium xlwt xlu
 pip3 install jsonpath -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
 pip3 install unittest -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
 pip3 install openpyxl -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
+安装scrapy
+pip install Scrapy
 
 
 
