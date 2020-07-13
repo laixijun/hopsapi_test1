@@ -13,12 +13,35 @@ class ResultAssert:
 	def __init__(self):
 		pass
 
+	def paraToExpectExchangeData(self, ExpectPara, ExpectData):
+		for para_item in ExpectPara.keys():
+			strKey = para_item
+			strValue = ExpectPara[strKey]
+			ExpectDataJson = Common().replaceStr(ExpectData, strKey, strValue)
+			ExpectData = ExpectDataJson
+			logger.info(ExpectDataJson)
+		logger.info(ExpectDataJson)
+		return ExpectDataJson
+
 	# 编列预期结果与实际结果对比
-	def compareResult(self,jsonActual,jsonExpect):
+	def compareResult(self,jsonActual,jsonExpect,testCaseID,parameterCase=None):
 		compareResult = {}
 		compareResults = {}
 		compareResults['SUC']={}
 		compareResults['FAIL']={}
+		if parameterCase != None:
+			try:
+				parameterCase = parameterCase[3]
+				parameterCase = json.loads(parameterCase, encoding='utf-8')
+				for testCaseIdParameter in parameterCase.keys():
+					if testCaseID == testCaseIdParameter:
+						parameterCasePara = parameterCase[testCaseIdParameter]
+						ExpectDataJson = self.paraToExpectExchangeData(ExpectPara=parameterCasePara,
+																		ExpectData=jsonExpect)
+				logger.info(ExpectDataJson)
+				jsonExpect=ExpectDataJson
+			except:
+				jsonExpect=jsonExpect
 		if isinstance(jsonActual,str):
 			jsonActual = json.loads(jsonActual,encoding='utf-8')
 		logger.info(jsonActual)
@@ -30,10 +53,11 @@ class ResultAssert:
 		logger.info(jsonExpect)
 		logger.info(type(jsonExpect))
 		for exItem in jsonExpect.keys():
-			if jsonExpect[exItem]["getValuePath"] != "":
-				getValueFalseList = jsonExpect[exItem]["getValuePath"].split("-")
-				strValue = Common().getJsonValue(mydict=jsonActual, key=exItem,
-												 assitValue=getValueFalseList[1], assitKey=getValueFalseList[0])
+			if not isinstance(jsonExpect[exItem],str):
+				for k,v in jsonExpect[exItem].items():
+					getValueFalseList = v.split("-")
+					strValue = Common().getJsonValue(mydict=jsonActual, key=exItem,
+													 assitValue=getValueFalseList[1], assitKey=getValueFalseList[0])
 			else:
 				strValue = Common().getJsonValue(mydict=jsonActual, key=exItem)
 			actualResult = strValue

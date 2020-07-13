@@ -126,37 +126,43 @@ class ParaAnalysis:
         if listNum ==1 and responseValue != None:
             for list_item in transmitKey:
                 strKey = list_item[0]
-                if list_item[1]["getValuePath"] != "":
-                    getValueFalseList = list_item[1]["getValuePath"].split("-")
-                    strValue=Common().getJsonValue(mydict=responseValue, key=list_item[1]["valueKey"], assitValue=getValueFalseList[1],assitKey=getValueFalseList[0])
+                if not isinstance(list_item[1],str):
+                    for k,v in list_item[1].items():
+                        getValueFalseList = v.split("-")
+                    strValue=Common().getJsonValue(mydict=responseValue, key=k, assitValue=getValueFalseList[1],assitKey=getValueFalseList[0])
+                    valueKey=k
                 else:
-                    strValue = Common().getJsonValue(mydict=responseValue, key=list_item[1]["valueKey"])
+                    strValue = Common().getJsonValue(mydict=responseValue, key=list_item[1])
+                    valueKey=list_item[1]
                 if strValue != None:
-                    ttr["transmitData"][list_item[1]["valueKey"]] = strValue
+                    ttr["transmitData"][valueKey] = strValue
                     envContentDic[strKey]=strValue
                 else:
                     logger.info(ttr)
                     logger.info(type(ttr))
                     try:
-                        strValue = ttr["transmitData"][list_item[1]['valueKey']]
+                        strValue = ttr["transmitData"][valueKey]
                     except:
                         strValue = "not found"
                 requestDataJson = Common().replaceStr(requestDataJson, strKey, strValue)
         elif listNum == 0  and responseValue != None:
             strKey = transmitKey[0]
             logger.info(strKey)
-            if transmitKey[1]["getValuePath"] != "":
-                getValueFalseList = transmitKey[1]["getValuePath"].split("-")
-                strValue = Common().getJsonValue(mydict=responseValue, key=transmitKey[1]["valueKey"],
-                                                 assitValue=getValueFalseList[1], assitKey=getValueFalseList[0])
+            if not isinstance(transmitKey[1], str):
+                for k, v in transmitKey[1].items():
+                    getValueFalseList = v.split("-")
+                strValue = Common().getJsonValue(mydict=responseValue, key=k, assitValue=getValueFalseList[1],
+                                                 assitKey=getValueFalseList[0])
+                valueKey = k
             else:
-                strValue = Common().getJsonValue(mydict=responseValue, key=transmitKey[1]["valueKey"])
+                strValue = Common().getJsonValue(mydict=responseValue, key=transmitKey[1])
+                valueKey = transmitKey[1]
             if strValue != None:
-                ttr["transmitData"][transmitKey[1]["valueKey"]] = strValue
+                ttr["transmitData"][valueKey] = strValue
                 envContentDic[strKey] = strValue
             else:
                 try:
-                    strValue = ttr["transmitData"][transmitKey[1]["valueKey"]]
+                    strValue = ttr["transmitData"][strValue]
                 except:
                     strValue = "not found"
             requestDataJson = Common().replaceStr(requestDataJson, strKey, strValue)

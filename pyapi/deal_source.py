@@ -43,6 +43,7 @@ class SourceDeal:
 			if testCaseListItem[0] == None:
 				break
 			resultCaseList = testCaseListItem[:4]
+			testCaseID = testCaseListItem[1]
 			logger.info(testCaseListItem)
 			# resultList.append(resultCaseList)
 			resultList = resultCaseList
@@ -69,7 +70,7 @@ class SourceDeal:
 			# 是否执行通过 isPass
 			isTwo = None
 			if resultRequst['status_code']==200:
-				compareResults=ResultAssert().compareResult(jsonActual=resultRequst['text'],jsonExpect=testCaseListItem[8])
+				compareResults=ResultAssert().compareResult(jsonActual=resultRequst['text'],jsonExpect=testCaseListItem[8],testCaseID=testCaseID,parameterCase=parameterCase)
 				if compareResults['reusltFinal'] == 'N':
 					isPass = 'FAIL'
 					failReason = compareResults['FAIL']

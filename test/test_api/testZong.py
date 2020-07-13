@@ -246,4 +246,16 @@ def test107():
 def test108():
     vainfo = {"isApp":"N","isTransmit":{"tokenName":[["token","applicationToken"],["Authorization","applicationToken"]],"transmitName":[["cityId",{"valueKey":"cityId","getValuePath":{"threeListAll":"$.data.cityList","threeList":"city-北京市-cityId"}}],["brokerageTypeId",{"valueKey":"brokerageTypeCode","getValuePath":{"threeListAll":"$.data.list","threeList":"brokerageTypeCode-YJ20200506000002-id"}}]]}}
     print(type(vainfo))
-test108()
+
+def test109():
+    a = [1,2,3]
+#     print(a[3])
+# try:
+#     test109()
+# except:
+#     print("ok")
+def test110():
+    dataData = {"mobile": 15718868478, "appFlag": "easylife-cms-api-gateway"}
+    for k,v in dataData.items():
+        print(k)
+test110()
