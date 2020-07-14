@@ -1,6 +1,7 @@
 # @Time    : 6/23/2020 7:49 PM
 # @Author  : Yang Xiaobai
 # @Email   : yangzhiyongtest@163.com
+import re
 from datetime import datetime
 import json
 
@@ -258,4 +259,11 @@ def test110():
     dataData = {"mobile": 15718868478, "appFlag": "easylife-cms-api-gateway"}
     for k,v in dataData.items():
         print(k)
-test110()
+        
+def test111():
+    urla="https://tbroker.lifeat.cn:45788/easylife/{rest}/{broker}/login"
+    regex = re.compile("{(.*?)}", re.I)
+    resultlist=regex.findall(urla)
+    return resultlist
+a=test111()
+print(a)

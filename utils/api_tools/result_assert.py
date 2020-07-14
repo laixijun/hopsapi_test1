@@ -55,13 +55,13 @@ class ResultAssert:
 		for exItem in jsonExpect.keys():
 			if not isinstance(jsonExpect[exItem],str):
 				for k,v in jsonExpect[exItem].items():
-					getValueFalseList = v.split("-")
+					getValueFalseList = k.split("-")
 					strValue = Common().getJsonValue(mydict=jsonActual, key=exItem,
 													 assitValue=getValueFalseList[1], assitKey=getValueFalseList[0])
 			else:
 				strValue = Common().getJsonValue(mydict=jsonActual, key=exItem)
 			actualResult = strValue
-			expectValue=jsonExpect[exItem]["jsonExpectValue"]
+			expectValue=jsonExpect[exItem]
 			if not isinstance(actualResult,str):
 				actualResult = str(actualResult)
 			if actualResult == expectValue:

@@ -112,6 +112,12 @@ class Common:
             except:
                 return False
 
+    def getUrlReg(self,urla):
+        urla = "https://tbroker.lifeat.cn:45788/easylife/{rest}/{broker}/login"
+        regex = re.compile("{(.*?)}", re.I)
+        resultlist = regex.findall(urla)
+        return resultlist
+
     # 正则内容对比返回true
     def getConpareResult(self,strData,regular,value):
         prog = re.compile(regular)

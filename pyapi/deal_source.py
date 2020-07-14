@@ -59,7 +59,7 @@ class SourceDeal:
 			logger.info(type(requestData))
 			requestHeader = ParaAnalysis().chooseHeader(caseList=testCaseListItem,responseValue=responseValue["headers"])
 			logger.info(requestHeader)
-			requestUrl = UrlClassfication().estimateUrl(testCaseListItem)
+			requestUrl = UrlClassfication().estimateUrl(testCaseListItem,parameterCase=parameterCase)
 			logger.info(requestUrl)
 			a = datetime.now()
 			resultRequst=ApiClassification(headerData=requestHeader).requestEstimate(methodRequest=requestMethod, urlRequest=requestUrl, dataRequest=requestData)

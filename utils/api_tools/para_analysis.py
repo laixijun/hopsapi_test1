@@ -192,6 +192,7 @@ class ParaAnalysis:
     def choosePara(self,caseList,responseValue=None,parameterCase=None,envContentDic={}):
         testCaseId = caseList[1]
         paraRequestDict = caseList[7]
+        logger.info(paraRequestDict)
         paraRequestDict = json.loads(paraRequestDict,encoding='utf-8')
         paraRequestJson = json.loads(caseList[6],encoding='utf-8')
         if responseValue != None:
