@@ -46,6 +46,7 @@ pip3 install unittest -i http://pypi.douban.com/simple --trusted-host pypi.douba
 pip3 install openpyxl -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
 安装scrapy
 pip install Scrapy
+pip3 install Appium-Python-Client -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
 
 
 
