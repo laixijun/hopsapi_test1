@@ -47,6 +47,7 @@ pip3 install openpyxl -i http://pypi.douban.com/simple --trusted-host pypi.douba
 安装scrapy
 pip install Scrapy
 pip3 install Appium-Python-Client -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
+pip install Appium-Python-Client -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
 
 
 
