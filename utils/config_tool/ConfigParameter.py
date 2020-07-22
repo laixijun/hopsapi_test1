@@ -7,3 +7,8 @@ TESTPARAMTER = None
 TRANSMITPARAMETER_MODLE = {"transmitData":{"transmitKey":{"transmitValue":"value","transmitDescribe":"describe"}},
 					 "parameterData":{"testExecuteID":{"testCaseId":{"parameterValue":{"getValuePath":"value"},"requestData":"data"}}}}
 TRANSMITPARAMETER = {"transmitData": {}, "parameterData": {}}
+
+
+class WebSelenium:
+	WINDOWSFIREFOXDRIVER="geckodriver.exe"
+	MACFIREFOXDRIVER="geckodriver"

@@ -1,7 +1,9 @@
 import os
+import re
 
 import openpyxl
 
+from utils.config_tool.ConfigParameter import WebSelenium
 from utils.config_tool.file_config_path import ExcelConfig
 from utils.logger import Log
 
@@ -122,6 +124,16 @@ class DealExcelTool:
 		tempDBFileName=self.getProjectPath() +  ExcelConfig.TEMPDBFILEPATH
 		tempDBFileName = tempDBFileName.replace('\\','/')
 		return tempDBFileName
+	# 获取mac的Firefox driver的全路径
+	def getMacFirefoxDriver(self):
+		macFirefoxDriver=self.getProjectPath() + ExcelConfig.CONFIGTOOLPATH + WebSelenium.MACFIREFOXDRIVER
+		macFirefoxDriver = macFirefoxDriver.replace('\\','/')
+		return macFirefoxDriver
+	# 获取windows的Firefox driver的全路径
+	def getWindowsFirefoxDriver(self):
+		windowsFirefoxDriver = self.getProjectPath() + ExcelConfig.CONFIGTOOLPATH + WebSelenium.WINDOWSFIREFOXDRIVER
+		windowsFirefoxDriver = windowsFirefoxDriver.replace('\\', '/')
+		return windowsFirefoxDriver
 	# 获取用例文件的路径
 	def getFilePath(self):
 		testCaseFilePath = self.getProjectPath()+ ExcelConfig.TESTCASEALL
@@ -133,28 +145,20 @@ class DealExcelTool:
 	# 获取项目路径
 	def getProjectPath(self):
 		projectPath=ExcelConfig.PROJECTPATH
-		root_path = os.path.abspath(os.path.dirname(__file__)).split(projectPath)
-		proPath = root_path[0]
-		logger.info(proPath)
-		proPath = proPath + projectPath
+		root_path = os.path.abspath(os.path.dirname(__file__))
+		reform = re.compile("/(.*?)/utils/new_tools",re.S)
+		projectPath = reform.findall(root_path)[0]
+		root_path=root_path.split(projectPath)[0]
+		# proPath = root_path[0]
+		# logger.info(proPath)
+		proPath = root_path + projectPath
 		return proPath
 
 
 if __name__ == '__main__':
-	# proPath=DealExcelTool().getProjectPath()
-	# print(proPath)
-	# getfilepath=DealExcelTool().getFilePath()
-	# print(getfilepath)
-	# filename = DealExcelTool().getTestFileName()
-	# print(filename)
-	# value=ExcelTool(excelFile=filename,sheetName='testCasejModle').get_col_value(1)
-	# print(value)
-	de=DealExcelTool()
-	rf=de.getReportFileName()
-	tf=de.getTestFileName()
-	print(rf,tf)
-	# path = de.getFilePath()
-	# pathReport = de.getFileReport()
-	# print(path)
-	# print(pathReport)
-	# print(de.getProjectPath())
+	a=DealExcelTool()
+	c= a.getProjectPath()
+	b=a.getProjectPath()
+	# root_path = os.path.abspath(os.path.dirname(__file__))
+	print(b)
+	print(c)
