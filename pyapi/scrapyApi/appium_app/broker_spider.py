@@ -15,6 +15,7 @@ class SpiderDemo:
     def always(self):
         alwaysbutton=self.driver.find_element_by_id("com.android.packageinstaller:id/permission_allow_button")
         alwaysbutton.click()
+        self.driver.implicitly_wait(30)
         alwaysbutton = self.driver.find_element_by_id("com.android.packageinstaller:id/permission_allow_button")
         alwaysbutton.click()
         # self.tm.WebDriverWaitW(driverDR=alwaysbutton,needFind="yes",someId="com.easylife.house.broker.test:id/tvNewHouse")
@@ -28,9 +29,13 @@ class SpiderDemo:
         alwaysbutton.click()
         self.driver.implicitly_wait(30)
         alwaysbutton = self.driver.find_elements_by_xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout")
+        xml1 = self.driver.page_source
+        logger.info(xml1)
+        xml = self.driver.dump_hierarchy()
         # alwaysbutton=alwaysbutton.
-        alwaysbutton= self.driver.
+        # alwaysbutton= self.driver.
         logger.info(alwaysbutton)
+        logger.info(xml)
         
         
         

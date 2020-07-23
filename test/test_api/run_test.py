@@ -13,5 +13,7 @@ def test01():
 	elif "windows" in a:
 		print("windows")
 
-
-test01()
+def test102():
+	a=(1,2)
+	print(a[1])
+test102()
