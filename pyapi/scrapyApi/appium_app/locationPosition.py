@@ -35,64 +35,59 @@ class LocationPosition:
         eles=driverD.find_element_by_android_uiautomator('new UiSelector().textContains(' + autoText + ')')
         return (driverD, eles)
     # 3）通过文本开头定位
-    #
-    # driver.fine_element_by_android_uiautormator(new
-    # UiSelector().textStartsWith("text文本开头"))
-    # find_element_by_android_uiautomator(‘new
-    # UiSelector().text(“XXXX”)’).click
-    # 正常匹配
-    # find_element_by_android_uiautomator(‘new
-    # UiSelector().textContains(“XXXX”)’).click
-    # 模糊匹配
-    # find_element_by_android_uiautomator(‘new
-    # UiSelector().textStartsWith(“XXXX”)’).click
-    # 开头匹配
-    #
-    # B.resource - id、
-    #
-    # class 、content-desc属性值
-    #
+    # driver.fine_element_by_android_uiautormator(new UiSelector().textStartsWith("text文本开头"))
+    def locationAutoStartsWithText(self,driverD,autoText):
+        eles=driverD.find_element_by_android_uiautomator('new UiSelector().textStartsWith(' + autoText + ')')
+        return (driverD, eles)
+    # B.resource-id、class 、content-desc属性值
     # find_element_by_android_uiautomator(‘new
     # UiSelector().resourceId(“XXXX”)’).click()
     # find_element_by_android_uiautomator(‘new
     # UiSelector().className(“XXXX”)’).click()
     # find_element_by_android_uiautomator(‘new
     # UiSelector().description(“XXXX”)’).click()
-    #
+    def locationAutoResourceId(self, driverD, autoText):
+        eles = driverD.find_element_by_android_uiautomator('new UiSelector().resourceId(' + autoText + ')')
+        return (driverD, eles)
+    def locationAutoClassName(self, driverD, autoText):
+        eles = driverD.find_element_by_android_uiautomator('new UiSelector().className(' + autoText + ')')
+        return (driverD, eles)
+    def locationAutoDescription(self, driverD, autoText):
+        eles = driverD.find_element_by_android_uiautomator('new UiSelector().description(' + autoText + ')')
+        return (driverD, eles)
     # 4)通过正则表达式匹配文本
-    #
-    # driver.fine_element_by_android_uiautormator(new
-    # UiSelector().textMatches("正则表达式"))
-    #
-    # 5)通过id定位
-    #
-    # driver.find_element_by_android_uiautormator(new
-    # UiSelector().resourceId("xx"))
-    #
+    # driver.fine_element_by_android_uiautormator(new UiSelector().textMatches("正则表达式"))
+    def locationAutoTextMatches(self, driverD, autoText):
+        eles = driverD.find_element_by_android_uiautomator('new UiSelector().textMatches(' + autoText + ')')
+        return (driverD, eles)
     # 6）id和text组合定位
-    #
     # id_text = 'resourceId("xx").text("xx")'
-    #
     # driver.find_element_by_android_uiautormator(id_text)
-    #
+    def locationAutoTextMatches(self, driverD, autoId,autoText):
+        id_text = 'resourceId('+ autoId +').text('+autoText+')'
+        eles = driverD.find_element_by_android_uiautomator(id_text)
+        return (driverD, eles)
     # class_text = 'className("xx").text("xx")'
-    #
     # driver.find_element_by_android_uiautormator(class_text)
-    #
+    def locationAutoTextMatches(self, driverD, autoClass, autoText):
+        id_text = 'className(' + autoClass + ').text(' + autoText + ')'
+        eles = driverD.find_element_by_android_uiautomator(id_text)
+        return (driverD, eles)
     # 7)关系定位
-    #
     # 父子定位
-    #
     # locator = 'resourceId("xx").childSelector(text("xx"))'
-    #
     # driver.find_element_by_android_uiautomator(locator)
-    #
+    def locationAutoChildSelector(self, driverD, autoId,autoText):
+        id_text = 'resourceId('+ autoId +').childSelector(text('+autoText+'))'
+        eles = driverD.find_element_by_android_uiautomator(id_text)
+        return (driverD, eles)
     # 同级元素定位
-    #
     # locator = 'resourceId("xx"""兄弟元素id"""").fromParent(text("xx"))'
-    #
     # driver.find_element_by_android_uiautomator(locator)
-    
+    def locationAutoTextMatches(self, driverD, autoId,autoText):
+        id_text = 'resourceId('+ autoId +').fromParent(text('+autoText+'))'
+        eles = driverD.find_element_by_android_uiautomator(id_text)
+        return (driverD, eles)
     
 class Model:
     def test_20a1(self):
