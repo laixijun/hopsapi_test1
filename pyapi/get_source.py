@@ -73,13 +73,25 @@ class SourceGet:
 	
 	# 清洗数据为可以测试数据
 	def getIdOfParameterOperateValues(self,lsti):
-		lsti1 = ConfigParameter.needRequestParameter
+		flagApp = False
+		lsti0 = ConfigParameter.WEBAPIDIC
+		lsti3 = ConfigParameter.needRequestSetting
+		for i in lsti0:
+			if i in lsti:
+				flagApp = True
+		if flagApp:
+			lsti3["isApp"] = "N"
+		lsti1=ConfigParameter.needRequestParameter
 		lsti1["paData"]["paramData"] = lsti[6]
 		lsti[6] = lsti1
 		lsti2 = ConfigParameter.needRequestSetting
 		lsti2["isTransmit"]["transmitName"] = lsti[7]
 		lsti[7] = lsti2
 		return lsti
+
+	# 判断是否APP接口
+	def isAPPApi(self):
+		pass
 		
 
 if __name__ == '__main__':

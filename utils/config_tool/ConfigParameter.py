@@ -13,6 +13,7 @@ needRequestParameter = {"isDefine": "", "paData": {"urlData": "", "paramData": {
 	"password": "123456"
 }}}
 needRequestSetting = {"isApp": "Y", "isTransmit": {"tokenName": "", "transmitName": ""}}
+WEBAPIDIC=("uat-pms-sso.hopsontong.com","cms.lifeat.cn")
 
 
 class WebSelenium:
