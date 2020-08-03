@@ -17,3 +17,7 @@ def test102():
 	a=(1,2)
 	print(a[1])
 test102()
+
+
+def test103():
+	pass

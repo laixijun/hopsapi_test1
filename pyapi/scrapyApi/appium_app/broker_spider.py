@@ -31,11 +31,9 @@ class SpiderDemo:
         alwaysbutton = self.driver.find_elements_by_xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout")
         xml1 = self.driver.page_source
         logger.info(xml1)
-        xml = self.driver.dump_hierarchy()
-        # alwaysbutton=alwaysbutton.
-        # alwaysbutton= self.driver.
-        logger.info(alwaysbutton)
-        logger.info(xml)
+        xml2 = self.driver.find_element_by_css_selector("android.widget.EditText")
+        print(xml2)
+    
         
         
         

@@ -1,6 +1,7 @@
 # @Time ： 2020/6/20 21:23
 # @Auth ： Yang Xiaobai
 # @Email:  yangzhiyongtest@163.com
+from utils.config_tool import ConfigParameter
 from utils.config_tool.file_config_path import ExcelConfig
 from utils.new_tools.common_tool import Common
 from utils.new_tools.excel_tool import DealExcelTool, ExcelTool
@@ -65,11 +66,23 @@ class SourceGet:
 		testCaseList = []
 		for i in range(startNum,endNum):
 			lsti=self.getParameterExcelHandle().get_row_value(row=i)
+			#数据清洗
+			lsti = self.getIdOfParameterOperateValues(lsti)
 			testCaseList.append(lsti)
 		return testCaseList
-
+	
+	# 清洗数据为可以测试数据
+	def getIdOfParameterOperateValues(self,lsti):
+		lsti1 = ConfigParameter.needRequestParameter
+		lsti1["paData"]["paramData"] = lsti[6]
+		lsti[6] = lsti1
+		lsti2 = ConfigParameter.needRequestSetting
+		lsti2["isTransmit"]["transmitName"] = lsti[7]
+		lsti[7] = lsti2
+		return lsti
+		
 
 if __name__ == '__main__':
 	lstid=[8, 3, 4]
-	re=SourceGet().getOperateId()
+	re=SourceGet().getIdOfParameterOperateValues().needRequestParameter
 	print(re)
