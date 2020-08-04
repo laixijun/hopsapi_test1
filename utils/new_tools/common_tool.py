@@ -7,6 +7,7 @@ import re
 import requests
 
 from utils.logger import Log
+from utils.new_tools.excel_tool import DealExcelTool
 
 logger = Log(logger='para_analysis').get_log()
 
@@ -131,7 +132,7 @@ class Common:
             return False
 
     # pass
-    def test_upload(self,url,filepath,):
+    def test_upload(self,fileName,tokenFiles):
         """
         test case
         :return:
@@ -142,28 +143,48 @@ class Common:
         header[":authority"]="upload-z1.qiniup.com"
         url = 'https://upload-z1.qiniup.com/'
         jsonrpc = "{\"title\": \"标题yzc0116\", \"tag\":\"标签yzc0116\",\"desc\":\"描述yzc0116\"}"
-        filepath = 'C:\\Users\\yangzc\\Desktop\\FlickAnimation.avi'
+        filepath = DealExcelTool().getFilePath()+"/"+fileName
+        tailFile=self.getTailFile(fileName)
+        tailType = images/''
         # 打开文件
-        # fo = open(filepath, 'rb')
+        with open(filepath, 'rb',encoding='utf-8') as file:
+            fo =file.read()
+        file.close()
+        crc32Value=self.crc32Get(fo)
         # # video表示实际的文件参数
         # video = {'Filedata': fo}
         # params表示实际的参数列表，包括：writetoken和JSONRPC这两个参数
         params = {'writetoken': '7043f898-8322-4e39-8bb5-7956bf0eb641', 'JSONRPC': jsonrpc}
         files = {
-            'token': (None, tokenValue),
+            'token': (None, tokenFiles),
             'crc32': (None, crc32Value),
-            'files': ('test.txt', open(file_path, 'rb'), 'text/plain'),
+            'files': (fileName, fo, 'text/tailFile'),
         }
-        r = requests.post(url=url, files=files, header=header)
+        r = requests.post(url=url, files=files, header=header, verify=False)
         # response = requests.post(url, data=params, files=video)
         # 关闭文件
         # fo.close()
-        return response
+        return r
+
+    # 计算图片crc32
+    def crc32Get(self,valueD):
+        import zlib
+        valueE=zlib.crc32(valueD)
+        return valueE
+
+    # 获取文件的后缀
+    def getTailFile(self,fileName):
+        patternD=re.compile("\.(.*?)")
+        tailFile=patternD.findall(fileName)[0]
+        return tailFile
+
 
 
 if __name__ == "__main__":
-    valuea = {"isApp":"N","isTransmit":{"tokenName":[["token","token"],["Authorization","token"]],"transmitName":[["token",{"valueKey":"token","getValuePath":"$.data.token"}],["applicationToken",{"valueKey":"applicationToken","getValuePath":"$.data.applicationToken"}],["cityId",{"valueKey":"cityId","getValuePath":{"threeListAll":"$.data.cityList","threeList":"city-北京市-cityId"}}]]}}
-    assitValue={"threeListAll": "$.data.cityList", "threeList": "city-北京市-cityId"}
-    assitKey="getValuePath"
-    valueab=Common().getJsonValue(mydict=valuea, key="valueKey1", assitValue=assitValue,assitKey=assitKey)
-    print(valueab)
+    # valuea = {"isApp":"N","isTransmit":{"tokenName":[["token","token"],["Authorization","token"]],"transmitName":[["token",{"valueKey":"token","getValuePath":"$.data.token"}],["applicationToken",{"valueKey":"applicationToken","getValuePath":"$.data.applicationToken"}],["cityId",{"valueKey":"cityId","getValuePath":{"threeListAll":"$.data.cityList","threeList":"city-北京市-cityId"}}]]}}
+    # assitValue={"threeListAll": "$.data.cityList", "threeList": "city-北京市-cityId"}
+    # assitKey="getValuePath"
+    # valueab=Common().getJsonValue(mydict=valuea, key="valueKey1", assitValue=assitValue,assitKey=assitKey)
+    # print(valueab)
+    a=DealExcelTool().getFilePath()
+    print(a)
