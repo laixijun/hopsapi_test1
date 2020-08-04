@@ -4,6 +4,8 @@
 import json
 import re
 
+import requests
+
 from utils.logger import Log
 
 logger = Log(logger='para_analysis').get_log()
@@ -129,6 +131,34 @@ class Common:
             return False
 
     # pass
+    def test_upload(self,url,filepath,):
+        """
+        test case
+        :return:
+        """
+        header={}
+        header["content-type"] = "multipart/form-data; boundary=werghnvt54wef654rjuhgb56trtg34tweuyrgf"
+        header["user-agent"]="QiniuObject-C/7.2.5 (iPhone; iOS 12.2; D5525AE8-3362-4E8C-9BE2-A604B651C1BF; m1qdTqGcH54NLtQrE2j0MRnvKf8LaJBu1A7omyfe)"
+        header[":authority"]="upload-z1.qiniup.com"
+        url = 'https://upload-z1.qiniup.com/'
+        jsonrpc = "{\"title\": \"标题yzc0116\", \"tag\":\"标签yzc0116\",\"desc\":\"描述yzc0116\"}"
+        filepath = 'C:\\Users\\yangzc\\Desktop\\FlickAnimation.avi'
+        # 打开文件
+        # fo = open(filepath, 'rb')
+        # # video表示实际的文件参数
+        # video = {'Filedata': fo}
+        # params表示实际的参数列表，包括：writetoken和JSONRPC这两个参数
+        params = {'writetoken': '7043f898-8322-4e39-8bb5-7956bf0eb641', 'JSONRPC': jsonrpc}
+        files = {
+            'token': (None, tokenValue),
+            'crc32': (None, crc32Value),
+            'files': ('test.txt', open(file_path, 'rb'), 'text/plain'),
+        }
+        r = requests.post(url=url, files=files, header=header)
+        # response = requests.post(url, data=params, files=video)
+        # 关闭文件
+        # fo.close()
+        return response
 
 
 if __name__ == "__main__":

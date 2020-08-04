@@ -1,6 +1,8 @@
 # @Time ： 2020/6/20 21:23
 # @Auth ： Yang Xiaobai
 # @Email:  yangzhiyongtest@163.com
+import json
+
 from utils.config_tool import ConfigParameter
 from utils.config_tool.file_config_path import ExcelConfig
 from utils.new_tools.common_tool import Common
@@ -53,7 +55,7 @@ class SourceGet:
 	def getIdOfTestOperate(self,lstNum):
 		startNum= lstNum[2]+1-lstNum[1]
 		endNum = lstNum[2]+1
-		testCaseList = []
+		testCaseList=[]
 		for i in range(startNum,endNum):
 			lsti=self.getExcelHandle().get_row_value(row=i)
 			testCaseList.append(lsti)
@@ -81,12 +83,15 @@ class SourceGet:
 				flagApp = True
 		if flagApp:
 			lsti3["isApp"] = "N"
+			lsti3 ["isTransmit"]["tokenName"]=[["token","token"],["Authorization","token"]]
 		lsti1=ConfigParameter.needRequestParameter
+		lsti[6]=json.loads(lsti[6])
 		lsti1["paData"]["paramData"] = lsti[6]
+		lsti1 = json.dumps(lsti1,ensure_ascii=False)
 		lsti[6] = lsti1
-		lsti2 = ConfigParameter.needRequestSetting
-		lsti2["isTransmit"]["transmitName"] = lsti[7]
-		lsti[7] = lsti2
+		lsti3["isTransmit"]["transmitName"] = lsti[7]
+		lsti[3]=json.dumps(lsti3,ensure_ascii=False)
+		lsti[7] = lsti3
 		return lsti
 
 	# 判断是否APP接口

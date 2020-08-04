@@ -12,7 +12,7 @@ needRequestParameter = {"isDefine": "", "paData": {"urlData": "", "paramData": {
 	"clientId": "8c82592b934908becdc2374e52dbbc7d",
 	"password": "123456"
 }}}
-needRequestSetting = {"isApp": "Y", "isTransmit": {"tokenName": "", "transmitName": ""}}
+needRequestSetting = {"isApp": "Y", "isTransmit": {"tokenName": [["token","token"],["brokerCode","brokerCode"]], "transmitName": ""}}
 WEBAPIDIC=("uat-pms-sso.hopsontong.com","cms.lifeat.cn")
 
 
