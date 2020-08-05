@@ -132,7 +132,7 @@ class Common:
             return False
 
     # pass
-    def test_upload(self,fileName,tokenFiles):
+    def test_upload(self,fileName,headersD):
         """
         test case
         :return:
@@ -142,30 +142,24 @@ class Common:
         header["user-agent"]="QiniuObject-C/7.2.5 (iPhone; iOS 12.2; D5525AE8-3362-4E8C-9BE2-A604B651C1BF; m1qdTqGcH54NLtQrE2j0MRnvKf8LaJBu1A7omyfe)"
         header[":authority"]="upload-z1.qiniup.com"
         url = 'https://upload-z1.qiniup.com/'
-        jsonrpc = "{\"title\": \"标题yzc0116\", \"tag\":\"标签yzc0116\",\"desc\":\"描述yzc0116\"}"
-        filepath = DealExcelTool().getFilePath()+"/"+fileName
-        tailFile=self.getTailFile(fileName)
-        tailType = 'mage/'+ tailFile
-        # 打开文件
-        with open(filepath, 'rb',encoding='utf-8') as file:
-            fo =file.read()
-        file.close()
+        tailFile = self.getTailFile(fileName)
+        tailType = 'image/' + tailFile
+        fo = self.getFilesBin(fileName)
         crc32Value=self.crc32Get(fo)
+        tokenFilesJson=self.getQiNiuToken(headersD)
+        tokenFiles=tokenFilesJson["data"]["imgToken"]
+        qiniuUrl=tokenFilesJson["data"]["qiniuUrl"]
         logger.info(crc32Value)
-        # # video表示实际的文件参数
-        # video = {'Filedata': fo}
-        # params表示实际的参数列表，包括：writetoken和JSONRPC这两个参数
-        params = {'writetoken': '7043f898-8322-4e39-8bb5-7956bf0eb641', 'JSONRPC': jsonrpc}
         files = {
             'token': (None, tokenFiles),
             'crc32': (None, crc32Value),
             'files': (fileName, fo, tailType),
         }
-        r = requests.post(url=url, files=files, header=header, verify=False)
-        # response = requests.post(url, data=params, files=video)
-        # 关闭文件
-        # fo.close()
-        return r
+        r = requests.post(url=url, files=files, headers=header, verify=False)
+        response=json.loads(r.text)
+        qiNiuUrl=qiniuUrl+response["hash"]
+        qiNiuUrl=qiNiuUrl.replace("/","\/")
+        return qiNiuUrl
 
     # 计算图片crc32
     def crc32Get(self,valueD):
@@ -173,11 +167,30 @@ class Common:
         valueE=zlib.crc32(valueD)
         return valueE
 
+    # 获取文件的二进制内容
+    def getFilesBin(self,fileName):
+        filepath = DealExcelTool().getFilePath() + "/" + fileName
+        # 打开文件
+        with open(filepath, 'rb') as file:
+            fo = file.read()
+        file.close()
+        return fo
+
     # 获取文件的后缀
     def getTailFile(self,fileName):
         patternD=re.compile("\.(.*?)")
         tailFile=patternD.findall(fileName)[0]
         return tailFile
+
+    # 获取图片qiniu的token
+    def getQiNiuToken(self,headersD):
+        data=json.dumps({},ensure_ascii=False)
+        urlD="https://tapi.lifeat.cn:45788/checkin/upload/uploadToken"
+        r=requests.post(url=urlD,data=data,headers=headersD,verify=False)
+        response=json.loads(r.text,encoding="utf-8")
+        return response
+
+
 
 
 
@@ -187,5 +200,13 @@ if __name__ == "__main__":
     # assitKey="getValuePath"
     # valueab=Common().getJsonValue(mydict=valuea, key="valueKey1", assitValue=assitValue,assitKey=assitKey)
     # print(valueab)
-    a=DealExcelTool().getFilePath()
-    print(a)
+    # a=DealExcelTool().getFilePath()
+    # print(a)
+    com=Common()
+    binData=com.getFilesBin("timg.jpeg")
+    print(binData)
+    crcData=com.crc32Get(binData)
+    print(crcData)
+    qiNiuUrl="https://www.runoob.com/python/att-string-replace.html"
+    qiNiuUrl = qiNiuUrl.replace("/", "\/")
+    print(qiNiuUrl)

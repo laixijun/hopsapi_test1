@@ -7,7 +7,7 @@ class RequestHeader:
     APPHEADER={
         "Content-Type":"application/json",
         "Connection":"keep-alive",
-        "User-Agent":"EasyLife.alpha/1.4.2 (iPhone; iOS 10.2.1; Scale/3.00)"
+        "User-Agent":"Operation.alpha/1.2.9 (iPhone; iOS 10.2.1; Scale/3.00)"
     }
     #web header
     WEBHEADER={
