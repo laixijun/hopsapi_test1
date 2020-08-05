@@ -145,12 +145,13 @@ class Common:
         jsonrpc = "{\"title\": \"标题yzc0116\", \"tag\":\"标签yzc0116\",\"desc\":\"描述yzc0116\"}"
         filepath = DealExcelTool().getFilePath()+"/"+fileName
         tailFile=self.getTailFile(fileName)
-        tailType = images/''
+        tailType = 'mage/'+ tailFile
         # 打开文件
         with open(filepath, 'rb',encoding='utf-8') as file:
             fo =file.read()
         file.close()
         crc32Value=self.crc32Get(fo)
+        logger.info(crc32Value)
         # # video表示实际的文件参数
         # video = {'Filedata': fo}
         # params表示实际的参数列表，包括：writetoken和JSONRPC这两个参数
@@ -158,7 +159,7 @@ class Common:
         files = {
             'token': (None, tokenFiles),
             'crc32': (None, crc32Value),
-            'files': (fileName, fo, 'text/tailFile'),
+            'files': (fileName, fo, tailType),
         }
         r = requests.post(url=url, files=files, header=header, verify=False)
         # response = requests.post(url, data=params, files=video)
