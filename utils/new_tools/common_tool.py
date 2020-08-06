@@ -1,11 +1,14 @@
 # @Time    : 6/18/2020 9:16 AM
 # @Author  : Yang Xiaobai
 # @Email   : yangzhiyongtest@163.com
+import datetime
 import json
 import re
 
 import requests
 
+from utils.config_tool import ConfigParameter
+from utils.config_tool.request_header import RequestHeader
 from utils.logger import Log
 from utils.new_tools.excel_tool import DealExcelTool
 
@@ -130,37 +133,91 @@ class Common:
             return True
         else:
             return False
-
+    
+    # 判断是否是APP
+    def isAppAssert(self,lsti):
+        flagApp = False
+        lsti0 = ConfigParameter.WEBAPIDIC
+        lsti3 = ConfigParameter.needRequestSetting
+        for i in lsti0:
+            if i in lsti:
+                flagApp = True
+        return flagApp
+    
+    # 获取header图片
+    def getHeaderImage(self,url):
+        header = {}
+        header["authority"] = "upload-z1.qiniup.com"
+        isWebApi=self.isAppAssert(url)
+        if isWebApi:
+            header["content-type"] = "multipart/form-data; boundary=----WebKitFormBoundaryPdEjbkHRVcjoWRVS"
+            header[
+                "user-agent"] = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36"
+            return header
+        else:
+            header["content-type"] = "multipart/form-data; boundary=werghnvt54wef654rjuhgb56trtg34tweuyrgf"
+            header[
+                "user-agent"] = "QiniuObject-C/7.2.5 (iPhone; iOS 12.2; D5525AE8-3362-4E8C-9BE2-A604B651C1BF; m1qdTqGcH54NLtQrE2j0MRnvKf8LaJBu1A7omyfe)"
+            return header
+    
     # pass
-    def test_upload(self,fileName,headersD):
+    def test_upload(self,fileName,headersD,url):
         """
         test case
         :return:
         """
-        header={}
-        header["content-type"] = "multipart/form-data; boundary=werghnvt54wef654rjuhgb56trtg34tweuyrgf"
-        header["user-agent"]="QiniuObject-C/7.2.5 (iPhone; iOS 12.2; D5525AE8-3362-4E8C-9BE2-A604B651C1BF; m1qdTqGcH54NLtQrE2j0MRnvKf8LaJBu1A7omyfe)"
-        header[":authority"]="upload-z1.qiniup.com"
+        header=self.getHeaderImage(url)
+        isWebApi = self.isAppAssert(url)
         url = 'https://upload-z1.qiniup.com/'
         tailFile = self.getTailFile(fileName)
         tailType = 'image/' + tailFile
-        fo = self.getFilesBin(fileName)
+        filepath = DealExcelTool().getFilePath() + "/" + fileName
+        fo = self.getFilesBin(fileName=filepath)
         crc32Value=self.crc32Get(fo)
         tokenFilesJson=self.getQiNiuToken(headersD)
         tokenFiles=tokenFilesJson["data"]["imgToken"]
         qiniuUrl=tokenFilesJson["data"]["qiniuUrl"]
         logger.info(crc32Value)
-        files = {
-            'token': (None, tokenFiles),
-            'crc32': (None, crc32Value),
-            'files': (fileName, fo, tailType),
-        }
-        r = requests.post(url=url, files=files, headers=header, verify=False)
+        keyName=self.getTimeHMS()+ "." + tailFile
+        if isWebApi:
+            data={
+                'token': tokenFiles,
+                "key" : keyName,
+                "fname" : fileName
+            }
+            qiNiuName=keyName
+        else:
+            data={ 'token':tokenFiles,
+                'crc32': crc32Value}
+        files = [
+            # 'token': (None, tokenFiles),
+            # 'crc32': (None, crc32Value),
+            ('file',(fileName, open(filepath,"rb"),tailType))
+        ]
+        r = requests.post(url=url, files=files, data=data, verify=False)
         response=json.loads(r.text)
-        qiNiuUrl=qiniuUrl+response["hash"]
+        if isWebApi:
+            qiNiuUrl = qiniuUrl + response["key"]
+        else:
+            qiNiuUrl=qiniuUrl+response["hash"]
+            qiNiuName=self.getFileName(tailFile)
         qiNiuUrl=qiNiuUrl.replace("/","\/")
-        return qiNiuUrl
-
+        return {"qiNiuUrl":qiNiuUrl,"qiNiuName":qiNiuName}
+    # 返回文件名称
+    def getFileName(self,tailFile):
+        import time
+        ticks=time.time()
+        fileName = "follow0-"+ticks+"."+tailFile
+        return fileName
+    
+    # 获取时间格式
+    def getTimeHMS(self):
+        now_time = datetime.datetime.now()
+        time1 = datetime.datetime.strftime(now_time, '%Y%m%d%H%M%S')
+        return time1
+        
+        
+    
     # 计算图片crc32
     def crc32Get(self,valueD):
         import zlib
@@ -169,32 +226,59 @@ class Common:
 
     # 获取文件的二进制内容
     def getFilesBin(self,fileName):
-        filepath = DealExcelTool().getFilePath() + "/" + fileName
         # 打开文件
-        with open(filepath, 'rb') as file:
+        with open(fileName, 'rb') as file:
             fo = file.read()
         file.close()
         return fo
 
     # 获取文件的后缀
     def getTailFile(self,fileName):
-        patternD=re.compile("\.(.*?)")
+        patternD=re.compile("\.(.*)")
         tailFile=patternD.findall(fileName)[0]
         return tailFile
 
     # 获取图片qiniu的token
-    def getQiNiuToken(self,headersD):
+    def getQiNiuToken(self,headersD,endPoint):
         data=json.dumps({},ensure_ascii=False)
-        urlD="https://tapi.lifeat.cn:45788/checkin/upload/uploadToken"
+        # urlD="https://tapi.lifeat.cn:45788/checkin/upload/uploadToken"
+        urlD = "https://"+endPoint+".lifeat.cn:45788/checkin/upload/uploadToken"
         r=requests.post(url=urlD,data=data,headers=headersD,verify=False)
         response=json.loads(r.text,encoding="utf-8")
         return response
+    
+    # 获取端URL节点
+    def getEndPont(self,url):
+        urlD = re.compile("https://(.*?)\.")
+        urlP = urlD.findall(url)[0]
+        return urlP
 
 
 
 
 
 if __name__ == "__main__":
+    com = Common()
+    urlD="https://tapi.lifeat.cn:45788/checkin/upload/uploadToken"
+    a=com.getTimeHMS()
+    print(a)
+    # a=com.getEndPont(urlD)
+    # print(a)
+    # b= com.isAppAssert(urlD)
+    # print(b)
+    
+  
+  
+    # fileName="timg.png"
+    # header=RequestHeader.APPHEADER
+    # header["Authorization"]="nJoTBfnirWaUISt7znl4fg"
+    # r=com.test_upload(fileName=fileName,headersD=header)
+    # print(r)
+    
+    # a=com.getTailFile(fileName)
+    # print(a)
+    #
+    
     # valuea = {"isApp":"N","isTransmit":{"tokenName":[["token","token"],["Authorization","token"]],"transmitName":[["token",{"valueKey":"token","getValuePath":"$.data.token"}],["applicationToken",{"valueKey":"applicationToken","getValuePath":"$.data.applicationToken"}],["cityId",{"valueKey":"cityId","getValuePath":{"threeListAll":"$.data.cityList","threeList":"city-北京市-cityId"}}]]}}
     # assitValue={"threeListAll": "$.data.cityList", "threeList": "city-北京市-cityId"}
     # assitKey="getValuePath"
@@ -202,11 +286,12 @@ if __name__ == "__main__":
     # print(valueab)
     # a=DealExcelTool().getFilePath()
     # print(a)
-    com=Common()
-    binData=com.getFilesBin("timg.jpeg")
-    print(binData)
-    crcData=com.crc32Get(binData)
-    print(crcData)
-    qiNiuUrl="https://www.runoob.com/python/att-string-replace.html"
-    qiNiuUrl = qiNiuUrl.replace("/", "\/")
-    print(qiNiuUrl)
+    
+    # com=Common()
+    # binData=com.getFilesBin("timg.jpeg")
+    # print(binData)
+    # crcData=com.crc32Get(binData)
+    # print(crcData)
+    # qiNiuUrl="https://www.runoob.com/python/att-string-replace.html"
+    # qiNiuUrl = qiNiuUrl.replace("/", "\/")
+    # print(qiNiuUrl)

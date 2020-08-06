@@ -1,4 +1,5 @@
 import os
+import platform
 import re
 
 import openpyxl
@@ -146,6 +147,7 @@ class DealExcelTool:
 	def getProjectPath(self):
 		projectPath=ExcelConfig.PROJECTPATH
 		root_path = os.path.abspath(os.path.dirname(__file__))
+		root_path=self.changeProjectPath(root_path)
 		reform = re.compile("/(.*?)/utils/new_tools",re.S)
 		projectPath = reform.findall(root_path)[0]
 		root_path=root_path.split(projectPath)[0]
@@ -153,12 +155,30 @@ class DealExcelTool:
 		# logger.info(proPath)
 		proPath = root_path + projectPath
 		return proPath
+	
+	#适配不同的系统，获取项目路径
+	def changeProjectPath(self,pathGet=None):
+		sysPlat=platform.system()
+		print(type(sysPlat))
+		print(sysPlat)
+		if "Windows" in sysPlat:
+			print("here")
+			pathGet=pathGet.replace('\\', '/')
+			print(pathGet)
+		return pathGet
+		
 
 
 if __name__ == '__main__':
+	
 	a=DealExcelTool()
-	c= a.getProjectPath()
-	b=a.getProjectPath()
-	# root_path = os.path.abspath(os.path.dirname(__file__))
+	b=a.changeProjectPath(pathGet="aaaa/bbb")
 	print(b)
-	print(c)
+	pathGet="aaaa/bbb"
+	pathGet=pathGet.replace
+	# c= a.getProjectPath()
+	# b=a.getProjectPath()
+	# # root_path = os.path.abspath(os.path.dirname(__file__))
+	# print(b)
+	# print(c)
+	

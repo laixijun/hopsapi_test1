@@ -26,7 +26,17 @@ def test103():
 	f = json.loads(e)
 	print(type(f["d"]))
 	print(f["d"])
-test103()
+def test104():
+	a="abc_bcd"
+	a=a.split("_")
+	print(a)
+	
+def test105():
+	b={"a":1}
+	for k,v in b.items():
+		print(k)
+		print(v)
+test105()
 
 
 def test103():

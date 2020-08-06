@@ -174,23 +174,45 @@ class ParaAnalysis:
         return {"requestDataJson":requestDataJson,"envContentDic":envContentDic}
 
     # 2、将需要参数化的健值添加参数
-    def paraToRequestExchangeData(self,requestPara,requestData,responseValue=None,parameterCase=None,envContentDic={}):
+    def paraToRequestExchangeData(self,requestPara,requestData,responseValue=None,parameterCase=None,headersD=None,url=None,envContentDic={}):
         # requestData = requestData["requestDataJson"]
         # requestData = json.dumps(requestData,ensure_ascii=False)
+        fileParam={}
         for para_item in requestPara.keys():
             strKey = para_item
             strValue = requestPara[strKey]
+            if "file_" in strValue:
+                # file_url_fileName   file_name_fileName
+                strValueList = strValue.split("_")
+                if strValueList[1]=="url":
+                    getParameter=Common().test_upload(fileName=strValue, headersD=headersD, url=url)
+                    strValue=getParameter["qiNiuUrl"]
+                    fileParam[strValueList[2]]=getParameter["qiNiuName"]
+                elif strValueList[1]=="name":
+                    try:
+                        strValue=fileParam[strValueList[2]]
+                    except:
+                        fileParam["name"][strKey]=strValueList[2]
             requestDataJson = Common().replaceStr(requestData, strKey, strValue)
             requestData = requestDataJson
             # requestDataJson =json.loads(requestData,encoding='utf-8')
             logger.info(requestDataJson)
+        try:
+            if fileParam["name"] != {}:
+                for k,v in fileParam["name"].items():
+                    strValue =fileParam["name"][k]
+                    requestDataJson = Common().replaceStr(requestData, strKey, strValue)
+        except:
+            pass
+            
         logger.info(requestDataJson)
         return {"requestDataJson":requestData,"envContentDic":envContentDic}
 
     # 获取参数
     #parameterCase= {"testCaseId":{"parameterKey":"parameterValue"}}
-    def choosePara(self,caseList,responseValue=None,parameterCase=None,envContentDic={}):
+    def choosePara(self,caseList,responseValue=None,parameterCase=None,requestHeader=None, envContentDic={}):
         testCaseId = caseList[1]
+        url=caseList[3]
         paraRequestDict = caseList[7]
         logger.info(paraRequestDict)
         paraRequestDict = json.loads(paraRequestDict,encoding='utf-8')
@@ -213,7 +235,7 @@ class ParaAnalysis:
             for testCaseIdParameter in parameterCase.keys():
                 if testCaseId == testCaseIdParameter:
                     parameterCasePara = parameterCase[testCaseIdParameter]
-                    requestDataJson=self.paraToRequestExchangeData(requestPara=parameterCasePara, requestData=requestDataJson['requestDataJson'])
+                    requestDataJson=self.paraToRequestExchangeData(requestPara=parameterCasePara, requestData=requestDataJson['requestDataJson'],url=url,headersD=requestHeader)
             logger.info(requestDataJson)
         logger.info(requestDataJson)
         return requestDataJson

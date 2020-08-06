@@ -39,6 +39,7 @@ class SourceDeal:
 		responseValue['headers']=None
 		responseValue['text']=None
 		testCaseDict = {}
+		requestHeader={}
 		for testCaseListItem in testCaseList:
 			if testCaseListItem[0] == None:
 				break
@@ -52,7 +53,7 @@ class SourceDeal:
 			logger.info(responseValue['headers'])
 			logger.info(responseValue['text'])
 			requestData = ParaAnalysis().choosePara(caseList=testCaseListItem, responseValue=responseValue['text'],
-													parameterCase=parameterCase)
+													parameterCase=parameterCase,requestHeader=requestHeader)
 			# requestData = json.dumps(requestData['requestDataJson'],ensure_ascii=False)
 			requestData = requestData['requestDataJson']
 			logger.info(requestData)
