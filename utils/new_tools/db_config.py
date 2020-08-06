@@ -3,9 +3,17 @@
 # @Email   : yangzhiyongtest@163.com
 
 # mysql
+import pymysql
+
+
 class MysqlSetting:
     def __init__(self):
-        pass
+        self.connection = pymysql.connect(host='localhost',
+                                     user='user',
+                                     password='passwd',
+                                     db='db',
+                                     charset='utf8mb4',
+                                     cursorclass=pymysql.cursors.DictCursor)
     
     
 
