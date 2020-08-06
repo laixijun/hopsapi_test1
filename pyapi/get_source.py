@@ -79,8 +79,15 @@ class SourceGet:
 		lsti0 = ConfigParameter.WEBAPIDIC
 		lsti3 = ConfigParameter.needRequestSetting
 		for i in lsti0:
-			if i in lsti:
+			if i in lsti[4]:
 				flagApp = True
+				if ("uat-pms-sso.hopsontong.com" in lsti[4]) and ("login" in lsti[4]):
+					lsti4 = ConfigParameter.LOGINWEBDIC
+					lsti[6]=json.loads(lsti[6],encoding="utf-8")
+					lsti4["mobile"]=lsti[6]["mobile"]
+					lsti4["password"] = lsti[6]["password"]
+					lsti4=json.dumps(lsti4,ensure_ascii=False)
+					lsti[6]=lsti4
 		if flagApp:
 			lsti3["isApp"] = "N"
 			lsti3 ["isTransmit"]["tokenName"]=[["token","token"],["Authorization","token"]]

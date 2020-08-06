@@ -14,7 +14,9 @@ needRequestParameter = {"isDefine": "", "paData": {"urlData": "", "paramData": {
 }}}
 needRequestSetting = {"isApp": "Y", "isTransmit": {"tokenName": [["token","token"],["brokerCode","brokerCode"]], "transmitName": ""}}
 WEBAPIDIC=("uat-pms-sso.hopsontong.com","cms.lifeat.cn")
-
+LOGINWEBDIC={"mobile":"{userMobile}","appFlag":"easylife-cms-api-gateway","afsSessionId":"WjFlCkIWDpHT9odN",
+			 "afsSig":"QuAncgq0hrmAVNX0","afsToken":"FFFF0N00000000009184:1591688607383:0.9844042761792562",
+			 "afsScene":"nc_login","password":"{userPD}"}
 
 class WebSelenium:
 	WINDOWSFIREFOXDRIVER="geckodriver.exe"
