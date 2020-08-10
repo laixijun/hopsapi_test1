@@ -254,14 +254,28 @@ class Common:
         return urlP
 
 
-
+    # 生成（%s,%s）
+    def getCValue(self,num):
+        numList=[]
+        for i in range(num):
+            numList.append(1)
+        numListStr=str(tuple(numList))
+        numListStr=numListStr.replace("1","%s")
+        return numListStr
+    
+    # 生成键=值  键=%s
+    def getSValue(self,listTu):
+        for key in listTu:
+            pass
 
 
 if __name__ == "__main__":
     com = Common()
     urlD="https://tapi.lifeat.cn:45788/checkin/upload/uploadToken"
-    a=com.getTimeHMS()
+    a=com.getCValue(10)
     print(a)
+    # a=com.getTimeHMS()
+    # print(a)
     # a=com.getEndPont(urlD)
     # print(a)
     # b= com.isAppAssert(urlD)

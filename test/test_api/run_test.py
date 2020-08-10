@@ -36,8 +36,17 @@ def test105():
 	for k,v in b.items():
 		print(k)
 		print(v)
-test105()
+
+def test107(*key,**kwargs):
+	print(key)
+	print(kwargs)
 
 
-def test103():
-	pass
+# test107((1,2,3),{"a":1},a=100,b=1000)
+
+def test108():
+	a=(1,2,3)
+	b=len(a)
+	print(b)
+	
+test108()

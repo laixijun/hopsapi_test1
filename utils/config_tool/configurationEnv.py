@@ -14,6 +14,9 @@ class ConfigurationEnv:
             print(i)
         return getPath
     
+class DBSetting:
+    MYSQLSETTINGH={"host":"rm-2zeh739lme9f9hr08eo.mysql.rds.aliyuncs.com","user":"easylife","password":"root123HOPSON","db":"easylife_test","port":3306}
+    MYSQLSETTINGT ={"host":"124.127.103.190","user":"root","password":"root123HOPSON","db":"easylife_test","port":40003}
     
 if __name__ == "__main__":
     ce=ConfigurationEnv()
