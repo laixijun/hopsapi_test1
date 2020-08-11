@@ -7,10 +7,12 @@ import re
 
 import pymysql
 
+
 from utils.config_tool.configurationEnv import DBSetting
+from utils.logger import Log
 from utils.new_tools.common_tool import Common
 
-
+logger = Log(logger='db_config').get_log()
 class MysqlSetting:
     def __init__(self,env):
         self.connect=self.getConnection(env)
@@ -57,19 +59,27 @@ class MysqlSetting:
         
     # 查询数据
     # 传入元组，第一个字符串"(key,key)",第二个传入元组（key),第三个传入值（value），第四个传入表名，tableName=Name,
+    #get --[{'id': 2, 'code': '100', 'create_time': datetime.datetime(2020, 8, 10, 14, 8, 21)}]
     def selectData(self,*key,**kwargs):
         # Read a single record
         keyDPatterm=re.compile("\((.*?)\)")
         keyD=keyDPatterm.findall(key[0])[0]
-        for keyLocationKey in key[1]:
-        
+        keyWhere=Common().getSValue(key[1])
         # sql = "SELECT `id`, `password` FROM `users` WHERE `email`=%s"
-        sql = "SELECT "+keyD+" FROM "+kwargs["tableName"]+" WHERE `email`=%s"
-        cursor.execute(sql, ('webmaster@python.org',))
-        result = cursor.fetchone()
+        sql = "SELECT "+keyD+" FROM "+kwargs["tableName"]+" WHERE" + keyWhere
+        logger.info(sql)
+        logger.info(key[2])
+        self.cursor.execute(sql, key[2])
+        result = self.cursor.fetchall()
+        return result
 
-    # 1、 通过where定位
-    
+    # 1、 通过where定位查询到实际结果
+    def selectDataBind(self,strDbKey,strDbValue):
+        DicParameter=Common().expectDB(strDbKey,strDbValue)
+        result=self.selectData(DicParameter["expectKey"],DicParameter["locationListKey"],DicParameter["locationListValue"],tableName=DicParameter["tableName"])
+        resultD=Common().compareData(expectDic=DicParameter["expectValue"],actule=result[0])
+        return resultD
+        
     # 2、 通过sql语句查询
 
     def commitData(self):
@@ -90,10 +100,16 @@ class MangoDBSetting:
 
 if __name__ == "__main__":
     ms=MysqlSetting(env="t")
-    key1='(code,status)'
-    value1=("100",1)
-    cs=ms.insertData(key1,value1,tableName="table_name3")
-    commit=ms.commitData()
+    tuple1='(id,code,create_time)'
+    tuple2=("id","status")
+    tuple3=(2,1)
+    tableName="table_name3"
+    a=ms.selectData(tuple1,tuple2,tuple3,tableName=tableName)
+    print(a)
+    # key1='(code,status)'
+    # value1=("100",1)
+    # cs=ms.insertData(key1,value1,tableName="table_name3")
+    # commit=ms.commitData()
     
     
     

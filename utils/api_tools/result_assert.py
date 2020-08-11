@@ -59,6 +59,15 @@ class ResultAssert:
 					strValue = Common().getJsonValue(mydict=jsonActual, key=exItem,
 													 assitValue=getValueFalseList[1], assitKey=getValueFalseList[0])
 			else:
+				if ("=" in exItem) and ("_" in exItem):
+					resultDB=Common().selectDataBind(exItem,jsonExpect[exItem])
+					if resultDB["FAIL"] == "FAIL" or resultDB["FAIL"] != {}:
+						compareResult['executeResult'] = 'FAIL'
+						compareResult['failField'] = resultDB["FAIL"]
+						compareResult['fieldExpect'] = jsonExpect[exItem]
+						compareResult['fieldActual'] = resultDB["FAIL"]
+						
+						compareResults['FAIL'][exItem] = compareResult
 				strValue = Common().getJsonValue(mydict=jsonActual, key=exItem)
 			actualResult = strValue
 			expectValue=jsonExpect[exItem]

@@ -265,15 +265,94 @@ class Common:
     
     # 生成键=值  键=%s
     def getSValue(self,listTu):
+        keyWhere=""
         for key in listTu:
-            pass
+            keyWhere=keyWhere + " and " + key + " = %s "
+        # anda = % sandb = % s
+        keyWhere=keyWhere[4:]
+        return keyWhere
+    
+    def formatTrans(self):
+        # tuple1 = '(id,code,create_time)'
+        # tuple2 = ("id", "status")
+        # tuple3 = (2, 1)
+        # tableName = "table_name3"
+        pass
 
+    # 预期结果：字段名 = 值_字段名 = 值_字段名 = 值：字段名 = 值_字段名 = 值
+    #  如果是int 或者浮点类型  值的前面加一个！
+    def expectDB(self,strDbKey,strDbValue):
+        expectDic={}
+        expectList=[]
+        locationListKey=[]
+        locationListValue=[]
+        # strDbList = strDb.split(":")
+        strDbListExpect=strDbKey.split("_")
+        for i in strDbListExpect:
+            i= i.split("=")
+            expectDic[i[0]]=i[1]
+            expectList.append(i[0])
+        strDbListLocation=strDbValue.split("_")
+        for i in strDbListLocation:
+            i = i.split("=")
+            if i[0]!="tableName":
+                locationListKey.append(i[0])
+                valueD=self.transTupleToNoStr(i[1])
+                locationListValue.append(valueD)
+            else:
+                tableName=i[1]
+        locationListKey=tuple(locationListKey)
+        locationListValue=tuple(locationListValue)
+        expectList=tuple(expectList)
+        expectList=self.transTupleToStr(expectList)
+        return {"expectValue":expectDic,"expectKey":expectList,"locationListKey":locationListKey,"locationListValue":locationListValue,"tableName":tableName}
+        
+    def transTupleToStr(self,liti):
+        liti=str(liti)
+        liti=liti.replace("'","")
+        liti = liti.replace("'", "")
+        liti = liti.replace('"', "")
+        return liti
+    def transTupleToNoStr(self,keyD):
+        if "!" in keyD:
+            keyD=keyD[1:]
+            if "." in keyD:
+                keyD=float(keyD)
+            else:
+                keyD=int(keyD)
+        return keyD
+    
+    # 字典数据对比
+    def compareData(self,expectDic,actule):
+        compareResult={}
+        compareResult["FAIL"]={}
+        compareResult["SUC"] = {}
+        try:
+            for k,v in expectDic.items():
+                if actule[k]==v:
+                    compareResult["SUC"][k]="PASS"
+                else:
+                    compareResult["FAIL"][k] = actule[k]
+        except:
+            compareResult["FAIL"]="FAIL"
+        return compareResult
+    
 
 if __name__ == "__main__":
     com = Common()
-    urlD="https://tapi.lifeat.cn:45788/checkin/upload/uploadToken"
-    a=com.getCValue(10)
-    print(a)
+    
+    # a= "!2.2"
+    # b=com.transTupleToNoStr(a)
+    # print(b)
+    a="字段名=值_字段名=值_字段名=值:字段名=值_字段名=值_字段名=!2.2_tableName=abc"
+    b=com.expectDB(a)
+    print(b)
+    # listTu=("a","b")
+    # a=com.getSValue(listTu)
+    # print(a)
+    # urlD="https://tapi.lifeat.cn:45788/checkin/upload/uploadToken"
+    # a=com.getCValue(10)
+    # print(a)
     # a=com.getTimeHMS()
     # print(a)
     # a=com.getEndPont(urlD)

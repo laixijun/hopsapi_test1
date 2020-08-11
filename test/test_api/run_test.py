@@ -49,4 +49,9 @@ def test108():
 	b=len(a)
 	print(b)
 	
-test108()
+a="2.2"
+if "." in a:
+	a=float(a)
+	b=int(a)
+	
+print(a,b)
