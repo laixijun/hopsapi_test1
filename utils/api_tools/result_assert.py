@@ -64,10 +64,14 @@ class ResultAssert:
 					if resultDB["FAIL"] == "FAIL" or resultDB["FAIL"] != {}:
 						compareResult['executeResult'] = 'FAIL'
 						compareResult['failField'] = resultDB["FAIL"]
-						compareResult['fieldExpect'] = jsonExpect[exItem]
-						compareResult['fieldActual'] = resultDB["FAIL"]
-						
+						compareResult['fieldExpect'] = resultDB["expectDic"]
+						compareResult['fieldActual'] = resultDB["actule"]
 						compareResults['FAIL'][exItem] = compareResult
+					else:
+						compareResult['executeResult'] = 'SUC'
+						compareResults['SUC'][exItem] = compareResult
+					compareResult = {}
+					break
 				strValue = Common().getJsonValue(mydict=jsonActual, key=exItem)
 			actualResult = strValue
 			expectValue=jsonExpect[exItem]

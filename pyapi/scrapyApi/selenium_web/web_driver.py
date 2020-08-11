@@ -10,7 +10,7 @@ from utils.new_tools.excel_tool import DealExcelTool
 
 class GetDriver:
     def __init__(self):
-        pass
+        self.driver=self.getDriver()
 
 
     def getDriver(self):
@@ -22,9 +22,22 @@ class GetDriver:
         driver = webdriver.Firefox(executable_path=driverPath)
         return driver
 
+    #获取当前界面的URL
+    def getUrl(self):
+        now_url = self.driver.current_url
+        print('当前页面的url为：{0}'.format(now_url))
+        return now_url
+
+    def loginCms(self):
+        driver=self.driver
+        URL="https://uat-pms-sso.hopsontong.com:11013/#/"
+        driver.get(URL)  # 登陆web界面
+        driver.maximize_window()  # 窗口最大化
+        pageSource=driver.page_source
+        print(pageSource)
 
 
 
 if __name__ == "__main__":
-    a= GetDriver().getDriver()
-    print(a)
+    a= GetDriver()
+    a.loginCms()

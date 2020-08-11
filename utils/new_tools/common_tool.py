@@ -327,6 +327,8 @@ class Common:
         compareResult={}
         compareResult["FAIL"]={}
         compareResult["SUC"] = {}
+        compareResult["expectDic"]=expectDic
+        compareResult["actule"]=actule
         try:
             for k,v in expectDic.items():
                 if actule[k]==v:
