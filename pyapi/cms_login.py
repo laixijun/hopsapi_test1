@@ -14,6 +14,8 @@ class CmsLogin:
     def __init__(self,userPhone=None,userPassword=None):
         self.cmsUrl = "https://uat-pms-sso.hopsontong.com:11013/api/login"
         self.headers = RequestHeader.WEBHEADER
+        self.tenantUrl = "https://uat-pms-sso.hopsontong.com:11013/api/selectTenant"
+        self.tenantHeaders = RequestHeader.WEBHEADER
         if userPhone != None:
             self.userPhone = userPhone
         else:
@@ -25,6 +27,7 @@ class CmsLogin:
         
     # 请求获取参数
     def cmsLogin(self):
+        dataR={}
         requestData = self.inputData()
         inputData = json.dumps(requestData,ensure_ascii=False)
         httpMethod = 'post'
@@ -36,7 +39,10 @@ class CmsLogin:
         if resuntRequests.status_code == 200:
             logger.info(type(resuntRequests.status_code))
             resuntRequestsData = json.loads(resuntRequests.text,encoding=False)
-            return resuntRequestsData
+            applicationToken = jsonpath.jsonpath(resuntRequestsData, "$.data.token")
+            dataR["reaponse"] = resuntRequestsData
+            dataR["token"] = applicationToken[0]
+            return dataR
         else:
             logger.info(resuntRequests)
             return "权限验证失败"
@@ -49,7 +55,49 @@ class CmsLogin:
         logger.info(requestData)
         return requestData
 
-    
+    # 选择租户的入参
+    def tenantData(self,tokenTen):
+        requestData='{"loginToken":"'+tokenTen+'","accessToken":null,"tenantId":28}'
+        requestData = json.loads(requestData, encoding=False)
+        return requestData
+        
+
+    # 获取租户token
+    #response {"code":200,"msg":"成功","data":{"token":"eyJhbGciOiJIUzI1NiJ9.eyJ0ZW5hbnRfaWQiOiIyOCIsInVzZXJfaWQiOiI5NTEiLCJwbGF0Zm9ybV9pZCI6IjMiLCJpYXQiOjE1OTcxOTY2NjYsImV4cCI6MTU5NzIwMzg2MSwibmJmIjoxNTk3MTk2NjY2fQ.IrNhW5rDztZYTHGXWSTeHr50UWCWavOXwIz2yrWELjY","apps":[{"id":3,"appName":"新运营端管理系统","appIcon":"","appUrl":"http://localhost:8089/,https://ndcms.lifeat.cn:45788/cms/,https://ntcms.lifeat.cn:45788/cms/,https://nhcms.lifeat.cn:45788/cms/,https://hb-ncms.lifeat.cn/cms/"},{"id":0,"appName":"权限系统","appIcon":"https://kf-pms-cdn.hopsontong.com/1585129410411-10947/cms/permission-system-logo-258x86.png","appUrl":"https://uat-pms-tenant.hopsontong.com:11013/#/login"}]},"success":true}
+    def getTenantToken(self,tokenTen):
+        self.tenantHeaders["Authorization"]=tokenTen
+        tenantData=self.tenantData(tokenTen)
+        logger.info(tenantData)
+        httpMethod = 'post'
+        logger.info(httpMethod)
+        logger.info(self.headers)
+        tenantData=json.dumps(tenantData,ensure_ascii=False)
+        resuntRequests = requests.post(url=self.tenantUrl, data=tenantData, headers=self.tenantHeaders, verify=False)
+        r=json.loads(resuntRequests.text,encoding="utf-8")
+        print(type(r))
+        print(r)
+        applicationToken = jsonpath.jsonpath(r, "$.data.token")
+        print(type(applicationToken))
+        print(applicationToken)
+        tokenTenR="Bearer "+applicationToken[0]
+        dataR={}
+        dataR["reaponse"]=resuntRequests.text
+        dataR["token"]=applicationToken[0]
+        dataR["Authorization"]=tokenTenR
+        return dataR
+        
+        
+    # 获取token
+    def getTenantTokenLeast(self):
+        cl=CmsLogin()
+        tokenJson=cl.cmsLogin()
+        tokenTenant=tokenJson["token"]
+        print(type(tokenTenant))
+        print(tokenTenant)
+        tokenTenant=cl.getTenantToken(tokenTenant)
+        return tokenTenant
+        
+        
     # 获得需要的token
     # ntcms、nhcms、ncms
     def getToken(self,env=None):
@@ -84,7 +132,7 @@ class CmsLogin:
     
     
 if __name__ == "__main__":
-    cg=CmsLogin().getToken(env='nhcms')
+    cg=CmsLogin().getTenantTokenLeast()
     print(cg)
 
         

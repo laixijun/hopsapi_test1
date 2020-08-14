@@ -21,3 +21,5 @@ LOGINWEBDIC={"mobile":"{userMobile}","appFlag":"easylife-cms-api-gateway","afsSe
 class WebSelenium:
 	WINDOWSFIREFOXDRIVER="geckodriver.exe"
 	MACFIREFOXDRIVER="geckodriver"
+	WINDOWSCHROMEDRIVER = "chromedriver84.exe"
+	MACCHROMEDRIVER = "chromedriver84"

@@ -126,13 +126,19 @@ class DealExcelTool:
 		tempDBFileName = tempDBFileName.replace('\\','/')
 		return tempDBFileName
 	# 获取mac的Firefox driver的全路径
-	def getMacFirefoxDriver(self):
-		macFirefoxDriver=self.getProjectPath() + ExcelConfig.CONFIGTOOLPATH + WebSelenium.MACFIREFOXDRIVER
+	def getMacFirefoxDriver(self,name=None):
+		if name=="firefox":
+			macFirefoxDriver=self.getProjectPath() + ExcelConfig.CONFIGTOOLPATH + WebSelenium.MACFIREFOXDRIVER
+		else:
+			macFirefoxDriver = self.getProjectPath() + ExcelConfig.CONFIGTOOLPATH + WebSelenium.MACCHROMEDRIVER
 		macFirefoxDriver = macFirefoxDriver.replace('\\','/')
 		return macFirefoxDriver
 	# 获取windows的Firefox driver的全路径
-	def getWindowsFirefoxDriver(self):
-		windowsFirefoxDriver = self.getProjectPath() + ExcelConfig.CONFIGTOOLPATH + WebSelenium.WINDOWSFIREFOXDRIVER
+	def getWindowsFirefoxDriver(self,name=None):
+		if name=="firefox":
+			windowsFirefoxDriver = self.getProjectPath() + ExcelConfig.CONFIGTOOLPATH + WebSelenium.WINDOWSFIREFOXDRIVER
+		else:
+			windowsFirefoxDriver = self.getProjectPath() + ExcelConfig.CONFIGTOOLPATH + WebSelenium.WINDOWSCHROMEDRIVER
 		windowsFirefoxDriver = windowsFirefoxDriver.replace('\\', '/')
 		return windowsFirefoxDriver
 	# 获取用例文件的路径

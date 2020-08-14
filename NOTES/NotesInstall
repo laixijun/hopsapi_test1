@@ -49,6 +49,9 @@ pip install Scrapy
 pip3 install Appium-Python-Client -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
 pip install Appium-Python-Client -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
 
+pip install PyHook3 -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
+pip install pyppeteer
+
 
 
 
