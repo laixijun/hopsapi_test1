@@ -17,10 +17,10 @@ async def main():
     await page.setViewport({'width': 1920, 'height': 1080})
     await page.goto(URL)
     await page.evaluate('''() =>{ Object.defineProperties(navigator,{ webdriver:{ get: () => false } }) }''')
-    await page.waitForSelector('#app > div > div.login-main > div > h4', {'timeout': 3000})
+    await page.waitForSelector('div.el-input.el-input--suffix > input', {'timeout': 3000})
     # await page.click('#J_QRCodeLogin > div.login-links > a.forget-pwd.J_Quick2Static')
-    await page.type('#app > div > div.login-main > div > form > div.el-form-item.mobile.is-success > div > div > input', '15718868478')  # 账号
-    await page.type('#app > div > div.login-main > div > form > div.el-form-item.password.is-success > div > div > input', '123456')  # 密码
+    await page.type('div.el-form-item.mobile.is-success>div>div.el-input.el-input--suffix > input', '15718868478')  # 账号
+    await page.type('div.el-form-item.password.is-success>div>div.el-input.el-input--suffix > input', '123456')  # 密码
     await asyncio.sleep(5)
     slider = await page.Jeval('#nocaptcha', 'node => node.style')  # 是否有滑块，ps：试了好多次都没出滑块
     if slider:
