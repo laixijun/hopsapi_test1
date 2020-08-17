@@ -9,8 +9,8 @@ https://miyakogi.github.io/pyppeteer/reference.html  api
 
 import asyncio
 import os
-DEFAULT_DOWNLOAD_HOST = 'https://npm.taobao.org/mirrors/'
-os.environ["PYPPETEER_DOWNLOAD_HOST"] = DEFAULT_DOWNLOAD_HOST
+# DEFAULT_DOWNLOAD_HOST = 'https://npm.taobao.org/mirrors/'
+# os.environ["PYPPETEER_DOWNLOAD_HOST"] = DEFAULT_DOWNLOAD_HOST
 from pyppeteer import launch
 
 width, height = 1366, 768

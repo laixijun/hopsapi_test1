@@ -5,7 +5,7 @@
 
 import asyncio
 import os
-DEFAULT_DOWNLOAD_HOST = 'https://npm.taobao.org/mirrors'
+DEFAULT_DOWNLOAD_HOST = 'http://cdn.npm.taobao.org/dist'
 os.environ["PYPPETEER_DOWNLOAD_HOST"] = DEFAULT_DOWNLOAD_HOST
 from pyppeteer import launch
 
@@ -19,8 +19,8 @@ async def main():
     await page.evaluate('''() =>{ Object.defineProperties(navigator,{ webdriver:{ get: () => false } }) }''')
     await page.waitForSelector('div.el-input.el-input--suffix > input', {'timeout': 3000})
     # await page.click('#J_QRCodeLogin > div.login-links > a.forget-pwd.J_Quick2Static')
-    await page.type('div.el-form-item.mobile.is-success>div>div.el-input.el-input--suffix > input', '15718868478')  # 账号
-    await page.type('div.el-form-item.password.is-success>div>div.el-input.el-input--suffix > input', '123456')  # 密码
+    await page.type('//*[@id="app"]/div/div[1]/div/form/div[1]/div/div/input', '15718868478')  # 账号
+    await page.type('#app > div > div.login-main > div > form > div.el-form-item.password.is-success > div > div > input', '123456')  # 密码
     await asyncio.sleep(5)
     slider = await page.Jeval('#nocaptcha', 'node => node.style')  # 是否有滑块，ps：试了好多次都没出滑块
     if slider:
@@ -31,4 +31,6 @@ async def main():
     print(cookie)
     await browser.close()
 
-asyncio.get_event_loop().run_until_complete(main())
+
+if __name__ == "__main__":
+    asyncio.get_event_loop().run_until_complete(main())
