@@ -27,7 +27,7 @@ async def main():
     await page.type('div.password > div.el-form-item__content > div.el-input.el-input--suffix > input.el-input__inner', '123456')  # 密码
     await asyncio.sleep(5)
     GJ=GetPostion().jsLocation()
-    WH=page.Jeval("#nc_1__scale_text",GJ)
+    WH= await page.evaluate(GJ)
     print(WH)
     slider = await page.Jeval('#nocaptcha', 'node => node.style')  # 是否有滑块，ps：试了好多次都没出滑块
     if slider:
