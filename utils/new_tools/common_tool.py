@@ -359,6 +359,15 @@ class Common:
             current += move
             track.append(round(move))
         return track
+
+    def screen_size(self):
+        # 使用tkinter获取屏幕大小
+        import tkinter
+        tk = tkinter.Tk()
+        width = tk.winfo_screenwidth()
+        height = tk.winfo_screenheight()
+        tk.quit()
+        return width, height
     
 
 if __name__ == "__main__":
@@ -367,8 +376,8 @@ if __name__ == "__main__":
     # a= "!2.2"
     # b=com.transTupleToNoStr(a)
     # print(b)
-    a="字段名=值_字段名=值_字段名=值:字段名=值_字段名=值_字段名=!2.2_tableName=abc"
-    b=com.expectDB(a)
+    # a="字段名=值_字段名=值_字段名=值:字段名=值_字段名=值_字段名=!2.2_tableName=abc"
+    b=com.screen_size()
     print(b)
     # listTu=("a","b")
     # a=com.getSValue(listTu)
