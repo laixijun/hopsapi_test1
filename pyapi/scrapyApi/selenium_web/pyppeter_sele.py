@@ -25,10 +25,31 @@ async def main():
     await page.evaluate('''() =>{ Object.defineProperties(navigator,{ webdriver:{ get: () => false } }) }''')
     await page.type('div.mobile > div.el-form-item__content > div.el-input.el-input--suffix > input.el-input__inner', '15718868478')  # 账号
     await page.type('div.password > div.el-form-item__content > div.el-input.el-input--suffix > input.el-input__inner', '123456')  # 密码
-    await asyncio.sleep(5)
-    GJ=GetPostion().jsLocation()
-    WH= await page.evaluate(GJ)
-    print(WH)
+    await asyncio.sleep(2)
+    dimensions = await page.evaluate('''() => {
+                return {
+                    width: document.documentElement.clientWidth,
+                    height: document.documentElement.clientHeight,
+                    deviceScaleFactor: window.devicePixelRatio,
+                }
+            }''')
+    print(dimensions)
+    # GJ=GetPostion().jsLocation()
+
+    # var div = document.getElementById('nc-lang-cnt');
+    dimensions = await page.evaluate('''() => {
+                    var myDate = new Date();
+                    var div = document.getElementById('nc_1__scale_text');
+                    var offset1 = div.offsetTop
+                    var reactObj = div.getBoundingClientRect();
+                    return{
+                    dicNum: myDate.getYear(),
+                    reactObj: document.documentElement.clientWidth,
+                    offs: reactObj,
+                    }
+                }''')
+    # await page.evaluate(reactObj="document.getElementById('nc_1__scale_text')",force_expr=True)
+    print(dimensions)
     slider = await page.Jeval('#nocaptcha', 'node => node.style')  # 是否有滑块，ps：试了好多次都没出滑块
     if slider:
         print('出现滑块')

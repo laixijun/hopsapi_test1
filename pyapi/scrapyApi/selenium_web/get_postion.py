@@ -17,12 +17,20 @@ class GetPostion:
         console.log(reactObj.top);
         :return:
         '''
-        jsData="" \
-               "var div = document.getElementById('nc_1__scale_text');" \
-               "var reactObj = div.getBoundingClientRect();" \
-               "return reactObj;"
-        
+        # jsData="" \
+        #        "var div = document.getElementById('nc_1__scale_text');" \
+        #        "var reactObj = div.getBoundingClientRect();" \
+        #        "return reactObj;"
+        jsData = '''() => {
+                    return {
+                        reactObj: document.getElementById('login-wrap clearfix').getBoundingClientRect();
+                    }
+                }
+        '''
         return jsData
+        
+        # return jsData
+
     
     # 登录login
     def jsLogin(self,url,obj):
