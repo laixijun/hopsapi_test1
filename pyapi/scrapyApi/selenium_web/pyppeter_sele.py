@@ -34,18 +34,33 @@ async def main():
                 }
             }''')
     print(dimensions)
-    # GJ=GetPostion().jsLocation()
-
-    # var div = document.getElementById('nc-lang-cnt');
+    '''
+    属性值：
+    
+    top: 元素上边距离页面上边的距离
+    left: 元素右边距离页面左边的距离
+    right: 元素右边距离页面左边的距离
+    bottom: 元素下边距离页面上边的距离
+    width: 元素宽度
+    height: 元素高度
+    '''
     dimensions = await page.evaluate('''() => {
                     var myDate = new Date();
                     var div = document.getElementById('nc_1__scale_text');
-                    var offset1 = div.offsetTop
+                    var offset1 = div.tagName;
                     var reactObj = div.getBoundingClientRect();
+                    var num = 0
+                    while (reactObj=={} && num <10){
+                        var reactObj = div.getBoundingClientRect();
+                        num+=1
+                        }
                     return{
-                    dicNum: myDate.getYear(),
-                    reactObj: document.documentElement.clientWidth,
-                    offs: reactObj,
+                        top: reactObj.top,
+                        left: reactObj.left,
+                        right: reactObj.right,
+                        bottom: reactObj.bottom,
+                        width: reactObj.width,
+                        height: reactObj.height,
                     }
                 }''')
     # await page.evaluate(reactObj="document.getElementById('nc_1__scale_text')",force_expr=True)
