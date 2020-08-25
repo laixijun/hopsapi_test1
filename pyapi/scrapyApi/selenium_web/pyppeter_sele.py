@@ -44,7 +44,8 @@ async def main():
     width: 元素宽度
     height: 元素高度
     '''
-    dimensions = await page.evaluate('''() => {
+    #{'top': 420.5, 'left': 523, 'right': 843, 'bottom': 454.5, 'width': 320, 'height': 34}
+    dimensionsOne = await page.evaluate('''() => {
                     var myDate = new Date();
                     var div = document.getElementById('nc_1__scale_text');
                     var offset1 = div.tagName;
@@ -63,8 +64,29 @@ async def main():
                         height: reactObj.height,
                     }
                 }''')
+    #{'top': 420.5, 'left': 523, 'right': 565, 'bottom': 454.5, 'width': 42, 'height': 34}
+    dimensionsTwo = await page.evaluate('''() => {
+                        var myDate = new Date();
+                        var div = document.getElementById('nc_1_n1z');
+                        var offset1 = div.tagName;
+                        var reactObj = div.getBoundingClientRect();
+                        var num = 0
+                        while (reactObj=={} && num <10){
+                            var reactObj = div.getBoundingClientRect();
+                            num+=1
+                            }
+                        return{
+                            top: reactObj.top,
+                            left: reactObj.left,
+                            right: reactObj.right,
+                            bottom: reactObj.bottom,
+                            width: reactObj.width,
+                            height: reactObj.height,
+                        }
+                    }''')
+    
     # await page.evaluate(reactObj="document.getElementById('nc_1__scale_text')",force_expr=True)
-    print(dimensions)
+    print(dimensionsOne,dimensionsTwo)
     slider = await page.Jeval('#nocaptcha', 'node => node.style')  # 是否有滑块，ps：试了好多次都没出滑块
     if slider:
         print('出现滑块')
