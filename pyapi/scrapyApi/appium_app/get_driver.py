@@ -14,8 +14,8 @@ class GetDriver:
     def getAndroidData(self):
         data ={
             "platformName": "Android",
-            "platformVersion": "8.1.0",
-            "deviceName": "OPPO A5",
+            "platformVersion": "7.0",
+            "deviceName": "Galaxy S6 edge+",
             "appPackage": "com.easylife.house.broker.test",
             "appActivity": "com.easylife.house.broker.ui.MainActivity",
             "resetKeyboard": "true"
@@ -38,8 +38,8 @@ class GetDriver:
     def getIosData(self):
         data = {
             "platformName": "Android",
-            "platformVersion": "8.1.0",
-            "deviceName": "OPPO A5",
+            "platformVersion": "7.0",
+            "deviceName": "Galaxy S6 edge+",
             "appPackage": "com.easylife.house.broker.test",
             "appActivity": "com.easylife.house.broker.ui.MainActivity",
             "resetKeyboard": "true"

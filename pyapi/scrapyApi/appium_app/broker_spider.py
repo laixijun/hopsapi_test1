@@ -185,8 +185,22 @@ class SpiderDemo:
         driver = ta.swipeUp(driver)
         el1 = driver.find_element_by_id("com.easylife.house.broker.test:id/tvOwnerIDCardValidDate")
         el1.click()
+        # 证件有效期
         driver = ta.legalSwipeUp(driver)
-        
+        el1 = driver.find_element_by_id("com.easylife.house.broker:id/tvOwnerPhone")
+        el1.send_keys("15700000006")
+        el2 = driver.find_element_by_id("com.easylife.house.broker:id/tvOwnerEmail")
+        el2.send_keys("15700000006@163.com")
+        el3 = driver.find_element_by_id("com.easylife.house.broker:id/imgAttorney")
+        el3.click()
+        el4 = driver.find_element_by_xpath(
+            "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[9]/android.view.View")
+        el4.click()
+        el5 = driver.find_element_by_id("com.easylife.house.broker:id/button_apply")
+        el5.click()
+        el6 = driver.find_element_by_id("com.easylife.house.broker:id/tvSubmit")
+        el6.click()
+        return driver
 
     # 收款金额验证
     def receiveFund(self,driver):
@@ -286,7 +300,6 @@ class SpiderDemo:
         el1.click()
         return driver
         
-
     # 银行账号录入
     def bankAccount(self,driver):
         el1 = driver.find_element_by_id("com.easylife.house.broker.test:id/imgAddBankCard")
@@ -306,6 +319,7 @@ class SpiderDemo:
         driver = ta.bankChoose(driver)
         driver = ta.bankBranchChoose(driver)
         driver = ta.areaChoose(driver)
+        return driver
         
         
         
