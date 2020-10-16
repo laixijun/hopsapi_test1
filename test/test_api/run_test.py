@@ -5,6 +5,8 @@ import json
 import platform
 import sys
 
+from utils.new_tools.db_config import MysqlSetting
+
 
 def test01():
 	a=platform.platform()
@@ -68,6 +70,29 @@ def get_track(distance):
 		track.append(round(move))
 	return track
 
+def update_sql(zId):
+	env ={"host":"rm-2zeh739lme9f9hr08eo.mysql.rds.aliyuncs.com","user":"easylife","password":"root123HOPSON","db":"easylife","port":3306}
+	mi=MysqlSetting(env=env)
+	userID = 250825
+	phoneD = 13503930411
+	for i in range(301):
+		userIDstr = str(userID)
+		phoneDstr = str(phoneD)
+		valueD = (zId,userIDstr,3,phoneDstr)
+		key_value =('(id,user_id,user_type,phone)',valueD)
+		mi.insertData01(key_value,tableName='easylife_live_room_user_record')
+		phoneD += 1
+		userID+=1
+	mi.commitData()
 
-a=get_track(195)
-print(a)
+# update_sql(zId='10261')
+
+class A:
+	def B(self):
+		
+		testC=100
+		print('ok')
+		
+a=A().B
+a()
+print(a.testC)
