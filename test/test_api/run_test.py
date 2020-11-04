@@ -93,6 +93,21 @@ class A:
 		testC=100
 		print('ok')
 		
-a=A().B
-a()
-print(a.testC)
+
+def test109():
+	stra=" D:/zhy/haoshenghuo/autoproject/hopsapi_test1/pyapi/scrapyApi/appium_app\\report/logs"
+	strb=stra.replace("\\","/")
+	print(strb)
+	
+def test110():
+	a=(1,2)
+	print(a[0])
+	print(a[1])
+	
+def test111():
+	a= {"a":1}
+	for k,v in a.items():
+		print(k)
+		print(v)
+if __name__ in "__main__":
+	test111()
