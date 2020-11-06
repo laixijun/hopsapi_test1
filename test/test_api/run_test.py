@@ -109,5 +109,21 @@ def test111():
 	for k,v in a.items():
 		print(k)
 		print(v)
+def test112():
+	a=('(id, organization_id, used_ebill_flag)', ('account_num', 'account_name'), ('1231255', '北京'))
+	print(a[2])
+	
+def test113():
+	import time
+	return time.strftime("%Y-%m-%d")
+
+
+def getDateStr():
+	import time
+	timeStr = time.strftime("%Y-%m-%d")
+	timeList = timeStr.split("-")
+	return timeList
+
 if __name__ in "__main__":
-	test111()
+	a=getDateStr()
+	print(a)

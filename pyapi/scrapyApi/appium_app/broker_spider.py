@@ -280,7 +280,7 @@ class SpiderDemo:
         sleep(3)
         return driver
     # 企业认证企业信息录入
-    def companyIdentify(self,driver,xinTax='911101085636363795'):
+    def companyIdentify(self,driver,xinTax='911101085636363795',companyIdentifyDic={}):
         el1 = driver.find_element_by_id("com.easylife.house.broker.test:id/tvAuthState")
         el1.click()
         sleep(3)
@@ -305,7 +305,9 @@ class SpiderDemo:
         el7 = driver.find_element_by_id("com.easylife.house.broker.test:id/edIDCardNum")
         el7.clear()
         sleep(3)
+        # 输入企业信用代码
         el7.send_keys(xinTax)
+        companyIdentifyDic["social_credit_code"]=xinTax
         el8 = driver.find_element_by_id("com.easylife.house.broker.test:id/tvSubmit")
         el8.click()
         sleep(3)
@@ -319,6 +321,13 @@ class SpiderDemo:
         el11 = driver.find_element_by_id("com.easylife.house.broker.test:id/button_apply")
         el11.click()
         sleep(3)
+        el1 = driver.find_element_by_id("com.easylife.house.broker.test:id/edCompanyName")
+        el1.click()
+        # 输入公司名称
+        el1.send_keys("公司名称")
+        driver.hide_keyboard()
+        companyIdentifyDic['company_name']="公司名称"
+        sleep(3)
         el12 = driver.find_element_by_id("com.easylife.house.broker.test:id/edIDCardNum")
         el12.clear()
         sleep(3)
@@ -326,21 +335,29 @@ class SpiderDemo:
         # 滑动界面
         ta = ToolsAppium()
         driver=ta.swipeUp(driver)
-        driver=ta.dateSwipeUp(driver)
+        #
+        driver=ta.dateSwipeUp(driver,companyIdentifyDic)
         el1 = driver.find_element_by_id("com.easylife.house.broker.test:id/edAddress")
         el1.click()
         el2 = driver.find_element_by_id("com.easylife.house.broker.test:id/edAddress")
+        #获取信息地址
+        companyIdentifyDic["company_address"]="北京朝阳区"
         el2.send_keys("北京朝阳区")
         driver.hide_keyboard()
+        sleep(3)
         ta.industrySwipeUp(driver)
         ta.scaleSwipeUp(driver)
         el1 = driver.find_element_by_id("com.easylife.house.broker.test:id/edRegisterMoney")
         el1.click()
         el1.clear()
+        #输入注册资本
+        companyIdentifyDic["registered_capital"]="100000"
         el1.send_keys("100000")
         driver.hide_keyboard()
         el1 = driver.find_element_by_id("com.easylife.house.broker.test:id/edBusinessScope")
         el1.clear()
+        # 输入经营范围
+        companyIdentifyDic["biz_scope"]="计算机技术"
         el1.send_keys("计算机技术")
         # 法人身份证上传
         driver = ta.swipeUp(driver)
@@ -407,6 +424,38 @@ class SpiderDemo:
         el1.click()
         sleep(3)
         return driver
+    #企业认证信息查询
+    def enterpriseCertification(self,driver):
+        sleep(3)
+        el1 = driver.find_element_by_id("com.easylife.house.broker.test:id/rl_company_auth")
+        el1.click()
+        el2 = driver.find_element_by_xpath(
+            "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.ImageView")
+        el2.click()
+        sleep(3)
+        # 滑动界面
+        ta = ToolsAppium()
+        driver = ta.swipeUp(driver)
+        el1 = driver.find_element_by_id("com.easylife.house.broker.test:id/action_bar_left_btn")
+        el1.click()
+        sleep(3)
+        el1 = driver.find_element_by_xpath(
+            "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.ImageView")
+        el1.click()
+        sleep(3)
+        el1 = driver.find_element_by_id("com.easylife.house.broker.test:id/action_bar_left_btn")
+        el1.click()
+        sleep(3)
+        el1 = driver.find_element_by_xpath(
+            "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.LinearLayout[3]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.ImageView")
+        el1.click()
+        sleep(3)
+        # 返回到我的界面
+        el1 = driver.find_element_by_id("com.easylife.house.broker.test:id/action_bar_left_btn")
+        el1.click()
+        sleep(3)
+        return driver
+    
     # 认证中
     def rezhen(self,driver):
         sleep(3)
@@ -445,7 +494,6 @@ class SpiderDemo:
         el2.click()
         sleep(3)
         driver = self.administratorEntry(driver)
-
     #点击始终允许
     def always(self):
         alwaysbutton=self.driver.find_element_by_id("com.android.packageinstaller:id/permission_allow_button")
@@ -489,6 +537,16 @@ class ToolsAppium:
         def swipSize(self):
             return driver.get_window_size()
     '''
+   #1、 从数据库读取数据存成待使用数据json
+    # {'FAIL': {'id': 417, 'organization_id': 438, 'used_ebill_flag': 1}, 'SUC': {}, 'expectDic': {'id': '417', 'organization_id': '438', 'used_ebill_flag': '1'}, 'actule': {'id': 417, 'organization_id': 438, 'used_ebill_flag': 1}}
+    # 读取strDbKey 预期结果字段和值，strDbValue协助定位字段和值，返回对比结果
+    def getDataExcept(self,strDbKey,strDbValue):
+        ms=MysqlSetting(env="t")
+        # strDbKey="id=417!_organization_id=438!_used_ebill_flag=1"
+        # strDbValue="account_num=1231255!_account_name=北京!_tableName=easylife_broker_corporation_organization_bank"
+        resultData=ms.selectDataBind(strDbKey, strDbValue)
+        return resultData
+    
     # 解析校验数据
     def assertExpect(self,expectList,driver):
         sleep(3)
@@ -655,7 +713,7 @@ class ToolsAppium:
         return driver
         
     # 通过抓取到时间控件的元素滑动选择日期
-    def dateSwipeUp(self,driver,):
+    def dateSwipeUp(self,driver,companyIdentifyDic):
         # 选择日期
         driver.find_element_by_id('com.easylife.house.broker.test:id/tvCompanyValidityDate').click()  # 点击日期选择
         eleyear = driver.find_elements_by_id('com.easylife.house.broker.test:id/year')[0]  # 当前年份元素
@@ -755,6 +813,17 @@ class ToolsAppium:
         wait = WebDriverWait(driver, 10, 0.5)
         wait.until(EC.presence_of_element_located((By.ID, idContent)))
         return driver
+    # 获取当前时间进行解析
+    def getDateStr(self):
+        import time
+        timeListList = []
+        timeStr=time.strftime("%Y-%m-%d")
+        timeList=timeStr.split("-")
+        for v in timeList:
+            v = int(v)
+            timeListList.append(v)
+        return timeListList
+
 
 # 断言 log
 class AssertResult:
@@ -1052,7 +1121,7 @@ class MysqlSetting:
         self.connect = self.getConnection(env)
         self.cursor = self.getCursor()
     
-    def getConnection(self, env):
+    def getConnection(self, env='t'):
         if env == "h":
             listi = DBSetting.MYSQLSETTINGH
         elif env == "t":
@@ -1111,12 +1180,42 @@ class MysqlSetting:
         # cursor.execute(sql, ('webmaster@python.org', 'very-secret'))
         cursor.execute(sql, key[0][1])
     
+    # 测试
+    def selectD1(self):
+        sqlD="SELECT id, organization_id, used_ebill_flag FROM easylife_broker_corporation_organization_bank WHERE account_num = %s  and account_name = %s"
+        # sqlD = "SELECT id, organization_id, used_ebill_flag FROM easylife_broker_corporation_organization_bank WHERE account_num = '1231255'  and account_name = '北京'"
+        paramD=('1231255', '北京')
+        cursor = self.cursor
+        # cursor.fetchall()
+        data=cursor.execute(sqlD,paramD)
+        result = cursor.fetchall()
+        return result
+    def selectD(self):
+        # sqlD="SELECT id, organization_id, used_ebill_flag FROM easylife_broker_corporation_organization_bank  WHERE account_num = %s  and account_name = %s"
+        # sqlD = "SELECT id, organization_id, used_ebill_flag FROM easylife_broker_corporation_organization_bank WHERE id=417"
+        sqlD = "SELECT id, organization_id, used_ebill_flag FROM easylife_broker_corporation_organization_bank "
+        # sqlD = "select * from broker_organization_area where id = %d" %(1)
+
+        paramD=('1231255', '北京')
+        cursor = self.cursor
+        # cursor.fetchall()
+        # cursor.execute(sqlD)
+        a=cursor.execute("SELECT id, organization_id, used_ebill_flag FROM easylife_broker_corporation_organization_bank WHERE id=417")
+        # data=cursor.execute(sqlD)
+        # print(cursor.fetchall())
+        print(a)
+        result = cursor.fetchall()
+        self.closeConnect()
+        return result
+    
     # 查询数据
     # 传入元组，第一个字符串"(key,key)",第二个传入元组（key),第三个传入值（value），第四个传入表名，tableName=Name,
+    #<class 'tuple'>: ('(id, organization_id, used_ebill_flag)', ('account_num', 'account_name'), ('1231255', '北京'))
     # get --[{'id': 2, 'code': '100', 'create_time': datetime.datetime(2020, 8, 10, 14, 8, 21)}]
     def selectData(self, *key, **kwargs):
         # Read a single record
         keyDPatterm = re.compile("\((.*?)\)")
+        logger.info(key)
         keyD = keyDPatterm.findall(key[0])[0]
         keyWhere = Common().getSValue(key[1])
         # sql = "SELECT `id`, `password` FROM `users` WHERE `email`=%s"
@@ -1132,11 +1231,14 @@ class MysqlSetting:
         DicParameter = Common().expectDB(strDbKey, strDbValue)
         result = self.selectData(DicParameter["expectKey"], DicParameter["locationListKey"],
                                  DicParameter["locationListValue"], tableName=DicParameter["tableName"])
-        resultD = Common().compareData(expectDic=DicParameter["expectValue"], actule=result[0])
+        try:
+            resultD = Common().compareData(expectDic=DicParameter["expectValue"], actule=result[0])
+        except:
+            resultD="数据库获取内容为空！"
+        logger.info(resultD)
         return resultD
     
     # 2、 通过sql语句查询
-    
     def commitData(self):
         self.connect.commit()
     
@@ -1145,6 +1247,72 @@ class MysqlSetting:
 class Common:
     def __init__(self):
         pass
+
+    # 预期结果：字段名 = 值_字段名 = 值_字段名 = 值：字段名 = 值_字段名 = 值 'id=417!_organization_id=438!_used_ebill_flag=1':'account_num=1231255!_account_name=北京'
+    #  如果是int 或者浮点类型  值的前面加一个！
+    def expectDB(self, strDbKey, strDbValue):
+        expectDic = {}
+        expectList = []
+        locationListKey = []
+        locationListValue = []
+        # strDbList = strDb.split(":")
+        strDbListExpect = strDbKey.split("_")
+        if len(strDbListExpect) >2:
+            strDbListExpect = strDbKey.split("!_")
+        for i in strDbListExpect:
+            i = i.split("=")
+            expectDic[i[0]] = i[1]
+            expectList.append(i[0])
+        strDbListLocation = strDbValue.split("_")
+        if len(strDbListLocation)>2:
+            strDbListLocation = strDbValue.split("!_")
+        for i in strDbListLocation:
+            i = i.split("=")
+            if i[0] != "tableName":
+                locationListKey.append(i[0])
+                valueD = self.transTupleToNoStr(i[1])
+                locationListValue.append(valueD)
+            else:
+                tableName = i[1]
+        locationListKey = tuple(locationListKey)
+        locationListValue = tuple(locationListValue)
+        expectList = tuple(expectList)
+        expectList = self.transTupleToStr(expectList)
+        return {"expectValue": expectDic, "expectKey": expectList, "locationListKey": locationListKey,
+                "locationListValue": locationListValue, "tableName": tableName}
+    
+    def transTupleToNoStr(self,keyD):
+        if "!" in keyD:
+            keyD=keyD[1:]
+            if "." in keyD:
+                keyD=float(keyD)
+            else:
+                keyD=int(keyD)
+        return keyD
+
+    def transTupleToStr(self, liti):
+        liti = str(liti)
+        liti = liti.replace("'", "")
+        liti = liti.replace("'", "")
+        liti = liti.replace('"', "")
+        return liti
+    # 字典数据对比
+    def compareData(self,expectDic,actule):
+        compareResult={}
+        compareResult["FAIL"]={}
+        compareResult["SUC"] = {}
+        compareResult["expectDic"]=expectDic
+        compareResult["actule"]=actule
+        try:
+            for k,v in expectDic.items():
+                if actule[k]==v:
+                    compareResult["SUC"][k]="PASS"
+                else:
+                    compareResult["FAIL"][k] = actule[k]
+        except:
+            compareResult["FAIL"]="FAIL"
+        return compareResult
+
     # 生成（%s,%s）
     def getCValue(self, num):
         numList = []
@@ -1163,21 +1331,21 @@ class Common:
         keyWhere = keyWhere[4:]
         return keyWhere
 class DBSetting:
-    MYSQLSETTINGH={"host":"rm-2zeh739lme9f9hr08eo.mysql.rds.aliyuncs.com","user":"easylife","password":"root123HOPSON","db":"easylife_test","port":3306}
-    MYSQLSETTINGT ={"host":"124.127.103.190","user":"root","password":"root123HOPSON","db":"easylife_test","port":40003}
+    MYSQLSETTINGH={"host":"rm-2zeh739lme9f9hr08eo.mysql.rds.aliyuncs.com","user":"easylife","password":"root123HOPSON","db":"easylife","port":3306,"ssl":{'ssl':{}}}
+    MYSQLSETTINGT ={"host":"124.127.103.190","user":"root","password":"root123HOPSON","db":"easylife","port":40003}
 # mangodb
 class MangoDBSetting:
     pass
 
 
 if __name__ == "__main__":
-    sd=SpiderDemo()
-    driver=sd.startApp()
-    # ta=ToolsAppium()
-    # driver=ta.take_screenShot(driver,"takeshot")
-    # driver=sd.loginApp(driver,phone='15231285090')
-    a=driver.page_source
-    print(a)
+    # sd=SpiderDemo()
+    # driver=sd.startApp()
+    # # ta=ToolsAppium()
+    # # driver=ta.take_screenShot(driver,"takeshot")
+    # # driver=sd.loginApp(driver,phone='15231285090')
+    # a=driver.page_source
+    # print(a)
     # sleep(5)
     # # driver= sd.rezhen(driver)
     # # driver= sd.rezhen3(driver)
@@ -1186,5 +1354,7 @@ if __name__ == "__main__":
     # a=ar.assertCostom("custom",2,1)
     # print(a)
     # ar.assertLog("hahaha")
+
+    ToolsAppium().getDataExcept()
     
 
