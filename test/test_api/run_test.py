@@ -124,6 +124,42 @@ def getDateStr():
 	timeList = timeStr.split("-")
 	return timeList
 
+def test114():
+	a={"a":1,"b":2}
+	for k,v in a.items():
+		print(k,v)
+		
+def test115():
+	('< appium.webdriver.webdriver.WebDriver (session="d0c4c0f6-33a0-48a5-a317-ea08ff5b69b2") >', {'company_name': '公司名称',
+																								 'base_status': '认证成功',
+																								 'certificate_type': '统一信用社会代码',
+																								 'social_credit_code': '911103026605015136',
+																								 'province_name': '天津市 天津市 和平区',
+																								 'company_address': '北京朝阳区',
+																								 'industry_name': '海洋天然气及可燃冰开采',
+																								 'customer_scale': '中型',
+																								 'biz_scope': '计算机技术',
+																								 'corporation_id_card_name': '薛业乔',
+																								 'authenticate_status': '认证成功',
+																								 'corporation_id_card_type': '中国居民身份证',
+																								 'corporation_id_card_num': '44010319900822244x',
+																								 'corporation_id_card_expiry_date': '2021-12-10',
+																								 'corporation_phone': '15700000006',
+																								 'account_name': '工商银行',
+																								 'bank_authenticate_status': '认证成功',
+																								 'account_num': '12323234',
+																								 'bank_name': '中国工商银行',
+																								 'city_name': '天津市 天津市',
+																								 'bank_branch_name': '中国工商银行股份有限公司天津玫瑰湾支行',
+																								 'used_ebill_flag': '否',
+																								 'admin_id_card_name': '薛业乔',
+																								 'admin_status': '认证成功',
+																								 'admin_id_card_type': '中国居民身份证',
+																								 'admin_id_card_num': '44010319900822244x',
+																								 'admin_id_card_expiry_date': '2021-12-10',
+																								 'admin_phone': '15700000006',
+																								 'admin_email': '15700000006@163.com'})
+	
 if __name__ in "__main__":
-	a=getDateStr()
+	a=test114()
 	print(a)

@@ -207,17 +207,16 @@ class SpiderDemo:
     # 查看结佣记录(在进入我的佣金已查看)
     def lookCommissionRecord(self):
         pass
-    # 企业认证
+    # 企业认证登记
     def companyAuthencition(self,driver,xinTax):
         driver = self.companyIdentify(driver,xinTax)
-        driver = self.bankAccount(driver)
-        driver = self.receiveFund(driver)
-        driver = self.administratorEntry(driver)
+        driver = self.bankAccount(driver[0],driver[1])
+        driver = self.receiveFund(driver[0],driver[1])
+        driver = self.administratorEntry(driver[0],driver[1])
         return driver
-        
     
     # 管理员信息录入
-    def administratorEntry(self,driver):
+    def administratorEntry(self,driver,companyIdentifyDic):
         el1 = driver.find_element_by_id("com.easylife.house.broker.test:id/imgIDCardFront")
         el1.click()
         sleep(3)
@@ -242,8 +241,11 @@ class SpiderDemo:
         el6 = driver.find_element_by_id("com.easylife.house.broker.test:id/button_apply")
         el6.click()
         el7 = driver.find_element_by_id("com.easylife.house.broker.test:id/tvOwnerName")
+        # 输入管理员姓名
+        companyIdentifyDic["admin_id_card_name"]="薛业乔"
         el7.send_keys("薛业乔")
         el8 = driver.find_element_by_id("com.easylife.house.broker.test:id/tvOwnerIdCardNum")
+        companyIdentifyDic["admin_id_card_num"]="44010319900822244x"
         el8.send_keys("44010319900822244x")
         # 滑动界面
         ta = ToolsAppium()
@@ -255,8 +257,12 @@ class SpiderDemo:
         driver = ta.legalSwipeUp(driver)
         sleep(3)
         el1 = driver.find_element_by_id("com.easylife.house.broker.test:id/tvOwnerPhone")
+        # 管理员手机号
+        companyIdentifyDic["admin_phone"]="15700000006"
         el1.send_keys("15700000006")
         el2 = driver.find_element_by_id("com.easylife.house.broker.test:id/tvOwnerEmail")
+        # 管理员手机号
+        companyIdentifyDic["admin_email"] = "15700000006@163.com"
         el2.send_keys("15700000006@163.com")
         el3 = driver.find_element_by_id("com.easylife.house.broker.test:id/imgAttorney")
         el3.click()
@@ -270,15 +276,26 @@ class SpiderDemo:
         el6 = driver.find_element_by_id("com.easylife.house.broker.test:id/tvSubmit")
         el6.click()
         sleep(3)
-        return driver
+        text=driver.find_element_by_id("com.easylife.house.broker.test:id/tvResult").text
+        if "企业认证已完成" in text:
+            logger.info("企业认证完成")
+        el1 = driver.find_element_by_id("com.easylife.house.broker.test:id/tvBack")
+        el1.click()
+        sleep(3)
+        el2 = driver.find_element_by_id("com.easylife.house.broker.test:id/tabMine")
+        el2.click()
+        sleep(3)
+        return (driver,companyIdentifyDic)
     # 收款金额验证
-    def receiveFund(self,driver):
+    def receiveFund(self,driver,companyIdentifyDic):
         el2 = driver.find_element_by_id("com.easylife.house.broker.test:id/edMoney")
+        # 输入校验金额
+        companyIdentifyDic["receiveFund"]="0.11"
         el2.send_keys("11")
         el3 = driver.find_element_by_id("com.easylife.house.broker.test:id/tvSubmit")
         el3.click()
         sleep(3)
-        return driver
+        return (driver,companyIdentifyDic)
     # 企业认证企业信息录入
     def companyIdentify(self,driver,xinTax='911101085636363795',companyIdentifyDic={}):
         el1 = driver.find_element_by_id("com.easylife.house.broker.test:id/tvAuthState")
@@ -359,7 +376,7 @@ class SpiderDemo:
         # 输入经营范围
         companyIdentifyDic["biz_scope"]="计算机技术"
         el1.send_keys("计算机技术")
-        # 法人身份证上传
+        # 法人身份证上传，选择日期暂未处理
         driver = ta.swipeUp(driver)
         el1 = driver.find_element_by_id("com.easylife.house.broker.test:id/imgIDCardFront")
         el1.click()
@@ -383,10 +400,16 @@ class SpiderDemo:
         sleep(3)
         el2 = driver.find_element_by_id("com.easylife.house.broker.test:id/edOwnerName")
         el2.clear()
+        # 法人姓名
         el2.send_keys("薛业乔")
+        companyIdentifyDic["corporation_id_card_name"]="薛业乔"
         el3 = driver.find_element_by_id("com.easylife.house.broker.test:id/edOwnerIdCardNum")
+        # 法人身份证号
+        companyIdentifyDic["corporation_id_card_num"]="44010319900822244x"
         el3.send_keys("44010319900822244x")
         el4 = driver.find_element_by_id("com.easylife.house.broker.test:id/edOwnerPhone")
+        # 法人手机号
+        companyIdentifyDic["corporation_phone"] = "15700000012"
         el4.send_keys("15700000012")
         sleep(3)
         el1 = driver.find_element_by_id("com.easylife.house.broker.test:id/tvOwnerIDCardValidDate")
@@ -395,9 +418,9 @@ class SpiderDemo:
         el1 = driver.find_element_by_id("com.easylife.house.broker.test:id/tvSubmit")
         el1.click()
         sleep(3)
-        return driver
+        return (driver,companyIdentifyDic)
     # 银行账号录入
-    def bankAccount(self,driver):
+    def bankAccount(self,driver,companyIdentifyDic):
         el1 = driver.find_element_by_id("com.easylife.house.broker.test:id/imgAddBankCard")
         el1.click()
         sleep(3)
@@ -409,23 +432,35 @@ class SpiderDemo:
         el3.click()
         sleep(3)
         el4 = driver.find_element_by_id("com.easylife.house.broker.test:id/edBankCardOwnerName")
+        # 录入银行账户
+        companyIdentifyDic["account_name"]="工商银行"
         el4.send_keys("工商银行")
         sleep(3)
         el5 = driver.find_element_by_id("com.easylife.house.broker.test:id/edBankCardNum")
+        # 录入银行账号
+        companyIdentifyDic["account_num"] = "12323234"
         el5.send_keys("12323234")
         sleep(1)
         # 滑动界面
         ta = ToolsAppium()
         driver = ta.swipeUp(driver)
+        # 暂时不取出来信息
         driver = ta.bankBranchChoose(driver)
         driver = ta.areaChoose(driver)
         driver = ta.bankChoose(driver)
         el1 = driver.find_element_by_id("com.easylife.house.broker.test:id/tvSubmit")
         el1.click()
         sleep(3)
+        return (driver,companyIdentifyDic)
+    #企业认证信息查询
+    def companyAuthencitionInfomation(self,driver):
+        driver=self.enterpriseCertification(driver)
+        driver=self.bankAccountInfomation(driver[0],driver[1])
+        driver=self.administratorInfomation(driver[0],driver[1])
         return driver
     #企业认证信息查询
     def enterpriseCertification(self,driver):
+        companyIdentifyDic={}
         sleep(3)
         el1 = driver.find_element_by_id("com.easylife.house.broker.test:id/rl_company_auth")
         el1.click()
@@ -433,6 +468,34 @@ class SpiderDemo:
             "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.ImageView")
         el2.click()
         sleep(3)
+        # 公司名称
+        companyIdentifyDic["company_name"]=driver.find_element_by_id("com.easylife.house.broker.test:id/tvCompanyName").text
+        #认证状态
+        companyIdentifyDic["base_status"]=driver.find_element_by_id("com.easylife.house.broker.test:id/tvAuthState").text
+        #证件类型
+        companyIdentifyDic["certificate_type"] = driver.find_element_by_id(
+            "com.easylife.house.broker.test:id/tvIDCardType").text
+        #信用代码
+        companyIdentifyDic["social_credit_code"] = driver.find_element_by_id(
+            "com.easylife.house.broker.test:id/tvIDCardNum").text
+        #所在省市
+        companyIdentifyDic["province_name"] = driver.find_element_by_id(
+            "com.easylife.house.broker.test:id/tvProvince").text
+        #详细地址
+        companyIdentifyDic["company_address"] = driver.find_element_by_id(
+            "com.easylife.house.broker.test:id/tvAddress").text
+        #所在行业
+        companyIdentifyDic["industry_name"] = driver.find_element_by_id(
+            "com.easylife.house.broker.test:id/tvIndustry").text
+        #企业规模
+        companyIdentifyDic["customer_scale"] = driver.find_element_by_id(
+            "com.easylife.house.broker.test:id/tvCompanyScale").text
+        #注册资本
+        companyIdentifyDic["biz_scope"] = driver.find_element_by_id(
+            "com.easylife.house.broker.test:id/tvRegisterMoney").text
+        # 经营范围
+        companyIdentifyDic["biz_scope"] = driver.find_element_by_id(
+            "com.easylife.house.broker.test:id/tvBusinessScope").text
         # 滑动界面
         ta = ToolsAppium()
         driver = ta.swipeUp(driver)
@@ -450,13 +513,103 @@ class SpiderDemo:
             "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.LinearLayout[3]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.ImageView")
         el1.click()
         sleep(3)
+        # 法人姓名
+        companyIdentifyDic["corporation_id_card_name"] = driver.find_element_by_id(
+            "com.easylife.house.broker.test:id/tvOwnerName").text
+        # 认证状态
+        companyIdentifyDic["authenticate_status"] = driver.find_element_by_id(
+            "com.easylife.house.broker.test:id/tvOwnerAuthState").text
+        # 证件类型
+        companyIdentifyDic["corporation_id_card_type"] = driver.find_element_by_id(
+            "com.easylife.house.broker.test:id/tvOwnerIDCardType").text
+        # 证件号码
+        companyIdentifyDic["corporation_id_card_num"] = driver.find_element_by_id(
+            "com.easylife.house.broker.test:id/tvOwnerIDCardNum").text
+        # 法人证件有效期
+        companyIdentifyDic["corporation_id_card_expiry_date"] = driver.find_element_by_id(
+            "com.easylife.house.broker.test:id/tvOwnerIDCardValidDate").text
+        # 手机号
+        companyIdentifyDic["corporation_phone"] = driver.find_element_by_id(
+            "com.easylife.house.broker.test:id/tvOwnerPhone").text
         # 返回到我的界面
         el1 = driver.find_element_by_id("com.easylife.house.broker.test:id/action_bar_left_btn")
         el1.click()
         sleep(3)
-        return driver
-    
-    # 认证中
+        return (driver,companyIdentifyDic)
+    # 银行账号信息查询
+    def bankAccountInfomation(self,driver,companyIdentifyDic):
+        sleep(3)
+        el1 = driver.find_element_by_id("com.easylife.house.broker.test:id/layAccountInfo")
+        el1.click()
+        sleep(3)
+        # 账号名称
+        companyIdentifyDic["account_name"] = driver.find_element_by_id(
+            "com.easylife.house.broker.test:id/tvBankCardOwnerName").text
+        # 认证状态
+        companyIdentifyDic["bank_authenticate_status"] = driver.find_element_by_id(
+            "com.easylife.house.broker.test:id/tvAuthState").text
+        # 开户账号
+        companyIdentifyDic["account_num"] = driver.find_element_by_id(
+            "com.easylife.house.broker.test:id/tvBankCardNum").text
+        # 开户行
+        companyIdentifyDic["bank_name"] = driver.find_element_by_id(
+            "com.easylife.house.broker.test:id/tvBankCardOpenBankName").text
+        # 开户地区
+        companyIdentifyDic["city_name"] = driver.find_element_by_id(
+            "com.easylife.house.broker.test:id/tvBankCardOpenBankAddress").text
+        # 开户行支行
+        companyIdentifyDic["bank_branch_name"] = driver.find_element_by_id(
+            "com.easylife.house.broker.test:id/tvBankCardOpenBankSubName").text
+        # 是否申请闪佣
+        companyIdentifyDic["used_ebill_flag"] = driver.find_element_by_id(
+            "com.easylife.house.broker.test:id/tvFastCommission").text
+        el2 = driver.find_element_by_id("com.easylife.house.broker.test:id/action_bar_left_btn")
+        el2.click()
+        return (driver, companyIdentifyDic)
+    # 管理员认证信息
+    def administratorInfomation(self,driver,companyIdentifyDic):
+        sleep(3)
+        el1 = driver.find_element_by_id("com.easylife.house.broker.test:id/layManagerInfo")
+        el1.click()
+        sleep(3)
+        # 姓名
+        companyIdentifyDic["admin_id_card_name"] = driver.find_element_by_id(
+            "com.easylife.house.broker.test:id/tvOwnerName").text
+        # 认证状态
+        companyIdentifyDic["admin_status"] = driver.find_element_by_id(
+            "com.easylife.house.broker.test:id/tvOwnerAuthState").text
+        # 证件类型
+        companyIdentifyDic["admin_id_card_type"] = driver.find_element_by_id(
+            "com.easylife.house.broker.test:id/tvOwnerIDCardType").text
+        # 证件号码
+        companyIdentifyDic["admin_id_card_num"] = driver.find_element_by_id(
+            "com.easylife.house.broker.test:id/tvOwnerIDCardNum").text
+        # 有效期
+        companyIdentifyDic["admin_id_card_expiry_date"] = driver.find_element_by_id(
+            "com.easylife.house.broker.test:id/tvOwnerIDCardValidDate").text
+        # 手机号
+        companyIdentifyDic["admin_phone"] = driver.find_element_by_id(
+            "com.easylife.house.broker.test:id/tvOwnerPhone").text
+        # 邮箱
+        companyIdentifyDic["admin_email"] = driver.find_element_by_id(
+            "com.easylife.house.broker.test:id/tvOwnerEmail").text
+        el2 = driver.find_element_by_id("com.easylife.house.broker.test:id/action_bar_left_btn")
+        el2.click()
+        sleep(3)
+        el1 = driver.find_element_by_id("com.easylife.house.broker.test:id/action_bar_left_btn")
+        el1.click()
+        sleep(3)
+        return (driver, companyIdentifyDic)
+    # 企业认证获取输入值获取展示值，进行校验对比
+    def compareEnterpriseCertification(self,driver,xinTax):
+        driver=self.companyAuthencition(driver,xinTax)
+        logger.info(driver)
+        driverInfo=self.companyAuthencitionInfomation(driver[0])
+        logger.info(driverInfo)
+        ta = ToolsAppium()
+        result=ta.assertExpectDic(driver[1],driverInfo[1])
+        return result
+    # 认证中,银行卡
     def rezhen(self,driver):
         sleep(3)
         el1 = driver.find_element_by_id("com.easylife.house.broker.test:id/rl_company_auth")
@@ -484,7 +637,7 @@ class SpiderDemo:
         # # ToolsAppium().keyCode(type='Sougou')
         # sleep(3)
         # driver.keyevent(66)
-    # 认证3
+    # 认证3，管理员
     def rezhen3(self,driver):
         sleep(3)
         el1 = driver.find_element_by_id("com.easylife.house.broker.test:id/rl_company_auth")
@@ -568,7 +721,27 @@ class ToolsAppium:
         else:
             expectListDic[expectList]["result"] = "Fail"
         return expectListDic
-        
+    # 对比预期结果中的值与实际值是否一致
+    def assertExpectDic(self,expectInputDic,expectOutputDic):
+        expectListDic = {}
+        itemResult = True
+        for k,v in expectInputDic.items():
+            try:
+                if expectOutputDic[k]==v:
+                    expectListDic[k]="Success"
+                else:
+                    expectListDic[k]["result"] = "Fail"
+                    expectListDic[k]["expectInput"] = v
+                    expectListDic[k]["expectOutput"] = expectOutputDic[k]
+                    itemResult = False
+            except:
+                logger.info("expectOutputDic " + k +"校验字段未采集")
+        if itemResult == True:
+            expectListDic["result"]="Success"
+        else:
+            expectListDic["result"] = "Fail"
+        return expectListDic
+                
     # 截图工具
     def take_screenShot(self, driver,name="takeShot"):
         '''
@@ -623,18 +796,20 @@ class ToolsAppium:
         sleep(3)
         return driver
 
-    # 开户行选择
+    # 开户行支行选择
     def bankChoose(self,driver):
         el2 = driver.find_element_by_id("com.easylife.house.broker.test:id/tvBankCardOpenBankSubName")
         el2.click()
-        sleep(3)
+        sleep(5)
         el3 = driver.find_element_by_id("com.easylife.house.broker.test:id/edSearch")
         el3.click()
-        sleep(3)
+        sleep(5)
         el4 = driver.find_element_by_id("com.easylife.house.broker.test:id/edSearch")
         el4.send_keys("工")
         sleep(3)
         # self.keyCode(type='Sougou')
+        # el1 = driver.find_element_by_id("com.easylife.house.broker.test:id/edSearch")
+        # el1.click()
         driver.keyevent(66)
         driver.hide_keyboard()
         el5 = driver.find_element_by_id("com.easylife.house.broker.test:id/tvName")
@@ -642,7 +817,7 @@ class ToolsAppium:
         sleep(3)
         return driver
         
-    # 开户行支行选择
+    # 开户行选择
     def bankBranchChoose(self,driver):
         el1 = driver.find_element_by_id("com.easylife.house.broker.test:id/tvBankCardOpenBankName")
         el1.click()
@@ -652,8 +827,12 @@ class ToolsAppium:
         sleep(3)
         el3 = driver.find_element_by_id("com.easylife.house.broker.test:id/edSearch")
         el3.send_keys("工")
+        sleep(3)
         # self.keyCode(type='Sougou')
-        driver.keyevent(66)
+        # el1 = driver.find_element_by_id("com.easylife.house.broker.test:id/edSearch")
+        # el1.click()
+        # driver.keyevent(66)
+        driver.press_keycode(66)
         driver.hide_keyboard()
         el1 = driver.find_element_by_id("com.easylife.house.broker.test:id/tvName")
         el1.click()
@@ -1339,15 +1518,21 @@ class MangoDBSetting:
 
 
 if __name__ == "__main__":
-    # sd=SpiderDemo()
-    # driver=sd.startApp()
-    # # ta=ToolsAppium()
-    # # driver=ta.take_screenShot(driver,"takeshot")
-    # # driver=sd.loginApp(driver,phone='15231285090')
+    sd=SpiderDemo()
+    driver=sd.startApp()
+    ta=ToolsAppium()
+    # # driver=ta.take_screenShot(driver,"takeshot") 13626265554
+    driver=sd.loginApp(driver,phone='15301161182')
+    # driver=sd.companyAuthencitionInfomation(driver)
+    # print(driver)
+    result = sd.compareEnterpriseCertification(driver,xinTax="91110000710932515R")
+    print(result)
+    # text=driver.find_element_by_id("com.easylife.house.broker.test:id/tv_channel").text
+    # print(text)
     # a=driver.page_source
     # print(a)
     # sleep(5)
-    # # driver= sd.rezhen(driver)
+    # driver= sd.rezhen(driver)
     # # driver= sd.rezhen3(driver)
     # driver = sd.companyAuthencition(driver,xinTax='91110000710933809D')
     # ar=AssertResult()
@@ -1355,6 +1540,6 @@ if __name__ == "__main__":
     # print(a)
     # ar.assertLog("hahaha")
 
-    ToolsAppium().getDataExcept()
+    # ToolsAppium().getDataExcept()
     
 
