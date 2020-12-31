@@ -3,7 +3,8 @@
 # @Email   : yangzhiyongtest@163.com
 from pyapi.deal_source import SourceDeal
 
-
+class DataParamter:
+    global dp
 
 
 if __name__ == "__main__":

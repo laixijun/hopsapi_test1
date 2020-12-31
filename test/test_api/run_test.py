@@ -5,6 +5,7 @@ import json
 import platform
 import sys
 
+from test.test_api.runTest import DataParamter
 from utils.new_tools.db_config import MysqlSetting
 
 
@@ -159,7 +160,73 @@ def test115():
 																								 'admin_id_card_expiry_date': '2021-12-10',
 																								 'admin_phone': '15700000006',
 																								 'admin_email': '15700000006@163.com'})
-	
+
+def test116():
+	a={"a":1}
+	a["b"]["c"]=2
+	print(a)
+
+
+def test117():
+    DataParamter.dp=100
+    DataParamter.dp += 1
+def test118():
+    print(DataParamter.dp)
+def test119():
+    test117()
+    test118()
+def test120():
+    operationCodeValuesdic = {}
+    operationCodeValuesdic["list"]=[]
+    operationCodeValuesdic["listDetail"] = []
+    operationCodeValue=[]
+    i_num=1
+    i_num_offSet=1
+    a=[1,1,1,2,2,4,4,3]
+    for i in a:
+        if i in operationCodeValuesdic["list"]:
+            i_num += 1
+            # 每个业务编号，用例数量，用例开始位置
+            operationCodeValue=[i,i_num,i_num_offSet]
+        else:
+            if operationCodeValue != [] or i_num_offSet==len(a)-1:
+                operationCodeValuesdic["listDetail"].append(operationCodeValue)
+            operationCodeValuesdic["list"].append(i)
+            i_num = 1
+            operationCodeValue = [i, i_num, i_num_offSet]
+        i_num_offSet +=1
+    print(operationCodeValuesdic)
+def test121():
+    operationCodeValuesdic = {}
+    operationCodeValuesdic["list"]=[]
+    operationCodeValuesdic["listDetail"] = []
+    operationCodeValueBn=False
+    operationCodeValue=[]
+    i_num=1
+    i_num_offSet=1
+    a=[1,1,1,2,2,4,4,3]
+    for i in a:
+        if i in operationCodeValuesdic["list"]:
+            i_num += 1
+            # 每个业务编号，用例数量，用例开始位置
+            operationCodeValue = [i, i_num, i_num_offSet]
+        else:
+            if i ==3:
+                print(i_num_offSet)
+                print(len(a))
+                print(operationCodeValue)
+            if operationCodeValue != [] and (operationCodeValue[0] in operationCodeValuesdic["list"]):
+                operationCodeValuesdic["listDetail"].append(operationCodeValue)
+                operationCodeValue=[]
+            if operationCodeValue == [] and i_num_offSet == len(a):
+                i_num = 1
+                # 每个业务编号，用例数量，用例开始位置
+                operationCodeValue = [i, i_num, i_num_offSet]
+                operationCodeValuesdic["listDetail"].append(operationCodeValue)
+            operationCodeValuesdic["list"].append(i)
+            i_num = 1
+        i_num_offSet +=1
+    return operationCodeValuesdic
 if __name__ in "__main__":
-	a=test114()
+	a=test121()
 	print(a)
